@@ -12,11 +12,12 @@
             <!-- /.box-header -->
             <div class="box-body">
                 <form role="form" action="{{route('admin.blog.store')}}" method="post" enctype="multipart/form-data">
+                @method('patch')
                 @csrf
                 <div class="box-body">
                     <div class="form-group">
                     <label for="exampleTitle">Title</label>
-                    <input type="text" class="form-control" name="title" id="exampleForTitle" placeholder="Enter Title" required>
+                    <input type="text" class="form-control" name="title" id="exampleForTitle" placeholder="Enter Title" value="{{$blog->title}}" required>
                     </div>
                     <div class="form-group">
                     <label for="category">Category</label>

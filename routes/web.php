@@ -40,6 +40,8 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/blog/index',[BlogController::class,'index'])->name('admin.blog.index');
     Route::get('/blog/create',[BlogController::class,'create'])->name('admin.blog.create');
     Route::post('/blog/store',[BlogController::class,'store'])->name('admin.blog.store');
+    Route::get('/blog/edit/{blog}',[BlogController::class,'edit'])->name('admin.blog.edit');
+    Route::patch('/blog/update',[BlogController::class,'update'])->name('admin.blog.update');
 
     //category
     Route::get('/category/index',[CategoryController::class,'index'])->name('admin.category.index');

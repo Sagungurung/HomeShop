@@ -61,7 +61,7 @@ class BlogController extends Controller
         $blog->description = $request->description;
         $blog->status = $request->status;
         $blog->image = $image_name;
-        $blog->user_id= Auth::user()->id;
+        $blog->user_id = Auth::user()->id;
         $blog->save();
         
         return redirect()->route('admin.blog.index')->with('success','Blog Created Successfully.');
@@ -86,7 +86,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view('admin.blog.edit',compact('blog'));
     }
 
     /**
