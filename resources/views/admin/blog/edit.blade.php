@@ -6,12 +6,12 @@
       <div class="col-md-12">
       <div class="box">
         <div class="box-header">
-              <h3 class="box-title">Create Blog</h3>
+              <h3 class="box-title">Edit Blog</h3>
               @include('admin.includes.errorSuccessMessage')
         </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form role="form" action="{{route('admin.blog.update')}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{route('admin.blog.update', $blog)}}" method="post" enctype="multipart/form-data">
                 @method('patch')
                 @csrf
                 <div class="box-body">

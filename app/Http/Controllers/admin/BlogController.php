@@ -102,7 +102,7 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $request->validate([
-            'title'=>'required|min:3|max:150|unique:blogs',
+            'title'=>'required|min:3|max:150|unique:blogs,title,'.$blog->id,
             'status'=>'required',
             'description'=>'required',
         ]);
@@ -110,7 +110,7 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->slug = Str::slug($request->title);
         $blog->description = $request->description;
-        $blog->category = $request->category_id;
+        $blog->category_id = $request->category_id;
         $blog->status = $request->status;
         $blog->user_id = Auth::user()->id;
         if($request->image){
@@ -127,6 +127,7 @@ class BlogController extends Controller
             $blog->image = $image_name;
         }
         $blog->update();
+        return redirect()->route('admin.blog.index')->with('success','Blog Updated Successfully.');
     }
 
     /**
