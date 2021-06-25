@@ -1,28 +1,30 @@
 @extends('admin.master')
-@section('title','Category')
+@section('title','Blog')
 @section('content')
 <section class="content">
       <div class="row">
       <div class="col-md-12">
       <div class="box">
         <div class="box-header">
-              <h3 class="box-title">Create Category</h3>
+              <h3 class="box-title">Create Blog</h3>
               @include('admin.includes.errorSuccessMessage')
         </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form role="form" action="{{route('admin.category.store')}}" method="post">
+                <form role="form" action="{{route('admin.blog.store')}}" method="post">
                 @csrf
                 <div class="box-body">
                     <div class="form-group">
-                    <label for="exampleForName">Name</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Enter Name">
+                    <label for="exampleForName">Title</label>
+                    <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Enter Title" required>
                     </div>
                     <div class="form-group">
-                    <label for="exampleForStatus">Status</label>
+                    <label for="exampleForStatus">Category</label>
                     <select name="status" id="exampleForStatus" class="form-control">
-                        <option value="1">Active</option>
-                        <option value="0">In-Active</option>
+                        <option value="" disabled>Select Category</option>
+                        @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
                     </select>
                     </div>
                 </div>

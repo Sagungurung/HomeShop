@@ -11,11 +11,11 @@
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="/admin/dist/img/user4-128x128.jpg" alt="User profile picture">
+              <img class="profile-user-img img-responsive img-circle" src="/uploads/admin_profile/{{$admin->image}}" alt="User profile picture">
 
-              <h3 class="profile-username text-center">Nina Mcintire</h3>
+              <h3 class="profile-username text-center">{{$admin->name}}</h3>
 
-              <p class="text-muted text-center">Software Engineer</p>
+              <p class="text-muted text-center">{{$admin->username}}</p>
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
@@ -60,14 +60,14 @@
               <p class="text-muted">{{$admin->address}}</p>
 
               <hr>
-
+<!-- 
               <strong><i class="fa fa-pencil margin-r-5"></i> Products</strong>
 
               <p>
                 {{$admin->products}}
               </p>
 
-              <hr>
+              <hr> -->
 
               <strong><i class="fa fa-file-text-o margin-r-5"></i> Members Since</strong>
 
@@ -309,13 +309,6 @@
 
                 <input type="hidden" name="id" value="{{$admin->id}}" />
 
-                <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Profile Picture</label>
-
-                    <div class="col-sm-10">
-                      <input type="file" class="form-control" id="inputName" placeholder="Image" name="image" required>
-                    </div>
-                  </div>
                   <div class="form-group">
                     <label for="inputName" class="col-sm-2 control-label">Name</label>
 
@@ -348,14 +341,21 @@
                     <label for="inputExperience" class="col-sm-2 control-label">Bio</label>
 
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Bio" value="{{$admin->bio}}" name="bio"></textarea>
+                      <textarea class="form-control" id="inputExperience" placeholder="Bio" name="bio">{{$admin->bio}}</textarea>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="inputSkills" class="col-sm-2 control-label">Products</label>
 
                     <div class="col-sm-10">
                       <input type="text" class="form-control" id="inputSkills" placeholder="Products" value="{{$admin->products}}" name="products">
+                    </div>
+                  </div> -->
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Profile Picture</label>
+
+                    <div class="col-sm-10">
+                      <input type="file" class="form-control" id="inputName" placeholder="Image" name="image">
                     </div>
                   </div>
                   <div class="form-group">

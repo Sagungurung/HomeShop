@@ -1,12 +1,12 @@
 @extends('admin.master')
-@section('title','Category')
+@section('title','Blog')
 @section('content')
 <section class="content">
       <div class="row">
       <div class="col-md-12">
       <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Category Table</h3>
+              <h3 class="box-title">Blog Table</h3>
               @include('admin.includes.errorSuccessMessage')
             </div>
             <!-- /.box-header -->
@@ -21,24 +21,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if(count($categories)>0)
-                @foreach($categories as $key=>$category)
+                @if(count($blogs)>0)
+                @foreach($blogs as $key=>$blog)
                   <tr>
                     <td>{{++$key}}</td>
-                    <td>{{$category->name}}</td>
-                    <td>@if($category->status == 1)
+                    <td>{{$blog->name}}</td>
+                    <td>@if($blog->status == 1)
                             Active
                         @else
                             In-Active
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('admin.category.edit', $category->id)}}"><button class="btn btn-primary">
-                          <i class="fa fa-edit"></i>
-                        </button></a>
-                        <a href="{{route('admin.category.delete', $category->id)}}" onclick="return confirm('Are You Sure?')"><button class="btn btn-danger">
-                          <i class="fa fa-trash"></i>
-                        </button></a>
+                        
                     </td>
                   </tr>
                 @endforeach 

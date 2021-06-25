@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\RegisterController;
+use App\Http\Controllers\admin\BlogController;
 use App\Models\Dashboard;
 
 /*
@@ -33,7 +34,12 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('admin.includes.dashboard');
     Route::get('/logout',[DashboardController::class,'logout'])->name('admin.logout');
     Route::get('/profile',[DashboardController::class,'profile'])->name('admin.profile');
-    Route::post('/editProfile',[DashboardController::class,'editProfile'])->name('admin.edit.profile');
+    Route::post('/profile/edit',[DashboardController::class,'editProfile'])->name('admin.edit.profile');
+    
+    //blog
+    Route::get('/blog/index',[BlogController::class,'index'])->name('admin.blog.index');
+    Route::get('/blog/create',[BlogController::class,'create'])->name('admin.blog.create');
+    Route::post('/blog/store',[BlogController::class,'store'])->name('admin.blog.store');
 
     //category
     Route::get('/category/index',[CategoryController::class,'index'])->name('admin.category.index');
@@ -42,7 +48,8 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('admin.category.edit');
     Route::patch('/category/update/{id}',[CategoryController::class,'update'])->name('admin.category.update');
     Route::get('/category/delete/{id}',[CategoryController::class,'destroy'])->name('admin.category.delete');
+     // Route::resource(); 
 
-    // Route::resource();
+    
     
 });

@@ -43,7 +43,7 @@
             <span>Dashboard</span>
           </a>
         </li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-book"></i> <span>Category</span>
             <span class="pull-right-container">
@@ -53,6 +53,18 @@
           <ul class="treeview-menu">
             <li class="active"><a href="{{route('admin.category.index')}}"><i class="fa fa-circle-o"></i> View Category</a></li>
             <li class="active"><a href="{{route('admin.category.create')}}"><i class="fa fa-circle-o"></i> Create Category</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-plus"></i> <span>Blog</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="{{route('admin.blog.index')}}"><i class="fa fa-circle-o"></i> View Blog</a></li>
+            <li class="active"><a href="{{route('admin.blog.create')}}"><i class="fa fa-circle-o"></i> Create Blog</a></li>
           </ul>
         </li>
       </ul>  
