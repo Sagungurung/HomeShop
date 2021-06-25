@@ -7,6 +7,7 @@ use App\Models\Admin\Blog;
 use App\Models\Admin\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -29,7 +30,7 @@ class BlogController extends Controller
      */
     public function create()
     {   
-        $categories = Category::get();
+        $categories = Category::where('status',1)->get();
         return view('admin.blog.create',compact('categories'));
     }
 
@@ -49,13 +50,14 @@ class BlogController extends Controller
         ]);
         if($request->image){
             $request->validate([
-                'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:2024',
+                'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:3000',
             ]);
-            $image_name = \Str::slug($request->title) . time();
+            //store new image
+            $image_name = Str::slug($request->title) . time();
             $uploaded = $request->image->move(public_path('/uploads/blogs'), $image_name);
         }
         $blog = new Blog();
-        $blog->slug = \Str::slug($request->title);
+        $blog->slug = Str::slug($request->title);
         $blog->title = $request->title;
         $blog->category_id = $request->category_id;
         $blog->description = $request->description;
@@ -86,7 +88,8 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        return view('admin.blog.edit',compact('blog'));
+        $categories = Category::get();
+        return view('admin.blog.edit',compact('blog','categories'));
     }
 
     /**
@@ -98,7 +101,32 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        $request->validate([
+            'title'=>'required|min:3|max:150|unique:blogs',
+            'status'=>'required',
+            'description'=>'required',
+        ]);
+
+        $blog->title = $request->title;
+        $blog->slug = Str::slug($request->title);
+        $blog->description = $request->description;
+        $blog->category = $request->category_id;
+        $blog->status = $request->status;
+        $blog->user_id = Auth::user()->id;
+        if($request->image){
+            $request->validate([
+                'image' => 'required|mimes:jpg,jpeg,png,svg,gif|max:3000',
+            ]);
+            //store image
+            $image_name = Str::slug($request->title) . time();
+            $uploaded = $request->image->move(public_path('/uploads/blogs'), $image_name);
+            //remove previous image
+            if(file_exists("/uploads/blogs/".$blog->image)){
+                unlink("/uploads/blogs/".$blog->image);
+            }
+            $blog->image = $image_name;
+        }
+        $blog->update();
     }
 
     /**

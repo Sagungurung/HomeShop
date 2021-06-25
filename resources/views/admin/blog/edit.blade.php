@@ -11,7 +11,7 @@
         </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form role="form" action="{{route('admin.blog.store')}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{route('admin.blog.update')}}" method="post" enctype="multipart/form-data">
                 @method('patch')
                 @csrf
                 <div class="box-body">
@@ -24,7 +24,7 @@
                     <select name="category_id" id="category" class="form-control">
                         <option value="" selected disabled>Select Category</option>
                         @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        <option value="{{$category->id}}" {{($blog->category_id == $category->id)?'selected':''}}>{{$category->name}}</option>
                         @endforeach
                     </select>
                     </div>
@@ -34,13 +34,13 @@
                     </div>
                     <div class="form-group">
                     <label for="exampleForDescription">Description</label>
-                    <textarea name="description" class="form-control" id="exampleForDescription" cols="30" rows="10"></textarea>
+                    <textarea name="description" class="form-control" id="exampleForDescription" cols="30" rows="10">{{$blog->description}}</textarea>
                     </div>
                     <div class="form-group">
                     <label for="exampleForStatus">Status</label>
                     <select name="status" id="exampleForStatus" class="form-control">
-                        <option value="1">Active</option>
-                        <option value="0">In-Active</option>
+                        <option value="1" {{($blog->status == 1)?'selected':''}}>Active</option>
+                        <option value="0" {{($blog->status == 0)?'selected':''}}>In-Active</option>
                     </select>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class DashboardController extends Controller
 {
@@ -38,10 +39,11 @@ class DashboardController extends Controller
             $request->validate([
                 'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:2024',
             ]);
-            $image_name = \Str::slug($request->name) . time();
+            //storing new image
+            $image_name = Str::slug($request->name) . time();
             $uploaded = $request->image->move(public_path('/uploads/admin_profile'),$image_name);
-            // dd($image_name);
         }
+        //removing old image
         if(file_exists("uploads/admin_profile/".$user->image)){
             unlink("uploads/admin_profile/".$user->image);
         }
