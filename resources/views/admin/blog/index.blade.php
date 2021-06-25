@@ -2,58 +2,64 @@
 @section('title','Blog')
 @section('content')
 <section class="content">
-      <div class="row">
-      <div class="col-md-12">
+  <div class="row">
+    <div class="col-md-12">
       <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Blog Table</h3>
-              @include('admin.includes.errorSuccessMessage')
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th>S.N.</th>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                @if(count($blogs)>0)
-                @foreach($blogs as $key=>$blog)
-                  <tr>
-                    <td>{{++$key}}</td>
-                    <td>{{$blog->title}}</td>
-                    <td>@if($blog->status == 1)
-                            Active
-                        @else
-                            In-Active
-                        @endif
-                    </td>
-                    <td>
-                        
-                    </td>
-                  </tr>
-                @endforeach 
-                @else
-                  <tr>
-                    <td colspan="4" class="text-center">No Records Found...</td>
-                  </tr>
-                @endif
-                </tbody>
-              <tfoot>
-                <tr>
-                    <th>S.N.</th>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-              </tfoot>
+        <div class="box-header">
+          <h3 class="box-title">Blog Table</h3>
+          @include('admin.includes.errorSuccessMessage')
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>S.N.</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              @if(count($blogs)>0)
+              @foreach($blogs as $key=>$blog)
+              <tr>
+                <td>{{++$key}}</td>
+                <td>{{$blog->title}}</td>
+                <td></td>
+                <td><img src="/uploads/blogs/{{$blog->image}}" alt="{{$blog->image}}" width="100" height="80"></td>
+                <td>{{\Illuminate\Support\Str::limit($blog->description,60)}}</td>
+                <td>@if($blog->status == 1)
+                  Active
+                  @else
+                  In-Active
+                  @endif
+                </td>
+                <td>
+
+                </td>
+              </tr>
+              @endforeach
+              @else
+              <tr>
+                <td colspan="4" class="text-center">No Records Found...</td>
+              </tr>
+              @endif
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>S.N.</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </tfoot>
           </table>
+        </div>
       </div>
-    </div>     
 </section>
 <!-- @push('scripts')
   <script>
