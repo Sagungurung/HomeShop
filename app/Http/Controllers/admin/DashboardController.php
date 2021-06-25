@@ -38,7 +38,7 @@ class DashboardController extends Controller
             $request->validate([
                 'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:2024',
             ]);
-            $image_name = \Str::slug($request->name).time();
+            $image_name = \Str::slug($request->name) . time();
             $uploaded = $request->image->move(public_path('/uploads/admin_profile'),$image_name);
             // dd($image_name);
         }

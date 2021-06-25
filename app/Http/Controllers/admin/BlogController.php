@@ -48,15 +48,21 @@ class BlogController extends Controller
         ]);
         if($request->image){
             $request->validate([
-                'image'=>'required|mimes:jpg,jpeg,png,svg,gif',
+                'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:2024',
             ]);
-            $image_name = \Str::slug($request->title).time();
-            $uploaded = $request->image->move(public_path('/uploads/blogs'),$image_name);
-            $request['image'] = $image_name;
+            $image_name = \Str::slug($request->title) . time();
+            $uploaded = $request->image->move(public_path('/uploads/blogs'), $image_name);
         }
-        $request['slug'] = \Str::slug($request->title);
-        $request['user_id']= Auth::user()->id;
-        Blog::create($request->all());
+        $blog = new Blog();
+        $blog->slug = \Str::slug($request->title);
+        $blog->title = $request->title;
+        $blog->category_id = $request->category_id;
+        $blog->description = $request->description;
+        $blog->status = $request->status;
+        $blog->image = $image_name;
+        $blog->user_id= Auth::user()->id;
+        $blog->save();
+        
         return redirect()->route('admin.blog.index')->with('success','Blog Created Successfully.');
     }
 
