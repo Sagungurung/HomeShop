@@ -15,12 +15,12 @@
                 @csrf
                 <div class="box-body">
                     <div class="form-group">
-                    <label for="exampleForName">Title</label>
-                    <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Enter Title" required>
+                    <label for="exampleTitle">Title</label>
+                    <input type="text" class="form-control" name="title" id="exampleForTitle" placeholder="Enter Title" required>
                     </div>
                     <div class="form-group">
-                    <label for="exampleForStatus">Category</label>
-                    <select name="status" id="exampleForStatus" class="form-control">
+                    <label for="category">Category</label>
+                    <select name="status" id="category" class="form-control">
                         <option value="" disabled>Select Category</option>
                         @foreach($categories as $category)
                         <option value="{{$category->id}}">{{$category->name}}</option>
@@ -33,7 +33,14 @@
                     </div>
                     <div class="form-group">
                     <label for="exampleForDescription">Description</label>
-                    <textarea name="description" class="form-control" id="exampleForDescription"></textarea>
+                    <textarea name="description" class="form-control" id="exampleForDescription" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleForStatus">Status</label>
+                    <select name="status" id="exampleForStatus" class="form-control">
+                        <option value="1">Active</option>
+                        <option value="0">In-Active</option>
+                    </select>
                     </div>
                 </div>
                 <!-- /.box-body -->

@@ -39,7 +39,20 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        $request->validate([
+            'title'=>'required|min:3|max:150|unique:blogs',
+            'status'=>'required',
+            'description'=>'required',
+        ]);
+        if($request->image){
+            $request->validate([
+                'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:2024',
+            ]);
+            $image_name = \Str::slug($request->name).time();
+            $uploaded = $request->image->move(public_path('/uploads/admin_profile'),$image_name);
+            // dd($image_name);
+        }
     }
 
     /**
