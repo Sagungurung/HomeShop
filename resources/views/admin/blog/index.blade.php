@@ -25,7 +25,7 @@
                 @foreach($blogs as $key=>$blog)
                   <tr>
                     <td>{{++$key}}</td>
-                    <td>{{$blog->name}}</td>
+                    <td>{{$blog->title}}</td>
                     <td>@if($blog->status == 1)
                             Active
                         @else

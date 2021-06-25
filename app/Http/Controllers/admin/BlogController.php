@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog;
 use App\Models\Admin\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -39,7 +40,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $request->validate([
             'title'=>'required|min:3|max:150|unique:blogs',
             'status'=>'required',
@@ -47,12 +48,16 @@ class BlogController extends Controller
         ]);
         if($request->image){
             $request->validate([
-                'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:2024',
+                'image'=>'required|mimes:jpg,jpeg,png,svg,gif',
             ]);
-            $image_name = \Str::slug($request->name).time();
-            $uploaded = $request->image->move(public_path('/uploads/admin_profile'),$image_name);
-            // dd($image_name);
+            $image_name = \Str::slug($request->title).time();
+            $uploaded = $request->image->move(public_path('/uploads/blogs'),$image_name);
+            $request['image'] = $image_name;
         }
+        $request['slug'] = \Str::slug($request->title);
+        $request['user_id']= Auth::user()->id;
+        Blog::create($request->all());
+        return redirect()->route('admin.blog.index')->with('success','Blog Created Successfully.');
     }
 
     /**

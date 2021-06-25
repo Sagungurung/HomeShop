@@ -11,7 +11,7 @@
         </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form role="form" action="{{route('admin.blog.store')}}" method="post">
+                <form role="form" action="{{route('admin.blog.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="box-body">
                     <div class="form-group">
@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                     <label for="category">Category</label>
-                    <select name="status" id="category" class="form-control">
+                    <select name="category_id" id="category" class="form-control">
                         <option value="" disabled>Select Category</option>
                         @foreach($categories as $category)
                         <option value="{{$category->id}}">{{$category->name}}</option>
