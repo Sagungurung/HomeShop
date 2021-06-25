@@ -20,6 +20,7 @@ class CreateBlogsTable extends Migration
             $table->integer('category_id');
             $table->text('image');
             $table->text('description');
+            $table->boolean('status')->default(1)->comment('0-inactive,1-inactive');
             $table->integer('user_id');
             $table->timestamps();
         });

@@ -27,6 +27,14 @@
                         @endforeach
                     </select>
                     </div>
+                    <div class="form-group">
+                    <label for="ForImage">Image</label>
+                    <input type="file" class="form-control" name="image" id="ForImage">
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleForDescription">Description</label>
+                    <textarea name="description" class="form-control" id="exampleForDescription"></textarea>
+                    </div>
                 </div>
                 <!-- /.box-body -->
 
