@@ -50,10 +50,13 @@ class BlogController extends Controller
         ]);
         if($request->image){
             $request->validate([
-                'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:3000',
+                'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ]);
-            //store new image
-            $image_name = Str::slug($request->title) . time();
+            //extension for image
+            $extension = $request->image->getClientOriginalExtension();
+
+            //store image
+            $image_name = Str::slug($request->title) . time().".".$extension;
             $uploaded = $request->image->move(public_path('/uploads/blogs'), $image_name);
         }
         $blog = new Blog();
@@ -117,12 +120,15 @@ class BlogController extends Controller
             $request->validate([
                 'image' => 'required|mimes:jpg,jpeg,png,svg,gif|max:3000',
             ]);
+            //extension for image
+            $extension = $request->image->getClientOriginalExtension();
+
             //store image
-            $image_name = Str::slug($request->title) . time();
+            $image_name = Str::slug($request->title) . time().".".$extension;
             $uploaded = $request->image->move(public_path('/uploads/blogs'), $image_name);
             //remove previous image
-            if(file_exists("/uploads/blogs/".$blog->image)){
-                unlink("/uploads/blogs/".$blog->image);
+            if(file_exists("uploads/blogs/".$blog->image)){
+                unlink("uploads/blogs/".$blog->image);
             }
             $blog->image = $image_name;
         }
@@ -137,7 +143,11 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Blog $blog)
-    {
-        dd($blog);
+    {   
+        if(file_exists("uploads/blogs/".$blog->image)){
+            unlink("uploads/blogs/".$blog->image);
+        }
+        $blog->delete();
+        return redirect()->back()->with('success','Blog Deleted Successfully.');
     }
 }

@@ -40,7 +40,7 @@
                 </td>
                 <td>
                     <a href="{{route('admin.blog.edit',$blog)}}"><i class="fa fa-edit" title="Edit"></i></a>
-                    <a href="{{route('admin.blog.delete',$blog)}}"><i class="fa fa-trash text danger" title="Delete"></i></a>
+                    <a href="{{route('admin.blog.delete',$blog)}}" onclick="return confirm('Are you sure you want to delete the blog?');"><i class="fa fa-trash text-danger" title="Delete"></i></a>
                 </td>
               </tr>
               @endforeach
