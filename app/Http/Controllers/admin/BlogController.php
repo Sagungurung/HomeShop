@@ -138,6 +138,6 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        dd($blog);
     }
 }

@@ -16,7 +16,7 @@
                 <div class="box-body">
                     <div class="form-group">
                     <label for="exampleForName">Name</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Enter Name">
+                    <input type="text" class="form-control" name="name" id="exampleForName" placeholder="Enter Name">
                     </div>
                     <div class="form-group">
                     <label for="exampleForStatus">Status</label>

@@ -42,7 +42,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::post('/blog/store',[BlogController::class,'store'])->name('admin.blog.store');
     Route::get('/blog/edit/{blog}',[BlogController::class,'edit'])->name('admin.blog.edit');
     Route::patch('/blog/update/{blog}',[BlogController::class,'update'])->name('admin.blog.update');
-    Route::get('/blog/destroy/{blog}',[BlogController::class,'destroy'])->name('admin.blog.destroy');
+    Route::get('/blog/delete/{blog}',[BlogController::class,'destroy'])->name('admin.blog.delete');
 
     //category
     Route::get('/category/index',[CategoryController::class,'index'])->name('admin.category.index');

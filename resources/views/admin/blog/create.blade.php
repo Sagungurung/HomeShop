@@ -15,7 +15,7 @@
                 @csrf
                 <div class="box-body">
                     <div class="form-group">
-                    <label for="exampleTitle">Title</label>
+                    <label for="exampleForTitle">Title</label>
                     <input type="text" class="form-control" name="title" id="exampleForTitle" placeholder="Enter Title" required>
                     </div>
                     <div class="form-group">

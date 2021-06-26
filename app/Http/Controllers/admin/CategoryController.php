@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -46,7 +47,7 @@ class CategoryController extends Controller
             'name'=>'required|min:2|unique:categories',
             'status'=>'boolean',
         ]);
-        $request['slug'] = \Str::slug($request->name);
+        $request['slug'] = Str::slug($request->name);
         Category::create($request->all());
         return redirect()->route('admin.category.index')->with(['success'=>'Category Created Successfully']);
     }
@@ -87,7 +88,7 @@ class CategoryController extends Controller
         // dd($id);
         $category = Category::where('id', $id)->first();
         $category->name = $request->name;
-        $category->slug = \Str::slug('$request->name');
+        $category->slug = Str::slug('$request->name');
         $category->status= $request->status;
         $category->update();
         return redirect()->route('admin.category.index')->with(['success'=>'Category Updated Successfully']);
