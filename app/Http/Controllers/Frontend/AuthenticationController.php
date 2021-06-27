@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthenticationController extends Controller
 {
     public function register(){
+        dd($token = rand(1,25););
         $user = Visitor::all();
         return view('frontend.authenticate.register');
     }
@@ -27,9 +28,11 @@ class AuthenticationController extends Controller
         $visitor->name = $request->name;
         $visitor->email = $request->email;
         $password=bcrypt($request->password);
-        //  dd($password); 
         $visitor->password = $password;
-        $visitor->save();
+        $saved = $visitor->save();
+        if($saved){
+            $token = rand(25);
+        }
         return redirect()->back()->with(['success'=>'Registered Successfully.']);   
     }
 

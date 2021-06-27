@@ -33,7 +33,7 @@ class RegisterController extends Controller
     }
 
     public function viewLogin(){
-        if(Auth::check()){
+        if(Auth::guard('user')->check()){
             return redirect()->route('admin.includes.dashboard');
         }else{
             return view('admin.authenticate.login');

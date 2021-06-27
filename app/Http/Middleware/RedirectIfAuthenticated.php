@@ -19,14 +19,32 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
-        $guards = empty($guards) ? [null] : $guards;
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                // return redirect(RouteServiceProvider::HOME);
-                return redirect()->route('admin.includes.dashboard');
-            }
-        }
+        // $guards = empty($guards) ? [null] : $guards;
+        // foreach ($guards as $guard) {
+        //     if (Auth::guard($guard)->check()) {
+        //         // return redirect(RouteServiceProvider::HOME);
+        //         return redirect()->route('admin.includes.dashboard');
+        //     }
+        // }
 
-        return $next($request);
+        // return $next($request);
+
+        switch($guards){
+            case 'user':
+                if(Auth::guard($guards)->check()){
+                    return redirect()->route('admin.dashboard');
+                }
+                break;
+            case 'visitor':
+                if(Auth::guard($guards)->check()){
+                    return redirect()->route('front.register.view');
+                }
+                break;
+            default:
+                if(Auth::guard($guards)->check()){
+                    return redirect('/dashboard');
+                }
+                break;
+        }
     }
 }
