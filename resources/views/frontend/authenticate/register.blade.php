@@ -33,13 +33,13 @@
 @include('admin.includes.errorSuccessMessage')
 
   <div class="register-logo">
-    <a href="../../index2.html"><b>Visitor</b>Login</a>
+    <a href=""><b>Visitor Register</b></a>
   </div>
 
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form action="{{route('admin.authenticate.register.submit')}}" method="post">
+    <form action="{{route('frontend.authenticate.register.submit')}}" method="post">
     <!-- cross site request forgery -->
     @csrf 
       <div class="form-group has-feedback">
@@ -86,7 +86,7 @@
         Google+</a>
     </div> -->
 
-    <a href="{{route('admin.authenticate.login.view')}}" class="text-center">I already have a membership</a>
+    <a href="{{route('frontend.authenticate.login.view')}}" class="text-center">I already have a membership</a>
   </div>
   <!-- /.form-box -->
 </div>

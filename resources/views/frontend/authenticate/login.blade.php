@@ -30,7 +30,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="/dist/index2.html"><b>Login</b>Visitor</a>
+    <a href="admin/dist/index2.html"><b>Visitor Login</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -38,7 +38,7 @@
   @include('admin.includes.errorSuccessMessage')
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="{{route('admin.authenticate.login.submit')}}" method="post">
+    <form action="{{route('frontend.authenticate.login.submit')}}" method="post">
         @csrf
       <div class="form-group has-feedback">
         <input type="email" name="email" class="form-control" placeholder="Email" required>
@@ -74,7 +74,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">I forgot my password</a><br>
-    <a href="{{route('admin.authenticate.register.view')}}" class="text-center">Register a new membership</a>
+    <a href="{{route('frontend.authenticate.register.view')}}" class="text-center">Register a new membership</a>
 
   </div>
   <!-- /.login-box-body -->

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class RegisterController extends Controller
 {
     public function register(){
+        $user = User::all();
         return view('admin.authenticate.register');
     }
     public function submitRegister(Request $request){
@@ -45,7 +46,7 @@ class RegisterController extends Controller
             'password'=>'required|min:6|max:20',
         ]);
 
-       if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password])){
+       if(Auth::guard('user')->attempt(['email'=>$request->email, 'password'=>$request->password])){
         // return "Email and Password are correct";
         return redirect()->route('admin.includes.dashboard');
 

@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'user',
-        'passwords' => 'user',
+        'guard' => 'web',
+        'passwords' => 'users',
     ],
 
     /*
@@ -76,8 +76,8 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'users' => [
-            'driver' => 'eleoquent',
+        'visitors' => [
+            'driver' => 'eloquent',
             'model' => App\Models\Frontend\Visitor::class,
         ],
     ],

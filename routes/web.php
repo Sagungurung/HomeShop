@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\RegisterController;
 use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\Frontend\AuthenticationController;
 use App\Models\Dashboard;
 
 /*
@@ -29,7 +30,7 @@ Route::post('/submit/register',[RegisterController::class,'submitRegister'])->na
 Route::get('/login',[RegisterController::class,'viewLogin'])->name('admin.authenticate.login.view');
 Route::post('/login/submit',[RegisterController::class,'submitlogin'])->name('admin.authenticate.login.submit');
 
-Route::group(['middleware'=>'auth'], function(){
+Route::group(['middleware'=>'auth:user'],function(){
     //dashboard
     Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('admin.includes.dashboard');
     Route::get('/logout',[DashboardController::class,'logout'])->name('admin.logout');
@@ -52,7 +53,16 @@ Route::group(['middleware'=>'auth'], function(){
     Route::patch('/category/update/{id}',[CategoryController::class,'update'])->name('admin.category.update');
     Route::get('/category/delete/{id}',[CategoryController::class,'destroy'])->name('admin.category.delete');
      // Route::resource(); 
+});
 
-    
-    
+//frontend register and login functions
+
+Route::get('/visitor/register',[AuthenticationController::class,'register'])->name('frontend.authenticate.register.view');
+Route::post('/visitor/submit/register',[AuthenticationController::class,'submitRegister'])->name('frontend.authenticate.register.submit');
+Route::get('/visitor/login',[AuthenticationController::class,'viewLogin'])->name('frontend.authenticate.login.view');
+Route::post('/visitor/login/submit',[AuthenticationController::class,'submitlogin'])->name('frontend.authenticate.login.submit');
+
+//frontend routes
+Route::group(['middleware'=>'auth:admin'],function(){
+
 });
