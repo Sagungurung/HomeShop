@@ -30,7 +30,7 @@
                 <td>{{++$key}}</td>
                 <td>{{$blog->title}}</td>
                 <td>{{$blog->category->name}}</td>
-                <td><img src="/uploads/blogs/{{$blog->image}}" alt="{{$blog->image}}" width="100" height="50"></td>
+                <td><img src="/uploads/blogs/{{$blog->image}}" alt="{{$blog->image}}" width="100" height="80"></td>
                 <td>{{\Illuminate\Support\Str::limit($blog->description,60)}}</td>
                 <td>@if($blog->status == 1)
                   Active
