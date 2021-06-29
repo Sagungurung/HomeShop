@@ -17,13 +17,11 @@ class CreateSellersTable extends Migration
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('phone no');
+            $table->string('phone_no');
             $table->text('address')->nullable();
             $table->string('shopname')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->text('image')->nullable();
-            $table->text('bio');
             $table->timestamps();
         });
     }

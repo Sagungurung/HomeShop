@@ -40,6 +40,10 @@ class RedirectIfAuthenticated
                     return redirect()->route('front.register.view');
                 }
                 break;
+            case 'seller':
+                if(Auth::guard($guards)){
+                    return redirect()->route();
+                }
             default:
                 if(Auth::guard($guards)->check()){
                     return redirect('/dashboard');

@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'user',
         'passwords' => 'users',
     ],
 
@@ -44,6 +44,11 @@ return [
         'visitor'=>[
             'driver'=>'session',
             'provider'=>'visitors',
+        ],
+
+        'sellers'=>[
+            'driver'=>'session',
+            'provider'=>'sellers',
         ],
 
         'api' => [
@@ -80,6 +85,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Frontend\Visitor::class,
         ],
+        'sellers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Frontend\Seller::class,
+        ],
     ],
 
     /*
@@ -106,6 +115,12 @@ return [
         ],
         'visitors'=>[
             'provider'=>'visitors',
+            'table'=>'password_resets',
+            'expire'=>60,
+            'throttle'=>60,
+        ],
+        'sellers' =>[
+            'provider'=>'sellers',
             'table'=>'password_resets',
             'expire'=>60,
             'throttle'=>60,

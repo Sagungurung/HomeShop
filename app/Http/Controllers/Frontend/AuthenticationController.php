@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class AuthenticationController extends Controller
 {
@@ -35,7 +36,7 @@ class AuthenticationController extends Controller
         $saved = $visitor->save();
         if($saved){
             $visitor = Visitor::where('id',$visitor->id)->first();
-            $visitor->verify_token = \Str::random(80);
+            $visitor->verify_token = Str::random(80);
             $visitor->token_expiry = Carbon::now();
             $visitor->update();
         }

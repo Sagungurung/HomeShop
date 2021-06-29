@@ -44,8 +44,8 @@ class DashboardController extends Controller
             $uploaded = $request->image->move(public_path('/uploads/admin_profile'),$image_name);
         }
         //removing old image
-        if(file_exists("uploads/admin_profile/".$user->image)){
-            unlink("uploads/admin_profile/".$user->image);
+        if(file_exists("/uploads/admin_profile/".$user->image)){
+            unlink("/uploads/admin_profile/".$user->image);
         }
 
         $user->image = $image_name;
