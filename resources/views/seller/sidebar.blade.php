@@ -38,7 +38,7 @@
           </ul>
         </li> -->
         <li class="treeview">
-          <a href="{{route('admin.includes.dashboard')}}">
+          <a href="{{route('seller.dashboard')}}">
             <i class="fa fa-files-dashboard"></i>
             <span>Dashboard</span>
           </a>

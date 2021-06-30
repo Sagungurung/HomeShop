@@ -2,6 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Controllers\Frontend\SellerDashboardController;
+use App\Models\Dashboard;
+use App\Models\Frontend\Seller;
 use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
@@ -42,7 +45,7 @@ class RedirectIfAuthenticated
                 break;
             case 'seller':
                 if(Auth::guard($guards)){
-                    return redirect()->route();
+                    return redirect()->route('seller.dashboard');
                 }
             default:
                 if(Auth::guard($guards)->check()){

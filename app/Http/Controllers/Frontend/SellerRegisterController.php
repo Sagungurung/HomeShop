@@ -20,7 +20,7 @@ class SellerRegisterController extends Controller
             'phone_no'=>'required',
             'address'=>'required',
             'email'=>'required|email|unique:sellers',//same email cannot be used by different user
-            'password'=>'required|min:3|max:50',
+            'password'=>'required|min:3|max:20',
             'confirm-password'=>'required|same:password',
         ]);
      //User model
@@ -39,13 +39,24 @@ class SellerRegisterController extends Controller
     }
 
     public function viewLogin(){
-        // if(Auth::guard('sellers')->check()){
-        //     return redirect()->route('admin.includes.dashboard');
-        // }else{
+        if(Auth::guard('seller')->check()){
+            return redirect()->route('seller.dashboard');
+        }else{
             return view('seller.login');
-        // }
+        }
     }
-    public function submitLogin(){
-        
+    public function submitLogin(Request $request){
+        $request->validate([
+            'email'=>'required|email',
+            'password'=>'required|min:3|max:20',
+        ]);
+        if(Auth::guard('seller')->attempt(['email'=>$request->email, 'password'=>$request->password])){
+            // return "Email and Password are correct";
+            return redirect()->route('seller.dashboard');
+    
+           }else{
+            //    return "false";
+                return redirect()->back()->with(['error'=>'Email or Password Incorrect']);
+           }
     }
 }

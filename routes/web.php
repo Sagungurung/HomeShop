@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\RegisterController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\Frontend\AuthenticationController;
 use App\Http\Controllers\Frontend\SellerRegisterController;
+use App\Http\Controllers\Frontend\SellerDashboardController;
 use App\Models\Dashboard;
 
 /*
@@ -63,6 +64,7 @@ Route::post('/visitor/submit/register',[AuthenticationController::class,'submitR
 Route::get('/visitor/login',[AuthenticationController::class,'viewLogin'])->name('frontend.authenticate.login.view');
 Route::post('/visitor/login/submit',[AuthenticationController::class,'submitlogin'])->name('frontend.authenticate.login.submit');
 
+// frontend routes
 // Route::group(['middleware'=>'auth:admin'],function(){
 
 // });
@@ -72,9 +74,7 @@ Route::get('/seller/register',[SellerRegisterController::class,'register'])->nam
 Route::post('/seller/submit/register',[SellerRegisterController::class,'submitRegister'])->name('seller.register.submit');
 Route::get('/seller/login',[SellerRegisterController::class,'viewLogin'])->name('seller.login');
 Route::post('/seller/login/submit',[SellerRegisterController::class,'submitlogin'])->name('seller.login.submit');
-Route::group(['middleware'=>'auth:sellers'],function(){
-    
 
-       // Route::
-    });  
-//frontend routes
+Route::group(['middleware'=>'auth:seller'],function(){
+       Route::get('/seller/dashboard',[SellerDashboardController::class,'dashboard'])->name('seller.dashboard');
+});  

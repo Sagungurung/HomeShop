@@ -46,7 +46,7 @@ return [
             'provider'=>'visitors',
         ],
 
-        'sellers'=>[
+        'seller'=>[
             'driver'=>'session',
             'provider'=>'sellers',
         ],
