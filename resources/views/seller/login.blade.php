@@ -74,7 +74,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">I forgot my password</a><br>
-    <a href="{{route('seller.register')}}" class="text-center">Register a new membership</a>
+    <a href="{{route('seller.register.view')}}" class="text-center">Register a new membership</a>
 
   </div>
   <!-- /.login-box-body -->

@@ -63,14 +63,18 @@ Route::post('/visitor/submit/register',[AuthenticationController::class,'submitR
 Route::get('/visitor/login',[AuthenticationController::class,'viewLogin'])->name('frontend.authenticate.login.view');
 Route::post('/visitor/login/submit',[AuthenticationController::class,'submitlogin'])->name('frontend.authenticate.login.submit');
 
+// Route::group(['middleware'=>'auth:admin'],function(){
+
+// });
 
 //seller resgister and login functions
 Route::get('/seller/register',[SellerRegisterController::class,'register'])->name('seller.register.view');
 Route::post('/seller/submit/register',[SellerRegisterController::class,'submitRegister'])->name('seller.register.submit');
 Route::get('/seller/login',[SellerRegisterController::class,'viewLogin'])->name('seller.login');
 Route::post('/seller/login/submit',[SellerRegisterController::class,'submitlogin'])->name('seller.login.submit');
+Route::group(['middleware'=>'auth:sellers'],function(){
+    
 
+       // Route::
+    });  
 //frontend routes
-Route::group(['middleware'=>'auth:admin'],function(){
-
-});
