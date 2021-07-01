@@ -42,11 +42,9 @@
 <div class="wrapper">
 
 @include('admin.includes.header')
-<!-- @include('seller.header') -->
   <!-- Left side column. contains the logo and sidebar -->
   
 @include('admin.includes.sidebar')
-<!-- @include('seller.sidebar') -->
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

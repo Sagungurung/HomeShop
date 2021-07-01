@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\RegisterController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\Frontend\AuthenticationController;
+
 use App\Http\Controllers\Frontend\SellerRegisterController;
 use App\Http\Controllers\Frontend\SellerDashboardController;
 use App\Models\Dashboard;
@@ -77,4 +78,6 @@ Route::post('/seller/login/submit',[SellerRegisterController::class,'submitlogin
 
 Route::group(['middleware'=>'auth:seller'],function(){
        Route::get('/seller/dashboard',[SellerDashboardController::class,'dashboard'])->name('seller.dashboard');
+       Route::get('/seller/logout',[SellerDashboardController::class,'logout'])->name('seller.logout');
+       Route::get('/seller/sellerProfile',[SellerDashboardController::class,'profile'])->name('seller.sellerProfile');
 });  
