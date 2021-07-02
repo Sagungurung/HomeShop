@@ -80,4 +80,7 @@ Route::group(['middleware'=>'auth:seller'],function(){
        Route::get('/seller/dashboard',[SellerDashboardController::class,'dashboard'])->name('seller.dashboard');
        Route::get('/seller/logout',[SellerDashboardController::class,'logout'])->name('seller.logout');
        Route::get('/seller/sellerProfile',[SellerDashboardController::class,'profile'])->name('seller.sellerProfile');
+       Route::get('/seller/settings',[SellerDashboardController::class,'settings'])->name('seller.settings');
+       Route::post('/seller/changeSettings',[SellerDashboardController::class,'changeSettings'])->name('seller.changeSettings');
+
 });  

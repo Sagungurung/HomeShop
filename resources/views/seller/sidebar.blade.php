@@ -4,10 +4,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="/uploads/admin_profile/{{$sellers->image}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Hi</p>
+          <p>{{$sellers->firstname}}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -48,20 +48,12 @@
             <li class="active"><a href="{{route('admin.category.create')}}"><i class="fa fa-circle-o"></i> Add Products</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-book"></i> <span>Settings</span>
+        <a href="{{route('seller.settings')}}">
+            <i class="fa fa-settings"></i> <span>Settings</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="{{route('admin.category.index')}}"><i class="fa fa-circle-o"></i> Change Profile</a></li>
-            <li class="active"><a href="{{route('admin.category.create')}}"><i class="fa fa-circle-o"></i> Add Products</a></li>
-          </ul>
-        </li>
-        
-      
+        </a>
         <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-plus"></i> <span>Blog</span>

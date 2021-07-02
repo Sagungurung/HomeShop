@@ -60,14 +60,6 @@
               <p class="text-muted">{{$admin->address}}</p>
 
               <hr>
-<!-- 
-              <strong><i class="fa fa-pencil margin-r-5"></i> Products</strong>
-
-              <p>
-                {{$admin->products}}
-              </p>
-
-              <hr> -->
 
               <strong><i class="fa fa-file-text-o margin-r-5"></i> Members Since</strong>
 

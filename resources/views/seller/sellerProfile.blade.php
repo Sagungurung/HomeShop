@@ -4,18 +4,16 @@
 <section class="content">
       <div class="row">
 
-      @include('admin.includes.errorSuccessMessage')
-
         <div class="col-md-3">
 
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <!-- <img class="profile-user-img img-responsive img-circle" src="/uploads/sellerPhotos/{{$sellers->image}}" alt="User profile picture"> -->
+              <img class="profile-user-img img-responsive img-circle" src="/uploads/sellerPhotos/{{$sellers->image}}" alt="Seller's profile picture">
 
               <h3 class="profile-username text-center">{{$sellers->firstname}}</h3>
 
-              <p class="text-muted text-center">{{$sellers->firstname}}</p>
+              <p class="text-muted text-center">{{$sellers->lastname}}</p>
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
@@ -28,8 +26,6 @@
                   <b>Friends</b> <a class="pull-right">13,287</a>
                 </li>
               </ul>
-
-              <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
             </div>
             <!-- /.box-body -->
           </div>
@@ -45,7 +41,7 @@
               <strong><i class="fa fa-book margin-r-5"></i>Bio</strong>
 
               <p class="text-muted">
-                {{Auth::guard('sellers')->bio}}
+                {{$sellers->bio}}
               </p>
 
               <hr>
@@ -78,7 +74,6 @@
             <ul class="nav nav-tabs">
               <li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
               <li><a href="#timeline" data-toggle="tab">Timeline</a></li>
-              <li><a href="#settings" data-toggle="tab">Settings</a></li>
             </ul>
             <div class="tab-content">
               <div class="active tab-pane" id="activity">
@@ -290,76 +285,6 @@
                   </li>
                 </ul>
               </div>
-              <!-- /.tab-pane -->
-
-              <div class="tab-pane" id="settings">
-                <form class="form-horizontal" name="edit-profile" action="{{route('seller.edit.profile')}}" method="post"
-                enctype="multipart/form-data">
-
-              @csrf
-
-                <input type="hidden" name="id" value="{{$admin->id}}" />
-
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName" placeholder="Name" name="name" value="{{$admin->name}}" required>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" value="{{$admin->email}}" required>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Address</label>
-
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName" placeholder="Address" value="{{$admin->address}}" name="address">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Username</label>
-
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName" placeholder="Username" value="{{$admin->username}}" name="username">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputExperience" class="col-sm-2 control-label">Bio</label>
-
-                    <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Bio" name="bio">{{$admin->bio}}</textarea>
-                    </div>
-                  </div>
-                 
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Profile Picture</label>
-
-                    <div class="col-sm-10">
-                      <input type="file" class="form-control" id="inputName" placeholder="Image" name="image">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">Submit</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <!-- /.tab-pane -->
             </div>
             <!-- /.tab-content -->
           </div>

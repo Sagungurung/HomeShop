@@ -19,7 +19,6 @@ class AuthenticationController extends Controller
     }
     public function submitRegister(Request $request){
         // dd($request); //do or die
-        // dd($request);
         DB::beginTransaction();
         $validated = $request->validate([
             'name'=>'required|min:3|max:50',
