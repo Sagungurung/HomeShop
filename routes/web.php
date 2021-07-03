@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\AuthenticationController;
 
 use App\Http\Controllers\Frontend\SellerRegisterController;
 use App\Http\Controllers\Frontend\SellerDashboardController;
+use App\Http\Controllers\Frontend\SellerCategoriesController;
 use App\Models\Dashboard;
 
 /*
@@ -76,11 +77,22 @@ Route::post('/seller/submit/register',[SellerRegisterController::class,'submitRe
 Route::get('/seller/login',[SellerRegisterController::class,'viewLogin'])->name('seller.login');
 Route::post('/seller/login/submit',[SellerRegisterController::class,'submitlogin'])->name('seller.login.submit');
 
+//SellerDashboard
 Route::group(['middleware'=>'auth:seller'],function(){
        Route::get('/seller/dashboard',[SellerDashboardController::class,'dashboard'])->name('seller.dashboard');
        Route::get('/seller/logout',[SellerDashboardController::class,'logout'])->name('seller.logout');
        Route::get('/seller/sellerProfile',[SellerDashboardController::class,'profile'])->name('seller.sellerProfile');
        Route::get('/seller/settings',[SellerDashboardController::class,'settings'])->name('seller.settings');
        Route::post('/seller/changeSettings',[SellerDashboardController::class,'changeSettings'])->name('seller.changeSettings');
+
+//Seller Categories
+    Route::get('/seller/sellerCategories/index',[SellerCategoriesController::class,'index'])->name('seller.sellerCategories.index');
+    Route::get('/seller/sellerCategories/create',[SellerCategoriesController::class,'create'])->name('seller.sellerCategories.create');
+    Route::post('/seller/sellerCategories/store',[SellerCategoriesController::class,'store'])->name('seller.sellerCategories.store');
+    Route::get('/seller/sellerCategories/edit/{id}',[SellerCategoriesController::class,'edit'])->name('seller.sellerCategories.edit');
+    Route::patch('/seller/sellerCategories/update/{id}',[SellerCategoriesController::class,'update'])->name('seller.sellerCategories.update');
+    Route::get('/seller/sellerCategories/delete/{id}',[SellerCategoriesController::class,'destroy'])->name('seller.sellerCategories.delete');
+
+
 
 });  

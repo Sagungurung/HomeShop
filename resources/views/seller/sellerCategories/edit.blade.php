@@ -1,17 +1,17 @@
 @extends('admin.master2')
-@section('title','My Products')
+@section('title','Category')
 @section('content')
 <section class="content">
       <div class="row">
       <div class="col-md-12">
       <div class="box">
         <div class="box-header">
-              <h3 class="box-title">Products Table</h3>
+              <h3 class="box-title">Category Table</h3>
               @include('admin.includes.errorSuccessMessage')
         </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form role="form" action="{{route('admin.category.update', $category->id)}}" method="post">
+                <form role="form" action="{{route('seller.sellerCategories.update', $category->id)}}" method="post">
                 @method('PATCH')
                 @csrf
                 <div class="box-body">

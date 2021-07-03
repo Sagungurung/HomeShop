@@ -4,17 +4,17 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/uploads/admin_profile/{{$sellers->image}}" class="img-circle" alt="User Image">
+          <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>{{$sellers->firstname}}</p>
+          <p>Hi</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <ul class="sidebar-menu" data-widget="tree">
       <li class="treeview">
           <a href="#">
-            <i class="fa fa-book"></i> <span>Products</span>
+            <i class="fa fa-book"></i> <span>My Products</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -32,8 +32,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{route('admin.category.index')}}"><i class="fa fa-circle-o"></i> View Category</a></li>
-            <li class="active"><a href="{{route('admin.category.create')}}"><i class="fa fa-circle-o"></i> Create Category</a></li>
+            <li class="active"><a href="{{route('seller.sellerCategories.index')}}"><i class="fa fa-circle-o"></i> View Category</a></li>
+            <li class="active"><a href="{{route('seller.sellerCategories.create')}}"><i class="fa fa-circle-o"></i> Create Category</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -49,7 +49,7 @@
           </ul>
         </li>
         <a href="{{route('seller.settings')}}">
-            <i class="fa fa-settings"></i> <span>Settings</span>
+            <i class="fa fa-gear"></i><span>Settings</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

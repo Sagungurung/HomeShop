@@ -1,29 +1,28 @@
 @extends('admin.master2')
-@section('title','My Products')
+@section('title','Category')
 @section('content')
 <section class="content">
       <div class="row">
       <div class="col-md-12">
       <div class="box">
         <div class="box-header">
-              <h3 class="box-title">Products Table</h3>
+              <h3 class="box-title">Create Category</h3>
               @include('admin.includes.errorSuccessMessage')
         </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <form role="form" action="{{route('admin.category.update', $category->id)}}" method="post">
-                @method('PATCH')
+                <form role="form" action="{{route('seller.sellerCategories.store')}}" method="post">
                 @csrf
                 <div class="box-body">
                     <div class="form-group">
                     <label for="exampleForName">Name</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="Enter Name" value="{{$category->name}}">
+                    <input type="text" class="form-control" name="name" id="exampleForName" placeholder="Enter Name">
                     </div>
                     <div class="form-group">
                     <label for="exampleForStatus">Status</label>
-                    <select name="status" id="exampleForStatus" class="form-control" value="{{$category->status}}">
-                        <option value="1" {{($category->status==1)?'selected':''}}>Active</option>
-                        <option value="0" {{($category->status==0)?'selected':''}}>In-Active</option>
+                    <select name="status" id="exampleForStatus" class="form-control">
+                        <option value="1">Active</option>
+                        <option value="0">In-Active</option>
                     </select>
                     </div>
                 </div>
