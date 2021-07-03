@@ -11,6 +11,9 @@ use App\Http\Controllers\Frontend\AuthenticationController;
 use App\Http\Controllers\Frontend\SellerRegisterController;
 use App\Http\Controllers\Frontend\SellerDashboardController;
 use App\Http\Controllers\Frontend\SellerCategoriesController;
+use App\Http\Controllers\Frontend\ProductsController;
+
+
 use App\Models\Dashboard;
 
 /*
@@ -94,6 +97,9 @@ Route::group(['middleware'=>'auth:seller'],function(){
     Route::get('/seller/sellerCategories/delete/{id}',[SellerCategoriesController::class,'destroy'])->name('seller.sellerCategories.delete');
 
 //ProductController
-    
-
+    Route::get('/seller/products/createProducts',[ProductsController::class,'create'])->name('seller.products.createProducts');
+    Route::get('/seller/products/update',[ProductsController::class,'update'])->name('seller.products.update');
+    Route::post('/seller/products/store',[ProductsController::class,'store'])->name('seller.products.store');
+    Route::get('/seller/products/indexProducts',[ProductsController::class,'index'])->name('seller.products.indexProducts');
+   
 });  

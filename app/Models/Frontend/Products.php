@@ -13,4 +13,7 @@ class Products extends Model
     public function categories(){
         $this->belongsTo(Categories::class);
     }
+    public function sellers(){
+        $this->belongsTo(seller::class);
+    }
 }
