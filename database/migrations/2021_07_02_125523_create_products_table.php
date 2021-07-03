@@ -15,6 +15,15 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('pname');
+            $table->integer('pprice') ;
+            $table->string('pcolor')->nullable();
+            $table->string('psize');
+            $table->integer('pquantity');
+            $table->integer('category_id');
+            $table->integer('sellers_id');
+            $table->text('pimage');
+            $table->boolean('pstatus')->default(1)->comment('0-inactive,1-inactive');
             $table->timestamps();
         });
     }

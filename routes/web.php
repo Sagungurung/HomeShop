@@ -93,6 +93,7 @@ Route::group(['middleware'=>'auth:seller'],function(){
     Route::patch('/seller/sellerCategories/update/{id}',[SellerCategoriesController::class,'update'])->name('seller.sellerCategories.update');
     Route::get('/seller/sellerCategories/delete/{id}',[SellerCategoriesController::class,'destroy'])->name('seller.sellerCategories.delete');
 
-
+//ProductController
+    
 
 });  
