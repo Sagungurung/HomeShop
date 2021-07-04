@@ -15,28 +15,40 @@
                 <thead>
                 <tr>
                     <th>S.N.</th>
-                    <th>Name</th>
+                    <th>Image</th>
+                    <th> Name</th>
+                    <th>Price</th>
+                    <th> Colors</th>
+                    <th>Size</th>
+                    <th>Quantity</th>
+                    <th>Category Name</th>
                     <th>Status</th>
-                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                @if(count($categories)>0)
-                @foreach($categories as $key=>$category)
+                @if(count($products)>0)
+                @foreach($products as $key=>$products)
                   <tr>
                     <td>{{++$key}}</td>
-                    <td>{{$category->name}}</td>
-                    <td>@if($category->status == 1)
+                    <td><img src="/uploads/sellerPhotos/products/{{$products->pimage}}" alt="{{$products->pimage}}" width="100" height="80"></td>
+                    <td>{{$products->pname}}</td>
+                    <td>{{$products->pprice}}</td>
+                    <td>{{$products->pcolor}}</td>
+                    <td>{{$products->psize}}</td>
+                    <td>{{$products->pquantity}}</td>
+                    <td>{{$products->category->name}}</td>
+                    <td>
+                        @if($products->pstatus == 1)
                             Active
                         @else
                             In-Active
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('seller.sellerCategories.edit', $category->id)}}"><button class="btn btn-primary">
+                        <a href="{{route('seller.products.edit', $products->id)}}"><button class="btn btn-primary">
                           <i class="fa fa-edit"></i>
                         </button></a>
-                        <a href="{{route('seller.sellerCategories.delete', $category->id)}}" onclick="return confirm('Are You Sure?')"><button class="btn btn-danger">
+                        <a href="{{route('seller.products.delete', $products->id)}}" onclick="return confirm('Are You Sure?')"><button class="btn btn-danger">
                           <i class="fa fa-trash"></i>
                         </button></a>
                     </td>
@@ -51,20 +63,18 @@
               <tfoot>
                 <tr>
                     <th>S.N.</th>
-                    <th>Name</th>
+                    <th>Image</th>
+                    <th> Name</th>
+                    <th>Price</th>
+                    <th> Colors</th>
+                    <th>Size</th>
+                    <th>Quantity</th>
+                    <th>Category Name</th>
                     <th>Status</th>
-                    <th>Action</th>
                 </tr>
               </tfoot>
           </table>
       </div>
     </div>     
 </section>
-<!-- @push('scripts')
-  <script>
-      function deleteCategory(){
-        confirm
-      }
-  </script>
-@endpush -->
 @endsection

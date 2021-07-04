@@ -20,7 +20,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{route('admin.category.index')}}"><i class="fa fa-circle-o"></i> View Products</a></li>
+            <li class="active"><a href="{{route('seller.products.indexProducts')}}"><i class="fa fa-circle-o"></i> View Products</a></li>
             <li class="active"><a href="{{route('seller.products.createProducts')}}"><i class="fa fa-circle-o"></i> Add Products</a></li>
           </ul>
         </li>

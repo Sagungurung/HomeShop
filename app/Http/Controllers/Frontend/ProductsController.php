@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Frontend\Categories;
+use App\Models\Admin\Category;
 use App\Models\Frontend\Products;
 use App\Models\Frontend\Seller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ProductsController extends Controller
 {
@@ -17,8 +18,12 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('seller.products.indexProducts');
+    {   
+        // $category = Category::get();
+        // dd($category);
+        $products = Products::with('category')->get();
+        // dd($product);
+        return view('seller.products.indexProducts',compact('products'));
     }
 
     /**
@@ -28,8 +33,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $categories = Categories::where('status',1)->get();
-        $sellers = Seller::pluck('id');
+        $categories = Category::where('status',1)->get();
+        $sellers = Seller::select('id');
         return view('seller.products.createProducts',compact('categories','sellers'));
     }
 
@@ -47,33 +52,34 @@ class ProductsController extends Controller
             'pprice'=>'required',
             'psize'=>'required',
             'pquantity'=>'required',
-            'status'=>'required',
-            'pimage'=>'required',
+            'pstatus'=>'boolean',
         ]);
-        if($request->image){
+        if($request->pimage){
             $request->validate([
-                'image'=>'required|mimes:jpg,jpeg,png,svg,gif|max:5000',
+                'pimage'=>'required|mimes:jpg,jpeg,png,svg,gif|max:5000',
             ]);
             //extension for image
-            $extension = $request->image->getClientOriginalExtension();
+            $extension = $request->pimage->getClientOriginalExtension();
 
             //store image
-            $image_name = $request->image . time().".".$extension;
-            $uploaded = $request->image->move(public_path('/uploads/sellerPhotos/products'), $image_name);
+            $image_name = Str::slug($request->pimage) . time().".".$extension;
+            $request->pimage->move(public_path('/uploads/sellerPhotos/products'), $image_name);
         }
+        // dd($image_name);
         $products = new Products();
         $products->pname = $request->pname;
         $products->pprice = $request->pprice;
         $products->pcolor = $request->pcolor;
         $products->psize = $request->psize;
-        $products->quantity = $request->quantity;
+        $products->pquantity = $request->pquantity;
         $products->category_id = $request->category_id;
-        $products->status = $request->status;
-        $products->image = $image_name;
-        $products->seller_id = Auth::sellers()->id;
+        $products->sellers_id = Auth::guard('seller')->id();
+        $products->pimage = $image_name;
+        $products->pstatus = $request->pstatus;
+        
         $products->save();
         
-        return redirect()->route('seller.products.index')->with('success','Product added Successfully.');
+        return redirect()->route('seller.products.indexProducts')->with('success','Product added Successfully.');
     }
     /**
      * Display the specified resource.

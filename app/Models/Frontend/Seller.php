@@ -11,7 +11,4 @@ class Seller extends Authenticatable
     use HasFactory;
     protected $fillable=['firstname','lastname','phone_no','address','shopname','email','password'];
 
-    public function products(){
-        return $this->hasMany(Products::class);
-    }
 }

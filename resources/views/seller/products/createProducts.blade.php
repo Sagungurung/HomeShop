@@ -65,7 +65,7 @@
                             <label for="inputImage" class="col-sm-2 control-label">Product's Image</label>
 
                             <div class="col-sm-10">
-                                <input type="file" class="form-control" id="inputImage" placeholder="Image" name="pimage">
+                                <input type="file" class="form-control" id="inputImage" name="pimage">
                             </div>
                         </div>
                         <div class="form-group">
