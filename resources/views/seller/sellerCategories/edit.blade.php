@@ -1,12 +1,12 @@
 @extends('admin.master2')
-@section('title','Category')
+@section('title','Edit Category')
 @section('content')
 <section class="content">
       <div class="row">
       <div class="col-md-12">
       <div class="box">
         <div class="box-header">
-              <h3 class="box-title">Category Table</h3>
+              <h3 class="box-title">Edit Categories</h3>
               @include('admin.includes.errorSuccessMessage')
         </div>
             <!-- /.box-header -->

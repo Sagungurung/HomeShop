@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Frontend\Categories;
+use App\Models\Admin\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class SellerCategoriesController extends Controller
 {
     public function index(){
-        $categories= Categories::get();
+        $categories= Category::get();
         return view('seller.sellerCategories.index', compact('categories'));
     }
 
@@ -28,13 +28,13 @@ class SellerCategoriesController extends Controller
             'status'=>'boolean',
         ]);
         $request['slug'] = Str::slug($request->name);
-        Categories::create($request->all());
+        Category::create($request->all());
         return redirect()->route('seller.sellerCategories.index')->with(['success'=>'Category Created Successfully']);
     }
 
     public function edit($id)
     {
-        $category = Categories::find($id);
+        $category = Category::find($id);
         return view('seller.sellerCategories.edit',compact('category'));
     }
 
@@ -42,9 +42,9 @@ class SellerCategoriesController extends Controller
     {
         // dd($request->all());
         // dd($id);
-        $category = Categories::where('id', $id)->first();
+        $category = Category::where('id', $id)->first();
         $category->name = $request->name;
-        $category->slug = Str::slug('$request->name');
+        $category->slug = Str::slug($request->name);
         $category->status= $request->status;
         $category->update();
         return redirect()->route('seller.sellerCategories.index')->with(['success'=>'Category Updated Successfully']);
@@ -52,7 +52,7 @@ class SellerCategoriesController extends Controller
 
     public function destroy($id)
     {
-        $category = Categories::find($id);
+        $category = Category::find($id);
         $category->delete();
         return redirect()->route('seller.sellerCategories.index')->with(['success'=>'Category Deleted Successfully']);
     }

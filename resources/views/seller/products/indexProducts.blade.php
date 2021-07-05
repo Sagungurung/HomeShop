@@ -45,7 +45,7 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('seller.products.edit', $products->id)}}"><button class="btn btn-primary">
+                        <a href="{{route('seller.products.editProducts', $products->id)}}"><button class="btn btn-primary">
                           <i class="fa fa-edit"></i>
                         </button></a>
                         <a href="{{route('seller.products.delete', $products->id)}}" onclick="return confirm('Are You Sure?')"><button class="btn btn-danger">

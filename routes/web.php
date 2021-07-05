@@ -101,7 +101,7 @@ Route::group(['middleware'=>'auth:seller'],function(){
     Route::get('/seller/products/update',[ProductsController::class,'update'])->name('seller.products.update');
     Route::post('/seller/products/store',[ProductsController::class,'store'])->name('seller.products.store');
     Route::get('/seller/products/indexProducts',[ProductsController::class,'index'])->name('seller.products.indexProducts');
-    Route::get('/seller/products/edit/{id}',[ProductsController::class,'edit'])->name('seller.products.edit');
+    Route::get('/seller/products/editProducts/{id}',[ProductsController::class,'edit'])->name('seller.products.editProducts');
     Route::patch('/seller/products/update/{id}',[ProductsController::class,'update'])->name('seller.products.update');
     Route::get('/seller/products/delete/{id}',[ProductsController::class,'destroy'])->name('seller.products.delete');
 

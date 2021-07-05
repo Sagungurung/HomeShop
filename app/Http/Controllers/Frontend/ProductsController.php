@@ -98,9 +98,12 @@ class ProductsController extends Controller
      * @param  \App\Models\Frontend\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit(Products $products)
+    public function edit(Products $products, $id)
     {
-        //
+        // dd($products);
+        $products = Products::find($id);
+        $categories = Category::find($id);
+        return view('seller.products.editProducts',compact('products','categories'));
     }
 
     /**
@@ -110,9 +113,48 @@ class ProductsController extends Controller
      * @param  \App\Models\Frontend\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $products)
+    public function update(Request $request, $id)
     {
-        dd($products);
+        $request->validate([
+            'pname'=>'required|max:50',
+            'pprice'=>'required',
+            'psize'=>'required',
+            'pquantity'=>'required',
+            'pstatus'=>'boolean',
+        ]);
+        
+        // dd($image_name);
+        $products = new Products();
+        $products->pname = $request->pname;
+        $products->pprice = $request->pprice;
+        $products->pcolor = $request->pcolor;
+        $products->psize = $request->psize;
+        $products->pquantity = $request->pquantity;
+        $products->category_id = $request->category_id;
+        $products->sellers_id = Auth::guard('seller')->id();
+        $products->pstatus = $request->pstatus;
+
+        if($request->pimage){
+            $request->validate([
+                'pimage'=>'required|mimes:jpg,jpeg,png,svg,gif|max:5000',
+            ]);
+            //extension for image
+            $extension = $request->pimage->getClientOriginalExtension();
+
+            //store image
+            $image_name = Str::slug($request->pimage) . time().".".$extension;
+            $request->pimage->move(public_path('/uploads/sellerPhotos/products'), $image_name);
+
+            if(file_exists("uploads/blogs/".$products->image)){
+                unlink("uploads/blogs/".$products->image);
+            }
+            $products->pimage = $image_name;
+        }
+        
+        $products->update();
+        
+        return redirect()->route('seller.products.indexProducts')->with('success','Product updated Successfully.');
+    
     }
 
     /**

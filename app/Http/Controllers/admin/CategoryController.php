@@ -88,7 +88,7 @@ class CategoryController extends Controller
         // dd($id);
         $category = Category::where('id', $id)->first();
         $category->name = $request->name;
-        $category->slug = Str::slug('$request->name');
+        $category->slug = Str::slug($request->name);
         $category->status= $request->status;
         $category->update();
         return redirect()->route('admin.category.index')->with(['success'=>'Category Updated Successfully']);
