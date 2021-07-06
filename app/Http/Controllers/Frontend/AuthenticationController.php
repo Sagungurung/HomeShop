@@ -45,7 +45,7 @@ class AuthenticationController extends Controller
 
     public function viewLogin(){
         if(Auth::guard('visitor')->check()){
-            return redirect()->route('frontend.includes.dashboard');
+            return redirect()->route('frontend.home');//calling frontend model function
         }else{
             return view('frontend.authenticate.login');
         }
@@ -59,7 +59,7 @@ class AuthenticationController extends Controller
         // dd($request->all());
        if(Auth::guard('visitor')->attempt(['email'=>$request->email, 'password'=>$request->password])){
         // return "Email and Password are correct";
-        return "true";
+        return redirect()->route('frontend.home');//calling frontend model function
        }else{
         //    return "false";
             return redirect()->back()->with(['error'=>'Email or Password Incorrect']);
