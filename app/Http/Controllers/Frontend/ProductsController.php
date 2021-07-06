@@ -98,11 +98,10 @@ class ProductsController extends Controller
      * @param  \App\Models\Frontend\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit(Products $products, $id)
+    public function edit(Products $products)
     {
         // dd($products);
-        $products = Products::find($id);
-        $categories = Category::find($id);
+        $categories = Category::get();
         return view('seller.products.editProducts',compact('products','categories'));
     }
 
@@ -113,7 +112,7 @@ class ProductsController extends Controller
      * @param  \App\Models\Frontend\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Products $products)
     {
         $request->validate([
             'pname'=>'required|max:50',
@@ -124,7 +123,7 @@ class ProductsController extends Controller
         ]);
         
         // dd($image_name);
-        $products = new Products();
+        // $products = new Products();
         $products->pname = $request->pname;
         $products->pprice = $request->pprice;
         $products->pcolor = $request->pcolor;
@@ -145,8 +144,8 @@ class ProductsController extends Controller
             $image_name = Str::slug($request->pimage) . time().".".$extension;
             $request->pimage->move(public_path('/uploads/sellerPhotos/products'), $image_name);
 
-            if(file_exists("uploads/blogs/".$products->image)){
-                unlink("uploads/blogs/".$products->image);
+            if(file_exists("/uploads/sellerPhotos/products".$products->image)){
+                unlink("/uploads/sellerPhotos/products".$products->image);
             }
             $products->pimage = $image_name;
         }
@@ -165,6 +164,10 @@ class ProductsController extends Controller
      */
     public function destroy(Products $products)
     {
-        //
+        if(file_exists("/uploads/sellerPhotos/products".$products->image)){
+            unlink("/uploads/sellerPhotos/products".$products->image);
+        }
+        $products->delete();
+        return redirect()->back()->with('success','Products Deleted Successfully.');
     }
 }

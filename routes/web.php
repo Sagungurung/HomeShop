@@ -7,7 +7,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\RegisterController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\Frontend\AuthenticationController;
-
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\SellerRegisterController;
 use App\Http\Controllers\Frontend\SellerDashboardController;
 use App\Http\Controllers\Frontend\SellerCategoriesController;
@@ -62,17 +62,6 @@ Route::group(['middleware'=>'auth:user'],function(){
      // Route::resource(); 
 });
 
-//frontend register and login functions
-
-Route::get('/visitor/register',[AuthenticationController::class,'register'])->name('frontend.authenticate.register.view');
-Route::post('/visitor/submit/register',[AuthenticationController::class,'submitRegister'])->name('frontend.authenticate.register.submit');
-Route::get('/visitor/login',[AuthenticationController::class,'viewLogin'])->name('frontend.authenticate.login.view');
-Route::post('/visitor/login/submit',[AuthenticationController::class,'submitlogin'])->name('frontend.authenticate.login.submit');
-
-// frontend routes
-// Route::group(['middleware'=>'auth:admin'],function(){
-
-// });
 
 //seller resgister and login functions
 Route::get('/seller/register',[SellerRegisterController::class,'register'])->name('seller.register.view');
@@ -101,8 +90,24 @@ Route::group(['middleware'=>'auth:seller'],function(){
     Route::get('/seller/products/update',[ProductsController::class,'update'])->name('seller.products.update');
     Route::post('/seller/products/store',[ProductsController::class,'store'])->name('seller.products.store');
     Route::get('/seller/products/indexProducts',[ProductsController::class,'index'])->name('seller.products.indexProducts');
-    Route::get('/seller/products/editProducts/{id}',[ProductsController::class,'edit'])->name('seller.products.editProducts');
-    Route::patch('/seller/products/update/{id}',[ProductsController::class,'update'])->name('seller.products.update');
-    Route::get('/seller/products/delete/{id}',[ProductsController::class,'destroy'])->name('seller.products.delete');
+    Route::get('/seller/products/editProducts/{products}',[ProductsController::class,'edit'])->name('seller.products.editProducts');
+    Route::patch('/seller/products/update/{products}',[ProductsController::class,'update'])->name('seller.products.update');
+    Route::get('/seller/products/delete/{products}',[ProductsController::class,'destroy'])->name('seller.products.delete');
 
-});  
+}); 
+
+//frontend register and login functions
+
+Route::get('/visitor/register',[AuthenticationController::class,'register'])->name('frontend.authenticate.register.view');
+Route::post('/visitor/submit/register',[AuthenticationController::class,'submitRegister'])->name('frontend.authenticate.register.submit');
+Route::get('/visitor/login',[AuthenticationController::class,'viewLogin'])->name('frontend.authenticate.login.view');
+Route::post('/visitor/login/submit',[AuthenticationController::class,'submitlogin'])->name('frontend.authenticate.login.submit');
+
+// frontend routes
+
+Route::get('/',[FrontendController::class,'home'])->name('frontend.home');
+
+Route::group(['middleware'=>'auth:visitor'],function(){
+
+
+});

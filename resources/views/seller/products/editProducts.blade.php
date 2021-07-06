@@ -10,7 +10,7 @@
                     @include('admin.includes.errorSuccessMessage')
                 </div>
                 <div class="box-body">
-                    <form role="form" class="form-horizontal" action="{{route('seller.products.update',$products->id)}}" method="post" enctype="multipart/form-data">
+                    <form role="form" class="form-horizontal" action="{{route('seller.products.update', $products)}}" method="post" enctype="multipart/form-data">
                     @method('PATCH')
                         @csrf
 
@@ -80,7 +80,6 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
