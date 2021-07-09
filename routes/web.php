@@ -52,6 +52,8 @@ Route::group(['middleware'=>'auth:user'],function(){
     Route::patch('/blog/update/{blog}',[BlogController::class,'update'])->name('admin.blog.update');
     Route::get('/blog/delete/{blog}',[BlogController::class,'destroy'])->name('admin.blog.delete');
 
+    Route::get('/blog/blogdetail',[BlogController::class,'blogdetail'])->name('admin.blog.blogdetail');
+
     //category
     Route::get('/category/index',[CategoryController::class,'index'])->name('admin.category.index');
     Route::get('/category/create',[CategoryController::class,'create'])->name('admin.category.create');

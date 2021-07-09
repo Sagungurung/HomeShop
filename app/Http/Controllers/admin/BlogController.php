@@ -150,4 +150,7 @@ class BlogController extends Controller
         $blog->delete();
         return redirect()->back()->with('success','Blog Deleted Successfully.');
     }
+    public function blogdetail(){
+        return view('admin.blog.blogdetail');
+    }
 }

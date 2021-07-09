@@ -20,21 +20,21 @@
  <div class="container">
   <div class="row">
    <div class="top_1 clearfix">
-    <div class="col-sm-3">
+    <!-- <div class="col-sm-3">
 	 <div class="top_1l clearfix">
 	  <h5 class="mgt"><i class="fa fa-headphones col_1"></i> <a href="#"> +091 (123) 456-789</a></h5>
 	 </div>
-	</div>
-	<div class="col-sm-3">
+	</div> -->
+	<!-- <div class="col-sm-3">
 	 <div class="top_1l clearfix">
 	  <h5 class="mgt"><i class="fa fa-envelope col_1"></i> <a href="#"> info@gmail.com</a></h5>
 	 </div>
-	</div>
+	</div> -->
 	<div class="col-sm-6">
 	 <div class="top_1r text-right clearfix">
 	  <ul class="mgt">
-	   <li><i class="fa fa-map-marker col_1"></i> <a href="#"> Store location</a></li>
-	   <li><i class="fa fa-clock-o col_1"></i> <a href="#"> Daily deal</a></li>
+	   <!-- <li><i class="fa fa-map-marker col_1"></i> <a href="#"> Store location</a></li>
+	   <li><i class="fa fa-clock-o col_1"></i> <a href="#"> Daily deal</a></li> -->
 	   <li><i class="fa fa-user col_1"></i> <a href="#"> My account</a></li>
 	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="#"> Login</a></li>
 	  </ul>
@@ -51,7 +51,7 @@
    <div class="header_1 clearfix">
     <div class="col-sm-2">
 	 <div class="header_1l clearfix">
-	  <h3><a href="index.html">Shop On</a></h3>
+	  <h3><a href="index.html">Home Shop</a></h3>
 	 </div>
 	</div>
 	<div class="col-sm-7">
@@ -173,7 +173,7 @@
 					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
 					  <ul class="dropdown-menu drop_3" role="menu">
 						<li><a href="blog.html">Blog</a></li>
-						<li><a class="border_none" href="blog_detail.html">Blog Detail</a></li>
+						<li><a class="border_none" href="{{route('admin.blog.blogdetail')}}">Blog Detail</a></li>
 					  </ul>
                     </li>
 				<li><a class="m_tag" href="contact.html">Contact</a></li>
@@ -1898,6 +1898,6 @@ $(document).ready(function(){
 		
 });
 </script>
-</body>
- 
+<!-- @stack('scripts') -->
+</body> 
 </html>

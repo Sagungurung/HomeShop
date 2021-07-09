@@ -33,6 +33,7 @@ class RegisterController extends Controller
     }
 
     public function viewLogin(){
+        // dd(session()->all());
         if(Auth::guard('user')->check()){
             return redirect()->route('admin.includes.dashboard');
         }else{
