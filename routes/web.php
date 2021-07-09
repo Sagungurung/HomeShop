@@ -13,6 +13,8 @@ use App\Http\Controllers\Frontend\SellerDashboardController;
 use App\Http\Controllers\Frontend\SellerCategoriesController;
 use App\Http\Controllers\Frontend\ProductsController;
 
+use App\Http\Controllers\Frontend\FrontendBlogController;
+
 
 use App\Models\Dashboard;
 
@@ -37,6 +39,10 @@ Route::post('/submit/register',[RegisterController::class,'submitRegister'])->na
 Route::get('/login',[RegisterController::class,'viewLogin'])->name('admin.authenticate.login.view');
 Route::post('/login/submit',[RegisterController::class,'submitlogin'])->name('admin.authenticate.login.submit');
 
+Route::get('/showBlog',[FrontendBlogController::class,'show'])->name('frontend.frontBlog.showBlog');
+Route::get('/blogDetail',[FrontendBlogController::class,'detail'])->name('frontend.frontBlog.blogDetail');
+
+
 Route::group(['middleware'=>'auth:user'],function(){
     //dashboard
     Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('admin.includes.dashboard');
@@ -48,12 +54,14 @@ Route::group(['middleware'=>'auth:user'],function(){
     Route::get('/blog/index',[BlogController::class,'index'])->name('admin.blog.index');
     Route::get('/blog/create',[BlogController::class,'create'])->name('admin.blog.create');
     Route::post('/blog/store',[BlogController::class,'store'])->name('admin.blog.store');
+
+    Route::post('/blog/slider/change/{id}/{show}',[BlogController::class,'changeSlider'])->name('admin.blog.slider');
+
     Route::get('/blog/edit/{blog}',[BlogController::class,'edit'])->name('admin.blog.edit');
     Route::patch('/blog/update/{blog}',[BlogController::class,'update'])->name('admin.blog.update');
     Route::get('/blog/delete/{blog}',[BlogController::class,'destroy'])->name('admin.blog.delete');
 
-    Route::get('/blog/blogdetail',[BlogController::class,'blogdetail'])->name('admin.blog.blogdetail');
-
+   
     //category
     Route::get('/category/index',[CategoryController::class,'index'])->name('admin.category.index');
     Route::get('/category/create',[CategoryController::class,'create'])->name('admin.category.create');
@@ -108,8 +116,9 @@ Route::post('/visitor/login/submit',[AuthenticationController::class,'submitlogi
 // frontend routes
 
 Route::get('/',[FrontendController::class,'home'])->name('frontend.home');
+    
 
 Route::group(['middleware'=>'auth:visitor'],function(){
-
+    
 
 });

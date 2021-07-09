@@ -78,11 +78,7 @@ class BlogController extends Controller
      * @param  \App\Models\Admin\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
-    {
-        //
-    }
-
+   
     /**
      * Show the form for editing the specified resource.
      *
@@ -150,7 +146,11 @@ class BlogController extends Controller
         $blog->delete();
         return redirect()->back()->with('success','Blog Deleted Successfully.');
     }
-    public function blogdetail(){
-        return view('admin.blog.blogdetail');
+    public function changeSlider($id, $show){
+        $blog = Blog::find($id);
+        $blog->show_in_slider = $show;
+        $blog->update();
+        return response()->json(['success'=>'Slider Updated Successfully']);
     }
+    
 }

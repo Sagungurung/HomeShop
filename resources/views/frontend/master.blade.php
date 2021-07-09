@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Shop On</title>
-	<link href="frontend/css/bootstrap.min.css" rel="stylesheet">
-	<link href="frontend/css/global.css" rel="stylesheet">
-	<link href="frontend/css/index.css" rel="stylesheet">
+    <title>Home Shop</title>
+	<link href="/frontend/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/frontend/css/global.css" rel="stylesheet">
+	<link href="/frontend/css/index.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="frontend/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
-	<script src="frontend/js/jquery-2.1.1.min.js"></script>
-    <script src="frontend/js/bootstrap.min.js"></script>
+	<script src="/frontend/js/jquery-2.1.1.min.js"></script>
+    <script src="/frontend/js/bootstrap.min.js"></script>
   </head>
   
 <body>
@@ -36,7 +36,7 @@
 	   <!-- <li><i class="fa fa-map-marker col_1"></i> <a href="#"> Store location</a></li>
 	   <li><i class="fa fa-clock-o col_1"></i> <a href="#"> Daily deal</a></li> -->
 	   <li><i class="fa fa-user col_1"></i> <a href="#"> My account</a></li>
-	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="#"> Login</a></li>
+	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login')}}"> Login</a></li>
 	  </ul>
 	 </div>
 	</div>
@@ -161,7 +161,7 @@
 						<li><a href="#">Man’s Product</a></li>
 					  </ul>
                     </li>
-				<li><a class="m_tag active_tab" href="index.html">Home</a></li>
+				<li><a class="m_tag active_tab" href="frontend.master">Home</a></li>
 				<li class="dropdown">
 					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Product<span class="caret"></span></a>
 					  <ul class="dropdown-menu drop_3" role="menu">
@@ -172,11 +172,11 @@
 				<li class="dropdown">
 					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
 					  <ul class="dropdown-menu drop_3" role="menu">
-						<li><a href="blog.html">Blog</a></li>
-						<li><a class="border_none" href="{{route('admin.blog.blogdetail')}}">Blog Detail</a></li>
+						<li><a href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
+						<li><a class="border_none" href="{{route('frontend.frontBlog.blogDetail')}}">Blog Detail</a></li>
 					  </ul>
                     </li>
-				<li><a class="m_tag" href="contact.html">Contact</a></li>
+				<!-- <li><a class="m_tag" href="contact.html">Contact</a></li> -->
 				<li><a class="m_tag" href="cart.html">Cart</a></li>
 				<li><a class="m_tag" href="checkout.html">Checkout</a></li>
 			</ul>
@@ -210,7 +210,7 @@ odiy maboriosm.</p>
 	</div>
 	<div class="col-sm-4">
 	 <div class="center_homer clearfix">
-	  <img src="frontend/img/3.jpg" class="iw" alt="abc">
+	  <img src="/frontend/img/3.jpg" class="iw" alt="abc">
 	 </div>
 	</div>
    </div>
@@ -1730,7 +1730,7 @@ odiy maboriosm.</p>
    <div class="blog_home_1 clearfix">
      <div class="col-sm-4">
 	  <div class="blog_home_1i clearfix">
-	   <img src="frontend/img/24.jpg" class="iw" alt="abc">
+	   <img src="/frontend/img/24.jpg" class="iw" alt="abc">
 	   <div class="blog_home_1i1 text-center clearfix">
 	    <h6 class="mgt col_2">22 July , 2020. Monday</h6>
 		<h4><a href="#">Sed adipiscing ornare</a></h4>
@@ -1898,6 +1898,6 @@ $(document).ready(function(){
 		
 });
 </script>
-<!-- @stack('scripts') -->
+@stack('scripts')
 </body> 
 </html>

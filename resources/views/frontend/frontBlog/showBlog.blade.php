@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Shop On</title>
+    <title>Home Shop</title>
 	<link href="/frontend/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/frontend/css/global.css" rel="stylesheet">
-	<link href="/frontend/css/blog_detail.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="/frontend/css/font-awesome.min.css" />
+	<link href="/frontend/css/blog.css" rel="stylesheet">
+	<link rel="/frontend/stylesheet" type="text/css" href="css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
-	<script src="/frontend/js/jquery-2.1.1.min.js"></script>
-    <script src="/frontend/js/bootstrap.min.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </head>
   
 <body>
@@ -51,7 +51,7 @@
    <div class="header_1 clearfix">
     <div class="col-sm-2">
 	 <div class="header_1l clearfix">
-	  <h3><a href="index.html">Shop On</a></h3>
+	  <h3><a href="/frontend/index.html">Shop On</a></h3>
 	 </div>
 	</div>
 	<div class="col-sm-7">
@@ -94,7 +94,7 @@
 						   <div class="drop_1i1l clearfix"><h6 class="mgt bold"><a href="#">Nulla Quis</a> <br> <span class="normal col_2">1x - $89.00</span> <br> <span><i class="fa fa-remove"></i></span></h6></div>
 						  </div>
 						  <div class="col-sm-4">
-						   <div class="drop_1i1r text-right clearfix"><a href="#"><img src="/frontend/img/1.jpg" class="iw" alt="abc"></a></div>
+						   <div class="drop_1i1r text-right clearfix"><a href="#"><img src="img/1.jpg" class="iw" alt="abc"></a></div>
 						  </div>
 						 </div>
 						 <div class="drop_1i1 clearfix">
@@ -196,7 +196,7 @@
 	 <div class="col-sm-12">
 	  <h5 class="mgt">
 	   <a href="#">Home <i class="fa fa-long-arrow-right"></i> </a>
-	   <a href="#">Blog Detail</a>
+	   <a href="#">Blog Page</a>
 	  </h5>
 	 </div>
 	</div>
@@ -218,125 +218,171 @@
 					</span>
       </div><br>
 	 <h4><span class="col_1">|</span> Blog Categories</h4><br>
-	 <h5><a href="#">Men's Apparel</a></h5>
-	 <h5><a href="#">Women's Apparel</a></h5>
-	 <h5><a href="#">Bags Collection</a></h5>
-	 <h5><a href="#">Accessories</a></h5>
-	 <h5><a href="#">Sun Glasses</a></h5><br>
+	 <h5><a href="blog_detail.html">Men's Apparel</a></h5>
+	 <h5><a href="blog_detail.html">Women's Apparel</a></h5>
+	 <h5><a href="blog_detail.html">Bags Collection</a></h5>
+	 <h5><a href="blog_detail.html">Accessories</a></h5>
+	 <h5><a href="blog_detail.html">Sun Glasses</a></h5><br>
 	 <h4><span class="col_1">|</span> Recent Post</h4><br>
 	   <div class="product_1li clearfix">
 	    <img src="/frontend/img/28.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
+		<h5 class="mgt"><a href="blog_detail.html">Top 10 Beautyful Women Dress in the world</a></h5>
 		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25</h6>
 	   </div>
 	   <div class="product_1li clearfix">
-	    <img src="/frontend/img/29.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
+	    <img src="img/29.jpg" alt="abc">
+		<h5 class="mgt"><a href="blog_detail.html">Top 10 Beautyful Women Dress in the world</a></h5>
 		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> July 10, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 45</h6>
 	   </div>
 	   <div class="product_1li border_none pdb clearfix">
-	    <img src="/frontend/img/30.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
+	    <img src="img/30.jpg" alt="abc">
+		<h5 class="mgt"><a href="blog_detail.html">Top 10 Beautyful Women Dress in the world</a></h5>
 		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 23</h6>
 	   </div><br>
 	   <h4><span class="col_1">|</span> Tags</h4><br>
 	   <ul>
-	    <li><a href="#">Business</a></li>
-		<li><a href="#">Wordpress</a></li>
-		<li><a href="#">Html</a></li>
-		<li><a href="#">Multipurpose</a></li>
-		<li><a href="#">Education</a></li>
-		<li><a href="#">Template</a></li>
-		<li><a href="#">Ecommerce</a></li>
+	    <li><a href="blog_detail.html">Business</a></li>
+		<li><a href="blog_detail.html">Wordpress</a></li>
+		<li><a href="blog_detail.html">Html</a></li>
+		<li><a href="blog_detail.html">Multipurpose</a></li>
+		<li><a href="blog_detail.html">Education</a></li>
+		<li><a href="blog_detail.html">Template</a></li>
+		<li><a href="blog_detail.html">Ecommerce</a></li>
 	   </ul>
 	   <h4><span class="col_1">|</span> Newslatter</h4><br>
 	   <div class="blog_1li clearfix">
 	     <h5 class="bold mgt">Subscribe & Get News
 Latest Updates.</h5><br>
        <input class="form-control" placeholder="Enter your email" type="text">
-	   <h5><a class="button" href="#">SUBMIT</a></h5>
+	   <h5><a class="button" href="blog_detail.html">SUBMIT</a></h5>
 	   </div>
 	</div>
    </div>
    <div class="col-sm-8">
-    <div class="blod_d1 clearfix">
-	 <img src="/frontend/img/38.jpg" class="iw" alt="abc">
-	 <h3>What Are The Secrets To Start- Up Success?</h3>
-	 <h6 class="col_2"><a class="col_2" href="#"><i class="fa fa-user col_1"></i> By Admin</a> | <a class="col_2" href="#"><i class="fa fa-calendercol_1"></i> Nov 24, 2018</a> | <a class="col_2" href="#"><i class="fa fa-comments col_1"></i> Comment (15)</a></h6>
-	 <hr>
-	 <p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p><br>
-	    <blockquote>
-	    <p class="mgt">Do what you love to do and give it your very best. Whether it's business or baseball, or the theater, or any field. If you don't love what you're doing and you can't give it your best, get out of it. Life is too short. You'll be an old man before you know it. risus. Ut tincidunt, erat eget feugiat eleifend, eros magna dapibus diam.</p>
-	   </blockquote>
-	   <p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
-	   <p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
-	  <ul>
-	   <li class="bold">Tags:</li>
-	   <li><a href="#">Glass</a></li>
-	   <li><a href="#">Pant</a></li>
-	   <li><a href="#">t-shirt</a></li>
-	   <li><a href="#">swater</a></li>
-	  </ul>
-	</div>  <br>
-	<div class="blod_d2 clearfix"> 
-	 <h3><span class="col_1">|</span> Comments (3)</h3>
-	 <div class="blod_d2i clearfix">
-	  <div class="col-sm-2 space_left">
-	   <img src="/frontend/img/39.jpg" class="iw img-circle" alt="abc">
+    <div class="blog_home_1 mgt clearfix">
+     <div class="col-sm-6">
+	  <div class="blog_home_1i clearfix">
+	   <img src="img/24.jpg" class="iw" alt="abc">
+	   <div class="blog_home_1i1 text-center clearfix">
+	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
+		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
+		<p><a href="blog_detail.html">Continue Reading</a></p>
+		<ul class="social-network social-circle">
+                        <li><a href="blog_detail.html" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+       </ul>
+	   </div>
 	  </div>
-	  <div class="col-sm-10">
-	   <h4 class="mgt">Lacinia Arcu</h4>
-	   <h6 class="mgt">At 8:59 Pm On May 18, 2019</h6>
-	   <p>Enthusiastically leverage existing premium quality vectors with enterprise-wide innovation collaboration Phosfluorescently leverage others enterprisee Phosfluorescently leverage.</p>
-	   <h5><a href="#"><i class="fa fa-reply"></i> Reply</a></h5>
-	  </div>
-	 </div>
-	 <div class="blod_d2i mgl clearfix">
-	  <div class="col-sm-2 space_left">
-	   <img src="/frontend/img/40.jpg" class="iw img-circle" alt="abc">
-	  </div>
-	  <div class="col-sm-10">
-	   <h4 class="mgt">Semper Porta</h4>
-	   <h6 class="mgt">At 8:59 Pm On May 18, 2019</h6>
-	   <p>Enthusiastically leverage existing premium quality vectors with enterprise-wide innovation collaboration Phosfluorescently leverage others enterprisee Phosfluorescently leverage.</p>
-	   <h5><a href="#"><i class="fa fa-reply"></i> Reply</a></h5>
+	 </div> 
+	 <div class="col-sm-6">
+	  <div class="blog_home_1i clearfix">
+	   <img src="img/25.jpg" class="iw" alt="abc">
+	   <div class="blog_home_1i1 text-center clearfix">
+	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
+		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
+		<p><a href="blog_detail.html">Continue Reading</a></p>
+		<ul class="social-network social-circle">
+                        <li><a href="blog_detail.html" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+       </ul>
+	   </div>
 	  </div>
 	 </div>
-	 <div class="blod_d2i clearfix">
-	  <div class="col-sm-2 space_left">
-	   <img src="/frontend/img/41.jpg" class="iw img-circle" alt="abc">
+	 
+   </div>
+    <div class="blog_home_1 clearfix">
+     <div class="col-sm-6">
+	  <div class="blog_home_1i clearfix">
+	   <img src="img/26.jpg" class="iw" alt="abc">
+	   <div class="blog_home_1i1 text-center clearfix">
+	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
+		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
+		<p><a href="blog_detail.html">Continue Reading</a></p>
+		<ul class="social-network social-circle">
+                        <li><a href="blog_detail.html" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+       </ul>
+	   </div>
 	  </div>
-	  <div class="col-sm-10">
-	   <h4 class="mgt">Conubia Nostra</h4>
-	   <h6 class="mgt">At 8:59 Pm On May 18, 2019</h6>
-	   <p>Enthusiastically leverage existing premium quality vectors with enterprise-wide innovation collaboration Phosfluorescently leverage others enterprisee Phosfluorescently leverage.</p>
-	   <h5><a href="#"><i class="fa fa-reply"></i> Reply</a></h5>
+	 </div> 
+	 <div class="col-sm-6">
+	  <div class="blog_home_1i clearfix">
+	   <img src="img/35.jpg" class="iw" alt="abc">
+	   <div class="blog_home_1i1 text-center clearfix">
+	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
+		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
+		<p><a href="blog_detail.html">Continue Reading</a></p>
+		<ul class="social-network social-circle">
+                        <li><a href="blog_detail.html" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+       </ul>
+	   </div>
 	  </div>
 	 </div>
-	</div><br>
-	<div class="blod_d2 clearfix"> 
-	 <h3><span class="col_1">|</span> Leave A Comment</h3>
-	</div>
-	<div class="blod_d3 clearfix"> 
-	 <div class="blod_d3i clearfix">
-	  <div class="col-sm-6">
-	   <h5>Your Name <span>*</span></h5>
-	   <input class="form-control" type="text">
+	 
+   </div>
+    <div class="blog_home_1 clearfix">
+     <div class="col-sm-6">
+	  <div class="blog_home_1i clearfix">
+	   <img src="img/36.jpg" class="iw" alt="abc">
+	   <div class="blog_home_1i1 text-center clearfix">
+	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
+		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
+		<p><a href="blog_detail.html">Continue Reading</a></p>
+		<ul class="social-network social-circle">
+                        <li><a href="blog_detail.html" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+       </ul>
+	   </div>
 	  </div>
-	  <div class="col-sm-6">
-	   <h5>Your Email <span>*</span></h5>
-	   <input class="form-control" type="text">
+	 </div> 
+	 <div class="col-sm-6">
+	  <div class="blog_home_1i clearfix">
+	   <img src="img/37.jpg" class="iw" alt="abc">
+	   <div class="blog_home_1i1 text-center clearfix">
+	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
+		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
+		<p><a href="blog_detail.html">Continue Reading</a></p>
+		<ul class="social-network social-circle">
+                        <li><a href="blog_detail.html" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="blog_detail.html" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+       </ul>
+	   </div>
 	  </div>
 	 </div>
-	 <div class="blod_d3i clearfix">
+	 
+   </div>
+    <div class="product_1_last text-center clearfix">
 	  <div class="col-sm-12">
-	   <h5>Your Message <span>*</span></h5>
-	   <textarea class="form-control form_1"></textarea>
-	   <h5><a class="button" href="#">POST COMMENT</a></h5>
+	   <ul>
+	    <li class="act"><a href="blog_detail.html">1</a></li>
+		<li><a href="blog_detail.html">2</a></li>
+		<li><a href="blog_detail.html">3</a></li>
+		<li><a href="blog_detail.html">4</a></li>
+		<li><a href="blog_detail.html">5</a></li>
+		<li><a href="blog_detail.html">6</a></li>
+		<li><a href="blog_detail.html"><i class="fa fa-chevron-right"></i></a></li>
+	   </ul>
 	  </div>
-	  
 	 </div>
-	</div>
    </div>
    </div>
   </div>

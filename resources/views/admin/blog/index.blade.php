@@ -20,7 +20,7 @@
                 <th>Image</th>
                 <th>Description</th>
                 <th>Status</th>
-                <!-- <th>Show in Slider</th> -->
+                <th>Show in Slider</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -39,13 +39,13 @@
                   In-Active
                   @endif
                 </td>
-                <!-- <td>
+                <td>
                   <label class="switch">
                     <input type="checkbox" onchange='sliderChange("{{$blog->id, $blog->show_in_slider}}")'>
                     <span class="slider round"></span>
                   </label>
                   {{$blog->show_in_slider}}
-                </td> -->
+                </td>
                 <td>
                   <a href="{{route('admin.blog.edit',$blog)}}"><i class="fa fa-edit" title="Edit"></i></a>
                   <a href="{{route('admin.blog.delete',$blog)}}" onclick="return confirm('Are you sure you want to delete the blog?');"><i class="fa fa-trash text-danger" title="Delete"></i></a>
@@ -135,20 +135,20 @@
   }
 </style>
 @endsection
-<!-- @push('scripts')
-  <script>
-    // $('#show_slider').on("change",function(data){
-    //   alert("sagun");
-    // });
-    function sliderChange(id,show){
-      $.ajax({
-        type:'GET';
-        url:'/getmsg',
-        data:'{id:id,slider:show}',
-        success:function(data){
-          $("#msg").html(data.msg);
-        }
-      });
+@push('scripts')
+<script>
+  // $('#show_slider').on("change",function(data){
+  //   alert("sagun");
+  // });
+  function sliderChange(id, show) {
+    $.ajax({
+      type: 'GET',
+      url: '/blog/slider/change/' + id + '/' + show,
+      data: '',
+      success: function(data) {
+        $("#msg").html(data.msg);
+      }
+    });
   }
-  </script>
-@endpush -->
+</script>
+@endpush
