@@ -20,23 +20,13 @@
  <div class="container">
   <div class="row">
    <div class="top_1 clearfix">
-    <!-- <div class="col-sm-3">
-	 <div class="top_1l clearfix">
-	  <h5 class="mgt"><i class="fa fa-headphones col_1"></i> <a href="#"> +091 (123) 456-789</a></h5>
-	 </div>
-	</div> -->
-	<!-- <div class="col-sm-3">
-	 <div class="top_1l clearfix">
-	  <h5 class="mgt"><i class="fa fa-envelope col_1"></i> <a href="#"> info@gmail.com</a></h5>
-	 </div>
-	</div> -->
 	<div class="col-sm-6">
 	 <div class="top_1r text-right clearfix">
 	  <ul class="mgt">
 	   <!-- <li><i class="fa fa-map-marker col_1"></i> <a href="#"> Store location</a></li>
 	   <li><i class="fa fa-clock-o col_1"></i> <a href="#"> Daily deal</a></li> -->
 	   <li><i class="fa fa-user col_1"></i> <a href="#"> My account</a></li>
-	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login')}}"> Login</a></li>
+	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login.view')}}"> Login</a></li>
 	  </ul>
 	 </div>
 	</div>
@@ -51,17 +41,17 @@
    <div class="header_1 clearfix">
     <div class="col-sm-2">
 	 <div class="header_1l clearfix">
-	  <h3><a href="index.html">Home Shop</a></h3>
+	  <h3><a href="{{route('frontend.home')}}">Home Shop</a></h3>
 	 </div>
 	</div>
 	<div class="col-sm-7">
 	 <div class="header_1m text-center clearfix">
 	 <select class="form-control form_1">
 				 <option>All Category</option>
-				 <option>Watch</option>
-				 <option>Mobile</option>
-				 <option>Kids</option>
-				 <option>Fashion</option>
+				 <option>Mufflers</option>
+				 <option>Chocolates</option>
+				 <option>Perfume</option>
+				 <option>Sweaters</option>
 			 </select>
 	  <div class="input-group">
 					<input type="text" class="form-control form_2" placeholder="Search Products Here...">
@@ -139,7 +129,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"> Shop On </a>
+				<a class="navbar-brand" href="{{route('frontend.home')}}"> Home Shop </a>
 			</div>
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -161,12 +151,12 @@
 						<li><a href="#">Man’s Product</a></li>
 					  </ul>
                     </li>
-				<li><a class="m_tag active_tab" href="frontend.master">Home</a></li>
+				<li><a class="m_tag active_tab" href="{{route('frontend.home')}}">Home</a></li>
 				<li class="dropdown">
-					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Product<span class="caret"></span></a>
+					  <a class="m_tag" href="" data-toggle="dropdown" role="button" aria-expanded="false">Product<span class="caret"></span></a>
 					  <ul class="dropdown-menu drop_3" role="menu">
-						<li><a href="product.html">Product</a></li>
-						<li><a class="border_none" href="detail.html">Product Detail</a></li>
+						<li><a href="{{route('frontend.frontProduct.showProduct')}}">Product</a></li>
+						<li><a class="border_none" href="{{route('frontend.frontProduct.productDetail')}}">Product Detail</a></li>
 					  </ul>
                     </li>
 				<li class="dropdown">
@@ -177,8 +167,8 @@
 					  </ul>
                     </li>
 				<!-- <li><a class="m_tag" href="contact.html">Contact</a></li> -->
-				<li><a class="m_tag" href="cart.html">Cart</a></li>
-				<li><a class="m_tag" href="checkout.html">Checkout</a></li>
+				<li><a class="m_tag" href="{{route('frontend.cart')}}">Cart</a></li>
+				<li><a class="m_tag" href="{{route('frontend.checkout')}}">Checkout</a></li>
 			</ul>
 		    	
 			</div>
@@ -195,22 +185,20 @@
    <div class="center_home clearfix">
     <div class="col-sm-4">
 	 <div class="center_homer clearfix">
-	  <img src="frontend/img/27.jpg" class="iw" alt="abc">
+	  <img src="/uploads/sellerphotos/products/phpE78A.tmp1625402256.jpg" class="iw" alt="abc">
 	 </div>
 	</div>
 	<div class="col-sm-4">
 	 <div class="center_homem clearfix">
 	  <h4 class="mgt">UP TO 50% OFF</h4>
 	  <h1 class="col_1">Nulla Quis Libero</h1>
-	  <p>Maboriosam in a nesciung eget magnae
-dapibus disting tloctio in the find it pereri
-odiy maboriosm.</p>
-      <h5><a class="button" href="#">SHOP NOW!</a></h5>
+	  <p>Maboriosam in a nesciung eget magnae dapibus disting tloctio in the find it pereriodiy maboriosm.</p>
+      <h5><a class="button" href="{{route('frontend.authenticate.login.view')}}">SHOP NOW!</a></h5>
 	 </div>
 	</div>
 	<div class="col-sm-4">
 	 <div class="center_homer clearfix">
-	  <img src="/frontend/img/3.jpg" class="iw" alt="abc">
+	  <img src="/uploads/sellerphotos/products/phpBB52.tmp1625407684.jpg" class="iw" alt="abc">
 	 </div>
 	</div>
    </div>
@@ -226,14 +214,14 @@ odiy maboriosm.</p>
 	 <div class="collect_1l clearfix">
 	  <div class="col-sm-6 space_all">
 	   <div class="collect_1ll clearfix">
-	    <h5 class="mgt col_1">Man's Collectons</h5>
-		<h4>Summer Travel Collection</h4>
+	    <h5 class="mgt col_1">Knitting</h5>
+		<h4>Winter Handmade Collection</h4>
 		<h5><a href="#"> DISCOVER NOW</a></h5>
 	   </div>
 	  </div>
 	  <div class="col-sm-6 space_all">
 	   <div class="collect_1lr clearfix">
-	    <img src="frontend/img/4.jpg" alt="abc" class="iw">
+	    <img src="uploads/blogs/winter-fashion1625497364.jpg" alt="abc" class="iw">
 	   </div>
 	  </div>
 	 </div>
@@ -258,14 +246,14 @@ odiy maboriosm.</p>
 	 <div class="collect_1l clearfix">
 	  <div class="col-sm-6 space_all">
 	   <div class="collect_1ll clearfix">
-	    <h5 class="mgt col_1">Flash Sale</h5>
+	    <h5 class="mgt col_1">Handmade Soap</h5>
 		<h4>Mid Season Up To 40% Off</h4>
 		<h5><a href="#"> DISCOVER NOW</a></h5>
 	   </div>
 	  </div>
 	  <div class="col-sm-6 space_all">
 	   <div class="collect_1lr clearfix">
-	    <img src="frontend/img/6.jpg" alt="abc" class="iw">
+	    <img src="uploads\blogs\perfumed-soap-blog1625839840.jpg" alt="abc" class="iw">
 	   </div>
 	  </div>
 	 </div>
@@ -289,12 +277,12 @@ odiy maboriosm.</p>
       <div class="workout_page_1_left clearfix">
 
 	    <ul class="nav nav-tabs">
-			  <li class="active"><a data-toggle="tab" href="#home">MAN  </a></li>
-			  <li class=""><a data-toggle="tab" href="#menu1">WOMAN </a></li>
-			  <li><a data-toggle="tab" href="#menu2">KIDS</a></li>
-			  <li class=""><a data-toggle="tab" href="#menu3">ACCESSORIES </a></li>
-			  <li class=""><a data-toggle="tab" href="#menu4">ESSENTIAL </a></li>
-			  <li class=""><a data-toggle="tab" href="#menu5">PRICES </a></li>
+			  <li class="active"><a data-toggle="tab" href="#home">Homemade Sweaters</a></li>
+			  <li class=""><a data-toggle="tab" href="#menu1">Chocolates</a></li>
+			  <li><a data-toggle="tab" href="#menu2">Cookies</a></li>
+			  <li class=""><a data-toggle="tab" href="#menu3">Soaps </a></li>
+			  <li class=""><a data-toggle="tab" href="#menu4">Perfumes</a></li>
+			  <li class=""><a data-toggle="tab" href="#menu5">Handmade Gloves</a></li>
           </ul>
 
 	    <div class="tab-content clearfix">
@@ -1763,7 +1751,7 @@ odiy maboriosm.</p>
  </div>
 </section>
 
-<section id="shipping">
+<!-- <section id="shipping">
  <div class="container">
   <div class="row">
    <div class="shipping_1 clearfix">
@@ -1782,7 +1770,7 @@ odiy maboriosm.</p>
 	<div class="col-sm-3">
 	 <div class="shipping_1i clearfix">
 	  <span><i class="fa fa-lock"></i></span>
-	  <h5 class="mgt">SUCURE PAYMENT <br> <span class="col_2">100% secure payment</span></h5>
+	  <h5 class="mgt">SECURE PAYMENT <br> <span class="col_2">100% secure payment</span></h5>
 	 </div>
 	</div>
 	<div class="col-sm-3">
@@ -1795,82 +1783,6 @@ odiy maboriosm.</p>
   </div>
  </div>
 </section>
-
-<section id="enquiry">
- <div class="container">
-  <div class="row">
-    <div class="enquiry_1 text-center clearfix">
-	 <div class="col-sm-12">
-	  <h4 class="mgt">NEWSLETTER</h4>
-	  <p>Subscribe to our newsletter and get <span class="col_1">20%</span> off your first purchase</p>
-	  <div class="input-group">
-		<input type="text" class="form-control form_2" placeholder="Your Email">
-		<span class="input-group-btn">
-			<button class="btn btn-primary" type="button">
-				SUBSCRIBE</button>
-		</span>
-      </div>
-	 </div>
-	</div>
-  </div>
- </div>
-</section>
-
-<section id="footer">
- <div class="container">
-  <div class="row">
-   <div class="footer_1 clearfix">
-    <div class="col-sm-3">
-	 <div class="footer_1i clearfix">
-	   <h3 class="mgt"><a href="#">Shop On</a></h3>
-	   <p> Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-	   <p>Got Question? Call us 24/7</p>
-	   <h4 class="mgt"><a class="col_1" href="#">+0123 456 789</a></h4>
-	 </div>
-	</div>
-	<div class="col-sm-3">
-	 <div class="footer_1i1 clearfix">
-      <h4 class="mgt">Useful links</h4>
-	  <ul class="normal">
-	   <li><a href="#">How it works</a></li>
-	   <li><a href="#">About us</a></li>
-	   <li><a href="#">Babysitters</a></li>
-	   <li><a href="#">Contact us</a></li>
-	  </ul>
-	 </div>
-	</div>
-	<div class="col-sm-3">
-	 <div class="footer_1i1 clearfix">
-      <h4 class="mgt">My Account</h4>
-	  <ul class="normal">
-	   <li><a href="#">Track my order</a></li>
-	   <li><a href="#">Terms of use</a></li>
-	   <li><a href="#">Wishlist</a></li>
-	   <li><a href="#">Submit Your feedback</a></li>
-	  </ul>
-	 </div>
-	</div>
-	<div class="col-sm-3">
-	 <div class="footer_1i2 clearfix">
-      <h4 class="mgt">Get In Tuch</h4>
-	  <p>NO. 172 - Kingdom Oxford Street.<br>
-000 United Kingdom.<br>
-info@gmail.com<br>
-+012 3456 7890</p>
-      <ul class="social-network social-circle">
-                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-	 </div>
-	</div>
-   </div>
-  </div>
- </div>
-</section>
-
 <section id="footer_last">
  <div class="container">
   <div class="row">
@@ -1881,7 +1793,7 @@ info@gmail.com<br>
    </div>
   </div>
  </div>
-</section>
+</section> -->
 
 <script>
 $(document).ready(function(){

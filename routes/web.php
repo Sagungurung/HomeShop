@@ -14,6 +14,8 @@ use App\Http\Controllers\Frontend\SellerCategoriesController;
 use App\Http\Controllers\Frontend\ProductsController;
 
 use App\Http\Controllers\Frontend\FrontendBlogController;
+use App\Http\Controllers\Frontend\FrontProductController;
+use App\Http\Controllers\CartController;
 
 
 use App\Models\Dashboard;
@@ -39,8 +41,6 @@ Route::post('/submit/register',[RegisterController::class,'submitRegister'])->na
 Route::get('/login',[RegisterController::class,'viewLogin'])->name('admin.authenticate.login.view');
 Route::post('/login/submit',[RegisterController::class,'submitlogin'])->name('admin.authenticate.login.submit');
 
-Route::get('/showBlog',[FrontendBlogController::class,'show'])->name('frontend.frontBlog.showBlog');
-Route::get('/blogDetail',[FrontendBlogController::class,'detail'])->name('frontend.frontBlog.blogDetail');
 
 
 Route::group(['middleware'=>'auth:user'],function(){
@@ -106,19 +106,28 @@ Route::group(['middleware'=>'auth:seller'],function(){
 
 }); 
 
-//frontend register and login functions
-
-Route::get('/visitor/register',[AuthenticationController::class,'register'])->name('frontend.authenticate.register.view');
-Route::post('/visitor/submit/register',[AuthenticationController::class,'submitRegister'])->name('frontend.authenticate.register.submit');
-Route::get('/visitor/login',[AuthenticationController::class,'viewLogin'])->name('frontend.authenticate.login.view');
-Route::post('/visitor/login/submit',[AuthenticationController::class,'submitlogin'])->name('frontend.authenticate.login.submit');
 
 // frontend routes
 
 Route::get('/',[FrontendController::class,'home'])->name('frontend.home');
+
+Route::get('/showBlog',[FrontendBlogController::class,'show'])->name('frontend.frontBlog.showBlog');
+Route::get('/blogDetail',[FrontendBlogController::class,'detail'])->name('frontend.frontBlog.blogDetail');
+
+Route::get('/showProduct',[FrontProductController::class,'show'])->name('frontend.frontProduct.showProduct');
+Route::get('/productDetail',[FrontProductController::class,'detail'])->name('frontend.frontProduct.productDetail');
+
     
+ //frontend register and login functions
+
+ Route::get('/visitor/register',[AuthenticationController::class,'register'])->name('frontend.authenticate.register.view');
+ Route::post('/visitor/submit/register',[AuthenticationController::class,'submitRegister'])->name('frontend.authenticate.register.submit');
+ Route::get('/visitor/login',[AuthenticationController::class,'viewLogin'])->name('frontend.authenticate.login');
+ Route::post('/visitor/login/submit',[AuthenticationController::class,'submitlogin'])->name('frontend.authenticate.login.submit');
 
 Route::group(['middleware'=>'auth:visitor'],function(){
-    
+    Route::get('/visitor/cart',[CartController::class,'viewCart'])->name('frontend.cart');
+    Route::get('/visitor/checkout',[CartController::class,'checkout'])->name('frontend.checkout');
 
+   
 });

@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home Shop</title>
+    <title>Shop On</title>
 	<link href="/frontend/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/frontend/css/global.css" rel="stylesheet">
-	<link href="/frontend/css/blog_detail.css" rel="stylesheet">
+	<link href="/frontend/css/cart.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/frontend/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
@@ -20,6 +20,16 @@
  <div class="container">
   <div class="row">
    <div class="top_1 clearfix">
+    <div class="col-sm-3">
+	 <div class="top_1l clearfix">
+	  <h5 class="mgt"><i class="fa fa-headphones col_1"></i> <a href="#"> +091 (123) 456-789</a></h5>
+	 </div>
+	</div>
+	<div class="col-sm-3">
+	 <div class="top_1l clearfix">
+	  <h5 class="mgt"><i class="fa fa-envelope col_1"></i> <a href="#"> info@gmail.com</a></h5>
+	 </div>
+	</div>
 	<div class="col-sm-6">
 	 <div class="top_1r text-right clearfix">
 	  <ul class="mgt">
@@ -41,7 +51,7 @@
    <div class="header_1 clearfix">
     <div class="col-sm-2">
 	 <div class="header_1l clearfix">
-	  <h3><a href="{{route('frontend.home')}}">Home Shop</a></h3>
+	  <h3><a href="{{route('frontend.home')}}">Home Shop </a></h3>
 	 </div>
 	</div>
 	<div class="col-sm-7">
@@ -105,7 +115,7 @@
 						 </div>
 						 <div class="drop_1i3 text-center clearfix">
 						  <div class="col-sm-12">
-						   <h5><a class="button" href="#">CHECKOUT</a></h5>
+						   <h5><a class="button" href="{{route('frontend.checkout')}}">CHECKOUT</a></h5>
 						  </div>
 						 </div>
 						</li>
@@ -129,7 +139,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="frontend.master"> Home Shop </a>
+				<a class="navbar-brand" href="{{route('frontend.home')}}"> Home Shop</a>
 			</div>
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -160,14 +170,14 @@
 					  </ul>
                     </li>
 				<li class="dropdown">
-					  <a class="m_tag active_tab" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
+					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
 					  <ul class="dropdown-menu drop_3" role="menu">
-						<li><a href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
-						<li><a class="border_none" href="{{route('frontend.frontBlog.blogDetail')}}">Blog Detail</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a class="border_none" href="blog_detail.html">Blog Detail</a></li>
 					  </ul>
                     </li>
 				<li><a class="m_tag" href="contact.html">Contact</a></li>
-				<li><a class="m_tag" href="cart.html">Cart</a></li>
+				<li><a class="m_tag active_tab" href="cart.html">Cart</a></li>
 				<li><a class="m_tag" href="checkout.html">Checkout</a></li>
 			</ul>
 		    	
@@ -185,8 +195,8 @@
     <div class="center_shop_1 clearfix">
 	 <div class="col-sm-12">
 	  <h5 class="mgt">
-	   <a href="{{route('frontend.home')}}">Home <i class="fa fa-long-arrow-right"></i> </a>
-	   <a href="{{route('frontend.frontBlog.blogDetail')}}">Blog Detail</a>
+	   <a href="#">Home <i class="fa fa-long-arrow-right"></i> </a>
+	   <a href="#">Cart</a>
 	  </h5>
 	 </div>
 	</div>
@@ -194,143 +204,191 @@
  </div>
 </section>
 
-<section id="blog">
+<section id="cart" class="clearfix">
  <div class="container">
   <div class="row">
-   <div class="blog_1 clearfix">
-   <div class="col-sm-4">
-    <div class="blog_1l clearfix">
-	 <div class="input-group">
-					<input type="text" class="form-control form_2" placeholder="Search Here...">
-					<span class="input-group-btn">
-						<button class="btn btn-primary" type="button">
-							<i class="fa fa-search"></i></button>
-					</span>
-      </div><br>
-	 <h4><span class="col_1">|</span> Blog Categories</h4><br>
-	 <h5><a href="#">Men's Apparel</a></h5>
-	 <h5><a href="#">Women's Apparel</a></h5>
-	 <h5><a href="#">Bags Collection</a></h5>
-	 <h5><a href="#">Accessories</a></h5>
-	 <h5><a href="#">Sun Glasses</a></h5><br>
-	 <h4><span class="col_1">|</span> Recent Post</h4><br>
-	   <div class="product_1li clearfix">
-	    <img src="/frontend/img/28.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
-		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25</h6>
+    <div class="cart_1 clearfix">
+	 <div class="col-sm-2">
+	   <div class="cart_1i clearfix">
+	    <h4 class="mgt col">PRODUCT</h4> 
 	   </div>
-	   <div class="product_1li clearfix">
-	    <img src="/frontend/img/29.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
-		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> July 10, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 45</h6>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_1i clearfix">
+	    <h4 class="mgt col">NAME</h4> 
 	   </div>
-	   <div class="product_1li border_none pdb clearfix">
-	    <img src="/frontend/img/30.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
-		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 23</h6>
-	   </div><br>
-	   <h4><span class="col_1">|</span> Tags</h4><br>
-	   <ul>
-	    <li><a href="#">Business</a></li>
-		<li><a href="#">Wordpress</a></li>
-		<li><a href="#">Html</a></li>
-		<li><a href="#">Multipurpose</a></li>
-		<li><a href="#">Education</a></li>
-		<li><a href="#">Template</a></li>
-		<li><a href="#">Ecommerce</a></li>
-	   </ul>
-	   <h4><span class="col_1">|</span> Newslatter</h4><br>
-	   <div class="blog_1li clearfix">
-	     <h5 class="bold mgt">Subscribe & Get News
-Latest Updates.</h5><br>
-       <input class="form-control" placeholder="Enter your email" type="text">
-	   <h5><a class="button" href="#">SUBMIT</a></h5>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_1i clearfix">
+	    <h4 class="mgt col">UNIT PRICE</h4> 
 	   </div>
-	</div>
-   </div>
-   <div class="col-sm-8">
-    <div class="blod_d1 clearfix">
-	 <img src="/frontend/img/38.jpg" class="iw" alt="abc">
-	 <h3>What Are The Secrets To Start- Up Success?</h3>
-	 <h6 class="col_2"><a class="col_2" href="#"><i class="fa fa-user col_1"></i> By Admin</a> | <a class="col_2" href="#"><i class="fa fa-calendercol_1"></i> Nov 24, 2018</a> | <a class="col_2" href="#"><i class="fa fa-comments col_1"></i> Comment (15)</a></h6>
-	 <hr>
-	 <p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p><br>
-	    <blockquote>
-	    <p class="mgt">Do what you love to do and give it your very best. Whether it's business or baseball, or the theater, or any field. If you don't love what you're doing and you can't give it your best, get out of it. Life is too short. You'll be an old man before you know it. risus. Ut tincidunt, erat eget feugiat eleifend, eros magna dapibus diam.</p>
-	   </blockquote>
-	   <p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
-	   <p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
-	  <ul>
-	   <li class="bold">Tags:</li>
-	   <li><a href="#">Glass</a></li>
-	   <li><a href="#">Pant</a></li>
-	   <li><a href="#">t-shirt</a></li>
-	   <li><a href="#">swater</a></li>
-	  </ul>
-	</div>  <br>
-	<div class="blod_d2 clearfix"> 
-	 <h3><span class="col_1">|</span> Comments (3)</h3>
-	 <div class="blod_d2i clearfix">
-	  <div class="col-sm-2 space_left">
-	   <img src="/frontend/img/39.jpg" class="iw img-circle" alt="abc">
-	  </div>
-	  <div class="col-sm-10">
-	   <h4 class="mgt">Lacinia Arcu</h4>
-	   <h6 class="mgt">At 8:59 Pm On May 18, 2019</h6>
-	   <p>Enthusiastically leverage existing premium quality vectors with enterprise-wide innovation collaboration Phosfluorescently leverage others enterprisee Phosfluorescently leverage.</p>
-	   <h5><a href="#"><i class="fa fa-reply"></i> Reply</a></h5>
-	  </div>
 	 </div>
-	 <div class="blod_d2i mgl clearfix">
-	  <div class="col-sm-2 space_left">
-	   <img src="/frontend/img/40.jpg" class="iw img-circle" alt="abc">
-	  </div>
-	  <div class="col-sm-10">
-	   <h4 class="mgt">Semper Porta</h4>
-	   <h6 class="mgt">At 8:59 Pm On May 18, 2019</h6>
-	   <p>Enthusiastically leverage existing premium quality vectors with enterprise-wide innovation collaboration Phosfluorescently leverage others enterprisee Phosfluorescently leverage.</p>
-	   <h5><a href="#"><i class="fa fa-reply"></i> Reply</a></h5>
-	  </div>
+	 <div class="col-sm-2">
+	   <div class="cart_1i clearfix">
+	    <h4 class="mgt col">QUANTITY</h4> 
+	   </div>
 	 </div>
-	 <div class="blod_d2i clearfix">
-	  <div class="col-sm-2 space_left">
-	   <img src="/frontend/img/41.jpg" class="iw img-circle" alt="abc">
-	  </div>
-	  <div class="col-sm-10">
-	   <h4 class="mgt">Conubia Nostra</h4>
-	   <h6 class="mgt">At 8:59 Pm On May 18, 2019</h6>
-	   <p>Enthusiastically leverage existing premium quality vectors with enterprise-wide innovation collaboration Phosfluorescently leverage others enterprisee Phosfluorescently leverage.</p>
-	   <h5><a href="#"><i class="fa fa-reply"></i> Reply</a></h5>
-	  </div>
+	 <div class="col-sm-2">
+	   <div class="cart_1i clearfix">
+	    <h4 class="mgt col">TOTAL</h4> 
+	   </div>
 	 </div>
-	</div><br>
-	<div class="blod_d2 clearfix"> 
-	 <h3><span class="col_1">|</span> Leave A Comment</h3>
-	</div>
-	<div class="blod_d3 clearfix"> 
-	 <div class="blod_d3i clearfix">
-	  <div class="col-sm-6">
-	   <h5>Your Name <span>*</span></h5>
-	   <input class="form-control" type="text">
-	  </div>
-	  <div class="col-sm-6">
-	   <h5>Your Email <span>*</span></h5>
-	   <input class="form-control" type="text">
-	  </div>
-	 </div>
-	 <div class="blod_d3i clearfix">
-	  <div class="col-sm-12">
-	   <h5>Your Message <span>*</span></h5>
-	   <textarea class="form-control form_1"></textarea>
-	   <h5><a class="button" href="#">POST COMMENT</a></h5>
-	  </div>
-	  
+	 <div class="col-sm-2">
+	   <div class="cart_1i clearfix">
+	    <h4 class="mgt col"><i class="fa fa-trash"></i></h4> 
+	   </div>
 	 </div>
 	</div>
-   </div>
-   </div>
+	<div class="cart_2 clearfix">
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+	    <img src="/frontend/img/42.jpg" class="iw" alt="abc">
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+	    <h4 class="mgt"><a href="#">Women Dress</a></h4>
+		<p>Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
+	   </div>
+	 </div>
+     <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		<p class="mgt">$120.00</p>
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		<div class="input-group number-spinner">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+				</span>
+				<input type="text" class="form-control text-center" value="1">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+				</span>
+			</div>
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		 <p class="mgt">$310.78</p>
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		 <p class="mgt"><a href="#"><i class="fa fa-trash"></i></a></p>
+	   </div>
+	 </div>
+	</div>
+	<div class="cart_2 clearfix">
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+	    <img src="/frontend/img/43.jpg" class="iw" alt="abc">
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+	    <h4 class="mgt"><a href="#">Women Dress</a></h4>
+		<p>Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
+	   </div>
+	 </div>
+     <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		<p class="mgt">$120.00</p>
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		<div class="input-group number-spinner">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+				</span>
+				<input type="text" class="form-control text-center" value="1">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+				</span>
+			</div>
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		 <p class="mgt">$310.78</p>
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		 <p class="mgt"><a href="#"><i class="fa fa-trash"></i></a></p>
+	   </div>
+	 </div>
+	</div>
+	<div class="cart_2 clearfix">
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+	    <img src="/frontend/img/44.jpg" class="iw" alt="abc">
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+	    <h4 class="mgt"><a href="#">Women Dress</a></h4>
+		<p>Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
+	   </div>
+	 </div>
+     <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		<p class="mgt">$120.00</p>
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		<div class="input-group number-spinner">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+				</span>
+				<input type="text" class="form-control text-center" value="1">
+				<span class="input-group-btn">
+					<button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+				</span>
+			</div>
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		 <p class="mgt">$310.78</p>
+	   </div>
+	 </div>
+	 <div class="col-sm-2">
+	   <div class="cart_2i clearfix">
+		 <p class="mgt"><a href="#"><i class="fa fa-trash"></i></a></p>
+	   </div>
+	 </div>
+	</div>
+	<div class="cart_3 clearfix">
+	 <div class="col-sm-4 space_left">
+	  <div class="cart_3i clearfix">
+	   <input class="form-control" placeholder="Enter Your Coupon" type="text">
+	   <h6 class="mgt"><a class="button mgt" href="#">APPLY</a></h6>
+	   <h5><input type="checkbox"> Shipping (+20$)</h5>
+	  </div>
+	 </div>
+	 <div class="col-sm-4 space_left">
+	  <div class="cart_3i clearfix">
+
+	  </div>
+	 </div>
+	 <div class="col-sm-4 space_left">
+	  <div class="cart_3i1 clearfix">
+	   <h5>Cart Subtotal <span class="pull-right">$430.00</span></h5>
+	   <h5>Shipping <span class="pull-right">Free</span></h5>
+	   <h5>You Save <span class="pull-right">$40.00</span></h5>
+	   <hr>
+	   <h5>You Pay <span class="pull-right">$390.00</span></h5><br>
+	   <h6><a class="button" href="checkout.html">CHECKOUT</a></h6>
+	   <h6><a class="button" href="#">CONTINUE SHOPPING</a></h6>
+	  </div>
+	 </div>
+	</div>
   </div>
- </div> 
+ </div>
 </section>
 
 <section id="enquiry">
@@ -349,6 +407,39 @@ Latest Updates.</h5><br>
       </div>
 	 </div>
 	</div>
+  </div>
+ </div>
+</section>
+
+<section id="shipping">
+ <div class="container">
+  <div class="row">
+   <div class="shipping_1 clearfix">
+    <div class="col-sm-3">
+	 <div class="shipping_1i clearfix">
+	  <span><i class="fa fa-rocket"></i></span>
+	  <h5 class="mgt">FREE SHIPING <br> <span class="col_2">Orders over $100</span></h5>
+	 </div>
+	</div>
+	<div class="col-sm-3">
+	 <div class="shipping_1i clearfix">
+	  <span><i class="fa fa-recycle"></i></span>
+	  <h5 class="mgt">FREE RETURN <br> <span class="col_2">Within 30 days returns</span></h5>
+	 </div>
+	</div>
+	<div class="col-sm-3">
+	 <div class="shipping_1i clearfix">
+	  <span><i class="fa fa-lock"></i></span>
+	  <h5 class="mgt">SUCURE PAYMENT <br> <span class="col_2">100% secure payment</span></h5>
+	 </div>
+	</div>
+	<div class="col-sm-3">
+	 <div class="shipping_1i clearfix">
+	  <span><i class="fa fa-tags"></i></span>
+	  <h5 class="mgt">BEST PEICE <br> <span class="col_2">Guaranteed price</span></h5>
+	 </div>
+	</div>
+   </div>
   </div>
  </div>
 </section>
@@ -435,6 +526,25 @@ $(document).ready(function(){
 		
 });
 </script>
+
+<script type="text/javascript">
+	$(document).on('click', '.number-spinner button', function () {    
+	var btn = $(this),
+		oldValue = btn.closest('.number-spinner').find('input').val().trim(),
+		newVal = 0;
+	
+	if (btn.attr('data-dir') == 'up') {
+		newVal = parseInt(oldValue) + 1;
+	} else {
+		if (oldValue > 1) {
+			newVal = parseInt(oldValue) - 1;
+		} else {
+			newVal = 1;
+		}
+	}
+	btn.closest('.number-spinner').find('input').val(newVal);
+});
+	</script>
 </body>
  
 </html>

@@ -20,23 +20,13 @@
  <div class="container">
   <div class="row">
    <div class="top_1 clearfix">
-    <div class="col-sm-3">
-	 <div class="top_1l clearfix">
-	  <h5 class="mgt"><i class="fa fa-headphones col_1"></i> <a href="#"> +091 (123) 456-789</a></h5>
-	 </div>
-	</div>
-	<div class="col-sm-3">
-	 <div class="top_1l clearfix">
-	  <h5 class="mgt"><i class="fa fa-envelope col_1"></i> <a href="#"> info@gmail.com</a></h5>
-	 </div>
-	</div>
 	<div class="col-sm-6">
 	 <div class="top_1r text-right clearfix">
 	  <ul class="mgt">
 	   <li><i class="fa fa-map-marker col_1"></i> <a href="#"> Store location</a></li>
 	   <li><i class="fa fa-clock-o col_1"></i> <a href="#"> Daily deal</a></li>
 	   <li><i class="fa fa-user col_1"></i> <a href="#"> My account</a></li>
-	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="#"> Login</a></li>
+	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login.view')}}"> Login</a></li>
 	  </ul>
 	 </div>
 	</div>
@@ -51,7 +41,7 @@
    <div class="header_1 clearfix">
     <div class="col-sm-2">
 	 <div class="header_1l clearfix">
-	  <h3><a href="/frontend/index.html">Shop On</a></h3>
+	  <h3><a href="{{route('frontend.home')}}">Home Shop</a></h3>
 	 </div>
 	</div>
 	<div class="col-sm-7">

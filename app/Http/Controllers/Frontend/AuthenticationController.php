@@ -15,7 +15,7 @@ class AuthenticationController extends Controller
     public function register(){
         // dd($expiry_token = Carbon::now());
         $user = Visitor::all();
-        return view('frontend.authenticate.register');
+        return view('frontend.authenticate.register.view');
     }
     public function submitRegister(Request $request){
         // dd($request); //do or die
@@ -45,9 +45,10 @@ class AuthenticationController extends Controller
 
     public function viewLogin(){
         if(Auth::guard('visitor')->check()){
-            return redirect()->route('frontend.home');//calling frontend model function
-        }else{
+            // return redirect()->route('frontend.home');//calling frontend model function
             return view('frontend.authenticate.login');
+        }else{
+            return view('seller.login');
         }
     }
     public function submitLogin(Request $request){
