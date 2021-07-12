@@ -20,7 +20,7 @@
                 <th>Image</th>
                 <th>Description</th>
                 <th>Status</th>
-                <th>Show in Slider</th>
+                <!-- <th>Show in Slider</th> -->
                 <th>Action</th>
               </tr>
             </thead>
@@ -39,13 +39,13 @@
                   In-Active
                   @endif
                 </td>
-                <td>
+                <!-- <td>
                   <label class="switch">
                     <input type="checkbox" onchange='sliderChange("{{$blog->id, $blog->show_in_slider}}")'>
                     <span class="slider round"></span>
                   </label>
                   {{$blog->show_in_slider}}
-                </td>
+                </td> -->
                 <td>
                   <a href="{{route('admin.blog.edit',$blog)}}"><i class="fa fa-edit" title="Edit"></i></a>
                   <a href="{{route('admin.blog.delete',$blog)}}" onclick="return confirm('Are you sure you want to delete the blog?');"><i class="fa fa-trash text-danger" title="Delete"></i></a>
@@ -70,7 +70,7 @@
         </div>
       </div>
 </section>
-<style>
+<!-- <style>
   /* The switch - the box around the slider */
   .switch {
     position: relative;
@@ -133,10 +133,10 @@
   .slider.round:before {
     border-radius: 50%;
   }
-</style>
+</style> -->
 @endsection
-@push('scripts')
-<script>
+<!-- @push('scripts') -->
+<!-- <script>
   // $('#show_slider').on("change",function(data){
   //   alert("sagun");
   // });
@@ -150,5 +150,5 @@
       }
     });
   }
-</script>
-@endpush
+</script> -->
+<!-- @endpush -->

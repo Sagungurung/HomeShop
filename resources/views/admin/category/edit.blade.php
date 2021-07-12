@@ -26,6 +26,13 @@
                         <option value="0" {{($category->status==0)?'selected':''}}>In-Active</option>
                     </select>
                     </div>
+                    <div class="form-group">
+                    <label for="exampleForShowInMenu">Show In Menu</label>
+                    <select name="show_in_menu" id="exampleForShowInMenu" class="form-control" value="{{$category->show_in_menu}}">
+                        <option value="1" {{($category->show_in_menu==1)?'selected':''}}>Yes</option>
+                        <option value="0" {{($category->show_in_menu)?'selected':''}}>No</option>
+                    </select>
+                    </div>
                 </div>
                 <!-- /.box-body -->
 

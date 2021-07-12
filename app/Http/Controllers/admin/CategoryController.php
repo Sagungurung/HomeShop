@@ -90,6 +90,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->slug = Str::slug($request->name);
         $category->status= $request->status;
+        $category->show_in_menu = $request->show_in_menu;
         $category->update();
         return redirect()->route('admin.category.index')->with(['success'=>'Category Updated Successfully']);
     }

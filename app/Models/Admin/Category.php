@@ -9,5 +9,5 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'status','slug'];
+    protected $fillable = ['name', 'status','slug','show_in_menu'];
 }

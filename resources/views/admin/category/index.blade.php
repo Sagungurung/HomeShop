@@ -17,6 +17,7 @@
                     <th>S.N.</th>
                     <th>Name</th>
                     <th>Status</th>
+                    <th>Show In Menu</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -30,6 +31,12 @@
                             Active
                         @else
                             In-Active
+                        @endif
+                    </td>
+                    <td>@if($category->show_in_menu == 1)
+                            Yes
+                        @else
+                            No
                         @endif
                     </td>
                     <td>
@@ -53,6 +60,7 @@
                     <th>S.N.</th>
                     <th>Name</th>
                     <th>Status</th>
+                    <th>Show In Menu</th>
                     <th>Action</th>
                 </tr>
               </tfoot>

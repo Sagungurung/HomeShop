@@ -11,8 +11,8 @@
 	<link rel="/frontend/stylesheet" type="text/css" href="css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
-	<script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+	<script src="/frontend/js/jquery-2.1.1.min.js"></script>
+    <script src="/frontend/js/bootstrap.min.js"></script>
   </head>
   
 <body>
@@ -26,7 +26,9 @@
 	   <li><i class="fa fa-map-marker col_1"></i> <a href="#"> Store location</a></li>
 	   <li><i class="fa fa-clock-o col_1"></i> <a href="#"> Daily deal</a></li>
 	   <li><i class="fa fa-user col_1"></i> <a href="#"> My account</a></li>
-	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login.view')}}"> Login</a></li>
+	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login')}}"> Login</a></li>
+	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('seller.login')}}"> Perhaps A Seller??</a></li>
+	  
 	  </ul>
 	 </div>
 	</div>
@@ -84,7 +86,7 @@
 						   <div class="drop_1i1l clearfix"><h6 class="mgt bold"><a href="#">Nulla Quis</a> <br> <span class="normal col_2">1x - $89.00</span> <br> <span><i class="fa fa-remove"></i></span></h6></div>
 						  </div>
 						  <div class="col-sm-4">
-						   <div class="drop_1i1r text-right clearfix"><a href="#"><img src="img/1.jpg" class="iw" alt="abc"></a></div>
+						   <div class="drop_1i1r text-right clearfix"><a href="#"><img src="/frontend/img/1.jpg" class="iw" alt="abc"></a></div>
 						  </div>
 						 </div>
 						 <div class="drop_1i1 clearfix">
@@ -162,8 +164,8 @@
 				<li class="dropdown">
 					  <a class="m_tag active_tab" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
 					  <ul class="dropdown-menu drop_3" role="menu">
-						<li><a href="blog.html">Blog</a></li>
-						<li><a class="border_none" href="blog_detail.html">Blog Detail</a></li>
+						<li><a href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
+						<li><a class="border_none" href="{{route('frontend.frontBlog.blogDetail')}}">Blog Detail</a></li>
 					  </ul>
                     </li>
 				<li><a class="m_tag" href="contact.html">Contact</a></li>
@@ -208,43 +210,43 @@
 					</span>
       </div><br>
 	 <h4><span class="col_1">|</span> Blog Categories</h4><br>
-	 <h5><a href="blog_detail.html">Men's Apparel</a></h5>
-	 <h5><a href="blog_detail.html">Women's Apparel</a></h5>
-	 <h5><a href="blog_detail.html">Bags Collection</a></h5>
-	 <h5><a href="blog_detail.html">Accessories</a></h5>
-	 <h5><a href="blog_detail.html">Sun Glasses</a></h5><br>
+	 <h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Men's Apparel</a></h5>
+	 <h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Women's Apparel</a></h5>
+	 <h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Bags Collection</a></h5>
+	 <h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Accessories</a></h5>
+	 <h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Sun Glasses</a></h5><br>
 	 <h4><span class="col_1">|</span> Recent Post</h4><br>
 	   <div class="product_1li clearfix">
 	    <img src="/frontend/img/28.jpg" alt="abc">
-		<h5 class="mgt"><a href="blog_detail.html">Top 10 Beautyful Women Dress in the world</a></h5>
+		<h5 class="mgt"><a href="{{route('frontend.frontBlog.blogDetail')}}">Top 10 Beautyful Women Dress in the world</a></h5>
 		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25</h6>
 	   </div>
 	   <div class="product_1li clearfix">
-	    <img src="img/29.jpg" alt="abc">
-		<h5 class="mgt"><a href="blog_detail.html">Top 10 Beautyful Women Dress in the world</a></h5>
+	    <img src="/frontend/img/29.jpg" alt="abc">
+		<h5 class="mgt"><a href="{{route('frontend.frontBlog.blogDetail')}}">Top 10 Beautyful Women Dress in the world</a></h5>
 		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> July 10, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 45</h6>
 	   </div>
 	   <div class="product_1li border_none pdb clearfix">
-	    <img src="img/30.jpg" alt="abc">
-		<h5 class="mgt"><a href="blog_detail.html">Top 10 Beautyful Women Dress in the world</a></h5>
+	    <img src="/frontend/img/30.jpg" alt="abc">
+		<h5 class="mgt"><a href="{{route('frontend.frontBlog.blogDetail')}}">Top 10 Beautyful Women Dress in the world</a></h5>
 		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 23</h6>
 	   </div><br>
 	   <h4><span class="col_1">|</span> Tags</h4><br>
 	   <ul>
-	    <li><a href="blog_detail.html">Business</a></li>
-		<li><a href="blog_detail.html">Wordpress</a></li>
-		<li><a href="blog_detail.html">Html</a></li>
-		<li><a href="blog_detail.html">Multipurpose</a></li>
-		<li><a href="blog_detail.html">Education</a></li>
-		<li><a href="blog_detail.html">Template</a></li>
-		<li><a href="blog_detail.html">Ecommerce</a></li>
+	    <li><a href="{{route('frontend.frontBlog.blogDetail')}}">Business</a></li>
+		<li><a href="{{route('frontend.frontBlog.blogDetail')}}">Wordpress</a></li>
+		<li><a href="{{route('frontend.frontBlog.blogDetail')}}">Html</a></li>
+		<li><a href="{{route('frontend.frontBlog.blogDetail')}}">Multipurpose</a></li>
+		<li><a href="{{route('frontend.frontBlog.blogDetail')}}">Education</a></li>
+		<li><a href="{{route('frontend.frontBlog.blogDetail')}}">Template</a></li>
+		<li><a href="{{route('frontend.frontBlog.blogDetail')}}">Ecommerce</a></li>
 	   </ul>
 	   <h4><span class="col_1">|</span> Newslatter</h4><br>
 	   <div class="blog_1li clearfix">
 	     <h5 class="bold mgt">Subscribe & Get News
 Latest Updates.</h5><br>
        <input class="form-control" placeholder="Enter your email" type="text">
-	   <h5><a class="button" href="blog_detail.html">SUBMIT</a></h5>
+	   <h5><a class="button" href="{{route('frontend.frontBlog.blogDetail')}}">SUBMIT</a></h5>
 	   </div>
 	</div>
    </div>
@@ -252,11 +254,11 @@ Latest Updates.</h5><br>
     <div class="blog_home_1 mgt clearfix">
      <div class="col-sm-6">
 	  <div class="blog_home_1i clearfix">
-	   <img src="img/24.jpg" class="iw" alt="abc">
+	   <img src="/frontend/img/24.jpg" class="iw" alt="abc">
 	   <div class="blog_home_1i1 text-center clearfix">
 	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
-		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
-		<p><a href="blog_detail.html">Continue Reading</a></p>
+		<h4><a href="{{route('frontend.frontBlog.blogDetail')}}">Sed adipiscing ornare</a></h4>
+		<p><a href="{{route('frontend.frontBlog.blogDetail')}}">Continue Reading</a></p>
 		<ul class="social-network social-circle">
                         <li><a href="blog_detail.html" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
                         <li><a href="blog_detail.html" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -269,7 +271,7 @@ Latest Updates.</h5><br>
 	 </div> 
 	 <div class="col-sm-6">
 	  <div class="blog_home_1i clearfix">
-	   <img src="img/25.jpg" class="iw" alt="abc">
+	   <img src="/frontend/img/25.jpg" class="iw" alt="abc">
 	   <div class="blog_home_1i1 text-center clearfix">
 	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
 		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
@@ -289,7 +291,7 @@ Latest Updates.</h5><br>
     <div class="blog_home_1 clearfix">
      <div class="col-sm-6">
 	  <div class="blog_home_1i clearfix">
-	   <img src="img/26.jpg" class="iw" alt="abc">
+	   <img src="/frontend/img/26.jpg" class="iw" alt="abc">
 	   <div class="blog_home_1i1 text-center clearfix">
 	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
 		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
@@ -306,7 +308,7 @@ Latest Updates.</h5><br>
 	 </div> 
 	 <div class="col-sm-6">
 	  <div class="blog_home_1i clearfix">
-	   <img src="img/35.jpg" class="iw" alt="abc">
+	   <img src="/frontend/img/35.jpg" class="iw" alt="abc">
 	   <div class="blog_home_1i1 text-center clearfix">
 	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
 		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
@@ -326,7 +328,7 @@ Latest Updates.</h5><br>
     <div class="blog_home_1 clearfix">
      <div class="col-sm-6">
 	  <div class="blog_home_1i clearfix">
-	   <img src="img/36.jpg" class="iw" alt="abc">
+	   <img src="/frontend/img/36.jpg" class="iw" alt="abc">
 	   <div class="blog_home_1i1 text-center clearfix">
 	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
 		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>
@@ -343,7 +345,7 @@ Latest Updates.</h5><br>
 	 </div> 
 	 <div class="col-sm-6">
 	  <div class="blog_home_1i clearfix">
-	   <img src="img/37.jpg" class="iw" alt="abc">
+	   <img src="/frontend/img/37.jpg" class="iw" alt="abc">
 	   <div class="blog_home_1i1 text-center clearfix">
 	    <h6 class="col_2 mgt"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25 <span class="span_2 col_1"><i class="fa fa-eye"></i></span> 15</h6>
 		<h4><a href="blog_detail.html">Sed adipiscing ornare</a></h4>

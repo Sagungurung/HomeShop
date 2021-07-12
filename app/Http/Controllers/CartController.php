@@ -3,13 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     public function viewCart(){
-        return view('frontend.cart');
+        if(Auth::guard('visitor')->check()){
+            return view('frontend.cart');
+        }else{
+            return view('frontend.authenticate.login');
+        }
+        
     }
     public function checkout(){
-        return view('frontend.checkout');
+        if(Auth::guard('visitor')->check()){
+            return view('frontend.checkout');
+        }else{
+            return view('frontend.home');
+        }
+       
     }
 }

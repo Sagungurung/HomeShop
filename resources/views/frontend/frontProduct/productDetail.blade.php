@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Shop</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/global.css" rel="stylesheet">
-	<link href="css/detail.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link href="/frontend/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/frontend/css/global.css" rel="stylesheet">
+	<link href="/frontend/css/detail.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/frontend/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
-	<script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+	<script src="/frontend/js/jquery-2.1.1.min.js"></script>
+    <script src="/frontend/js/bootstrap.min.js"></script>
   </head>
   
 <body>
@@ -20,23 +20,13 @@
  <div class="container">
   <div class="row">
    <div class="top_1 clearfix">
-    <div class="col-sm-3">
-	 <div class="top_1l clearfix">
-	  <h5 class="mgt"><i class="fa fa-headphones col_1"></i> <a href="#"> +091 (123) 456-789</a></h5>
-	 </div>
-	</div>
-	<div class="col-sm-3">
-	 <div class="top_1l clearfix">
-	  <h5 class="mgt"><i class="fa fa-envelope col_1"></i> <a href="#"> info@gmail.com</a></h5>
-	 </div>
-	</div>
 	<div class="col-sm-6">
 	 <div class="top_1r text-right clearfix">
 	  <ul class="mgt">
 	   <li><i class="fa fa-map-marker col_1"></i> <a href="#"> Store location</a></li>
 	   <li><i class="fa fa-clock-o col_1"></i> <a href="#"> Daily deal</a></li>
 	   <li><i class="fa fa-user col_1"></i> <a href="#"> My account</a></li>
-	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login.view')}}"> Login</a></li>
+	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login')}}"> Login</a></li>
 	  </ul>
 	 </div>
 	</div>
@@ -94,7 +84,7 @@
 						   <div class="drop_1i1l clearfix"><h6 class="mgt bold"><a href="#">Nulla Quis</a> <br> <span class="normal col_2">1x - $89.00</span> <br> <span><i class="fa fa-remove"></i></span></h6></div>
 						  </div>
 						  <div class="col-sm-4">
-						   <div class="drop_1i1r text-right clearfix"><a href="#"><img src="img/1.jpg" class="iw" alt="abc"></a></div>
+						   <div class="drop_1i1r text-right clearfix"><a href="#"><img src="/frontend/img/1.jpg" class="iw" alt="abc"></a></div>
 						  </div>
 						 </div>
 						 <div class="drop_1i1 clearfix">
@@ -102,7 +92,7 @@
 						   <div class="drop_1i1l clearfix"><h6 class="mgt bold"><a href="#">Eget Nulla</a> <br> <span class="normal col_2">1x - $49.00</span> <br> <span><i class="fa fa-remove"></i></span></h6></div>
 						  </div>
 						  <div class="col-sm-4">
-						   <div class="drop_1i1r text-right clearfix"><a href="#"><img src="img/2.jpg" class="iw" alt="abc"></a></div>
+						   <div class="drop_1i1r text-right clearfix"><a href="#"><img src="/frontend/img/2.jpg" class="iw" alt="abc"></a></div>
 						  </div>
 						 </div>
 						 <div class="drop_1i2 clearfix">
@@ -219,58 +209,6 @@
 	   <h5><a href="#">Kitwears</a></h5>
 	   <h5><a href="#">Accessories</a></h5>
 	  </div>
-	  <div class="product_1l clearfix">
-	   <h4 class="mgt">Shop By Price</h4>
-	   <h6>Range:</h6>
-	   <h5 class="bold">$120 - $250</h5><br>
-	   <h5><input type="checkbox" > $20 - $50 (2)</h5>
-	   <h5><input type="checkbox" > $50 - $80 (5)</h5>
-	   <h5><input type="checkbox" > $80 - $120 (7)</h5>
-	  </div>
-	  <div class="product_1l clearfix">
-	   <h4 class="mgt">Recent Post</h4>
-       <div class="product_1li clearfix">
-	    <img src="img/28.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Girls Dress</a> <br>$89.00</h5>
-		<span>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star-o"></i>
-		</span>
-	   </div>
-	   <div class="product_1li clearfix">
-	    <img src="img/29.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Kids Dress</a> <br>$69.00</h5>
-		<span>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star-half-o"></i>
-		</span>
-	   </div>
-	   <div class="product_1li border_none pdb clearfix">
-	    <img src="img/30.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Best Dress</a> <br>$99.00</h5>
-		<span>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		 <i class="fa fa-star"></i>
-		</span>
-	   </div>
-	  </div>
-	  <div class="product_1l clearfix">
-	   <h4 class="mgt">Manufacturers</h4>
-	   <h5><a href="#">Forever</a></h5>
-	   <h5><a href="#">Giordano</a></h5>
-	   <h5><a href="#">Abercrombie</a></h5>
-	   <h5><a href="#">Ecko United</a></h5>
-	   <h5><a href="#">Zara</a></h5>
-	  </div>
 	 </div>
 	 <div class="col-sm-9">
 	  <div class="center_detail_2 clearfix">
@@ -283,38 +221,38 @@
 		
 			<div class="item active">
 			  <div class="mag">
-                <div class="magnify"><div class="magnify"><img data-toggle="magnify" src="img/31.jpg" alt=""><div class="magnify-large" style="background: url(&quot;img/53.jpg&quot;) no-repeat;"></div></div><div class="magnify-large"></div></div>
+                <div class="magnify"><div class="magnify"><img data-toggle="magnify" src="/frontend/img/31.jpg" alt=""><div class="magnify-large" style="background: url(&quot;img/53.jpg&quot;) no-repeat;"></div></div><div class="magnify-large"></div></div>
             </div>
 			</div>
 			<div class="item">
 			  <div class="mag">
-                <div class="magnify"><div class="magnify"><img data-toggle="magnify" src="img/32.jpg" alt=""><div class="magnify-large" style="background: url(&quot;img/54.jpg&quot;) no-repeat;"></div></div><div class="magnify-large"></div></div>
+                <div class="magnify"><div class="magnify"><img data-toggle="magnify" src="/frontend/img/32.jpg" alt=""><div class="magnify-large" style="background: url(&quot;img/54.jpg&quot;) no-repeat;"></div></div><div class="magnify-large"></div></div>
             </div>
 			</div>
 			<div class="item">
 			  <div class="mag">
-                <div class="magnify"><div class="magnify"><img data-toggle="magnify" src="img/33.jpg" alt=""><div class="magnify-large" style="background: url(&quot;img/55.jpg&quot;) no-repeat;"></div></div><div class="magnify-large"></div></div>
+                <div class="magnify"><div class="magnify"><img data-toggle="magnify" src="/frontend/img/33.jpg" alt=""><div class="magnify-large" style="background: url(&quot;img/55.jpg&quot;) no-repeat;"></div></div><div class="magnify-large"></div></div>
             </div>
 			</div>
 			<div class="item ">
 			  <div class="mag">
-                <div class="magnify"><div class="magnify"><img data-toggle="magnify" src="img/34.jpg" alt=""><div class="magnify-large" style="background: url(&quot;img/56.jpg&quot;) -101px -21px no-repeat; display: block; left: 17px; top: -27.5px; opacity: 0;"></div></div><div class="magnify-large"></div></div>
+                <div class="magnify"><div class="magnify"><img data-toggle="magnify" src="/frontend/img/34.jpg" alt=""><div class="magnify-large" style="background: url(&quot;img/56.jpg&quot;) -101px -21px no-repeat; display: block; left: 17px; top: -27.5px; opacity: 0;"></div></div><div class="magnify-large"></div></div>
             </div>
 			</div>
 		  </div>
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
 			<li class="active" data-slide-to="0" data-target="#article-photo-carousel">
-			  <img alt="" src="img/31.jpg">
+			  <img alt="" src="/frontend/img/31.jpg">
 			</li>
 			<li class="" data-slide-to="1" data-target="#article-photo-carousel">
-			  <img alt="" src="img/32.jpg">
+			  <img alt="" src="/frontend/img/32.jpg">
 			</li>
 			<li class="" data-slide-to="2" data-target="#article-photo-carousel">
-			  <img alt="" src="img/33.jpg">
+			  <img alt="" src="/frontend/img/33.jpg">
 			</li>
 			<li class="" data-slide-to="3" data-target="#article-photo-carousel">
-			  <img alt="" src="img/34.jpg">
+			  <img alt="" src="/frontend/img/34.jpg">
 			</li>
 		  </ol>
         </div>
@@ -522,7 +460,7 @@
 					       <div class="col-sm-3">
 							 <div class="workout_1_inner clearfix">
 							   <div class="workout_1_in1 clearfix">
-							    <a href="#"><img src="img/7.jpg" class="iw" alt="abc"></a>
+							    <a href="#"><img src="/frontend/img/7.jpg" class="iw" alt="abc"></a>
 								<h5><a href="#">Semper Porta</a></h5>
 								<h5>$39.00</h5>
 							   </div> 
@@ -546,7 +484,7 @@
 						   <div class="col-sm-3">
 							 <div class="workout_1_inner clearfix">
 							   <div class="workout_1_in1 clearfix">
-							    <a href="#"><img src="img/8.jpg" class="iw" alt="abc"></a>
+							    <a href="#"><img src="/frontend/img/8.jpg" class="iw" alt="abc"></a>
 								<h5><a href="#">Eget Nulla</a></h5>
 								<h5>$39.00</h5>
 							   </div> 
@@ -570,7 +508,7 @@
 						   <div class="col-sm-3">
 							 <div class="workout_1_inner clearfix">
 							   <div class="workout_1_in1 clearfix">
-							    <a href="#"><img src="img/9.jpg" class="iw" alt="abc"></a>
+							    <a href="#"><img src="/frontend/img/9.jpg" class="iw" alt="abc"></a>
 								<h5><a href="#">Lacinia Nunc</a></h5>
 								<h5>$39.00</h5>
 							   </div> 
@@ -594,7 +532,7 @@
 						   <div class="col-sm-3">
 							 <div class="workout_1_inner clearfix">
 							   <div class="workout_1_in1 clearfix">
-							    <a href="#"><img src="img/10.jpg" class="iw" alt="abc"></a>
+							    <a href="#"><img src="/frontend/img/10.jpg" class="iw" alt="abc"></a>
 								<h5><a href="#">Nulla Quis</a></h5>
 								<h5>$39.00</h5>
 							   </div> 
@@ -616,73 +554,6 @@
 							 </div>
 						   </div>
 					</div>
-  </div>
- </div>
-</section>
-
-<section id="footer">
- <div class="container">
-  <div class="row">
-   <div class="footer_1 clearfix">
-    <div class="col-sm-3">
-	 <div class="footer_1i clearfix">
-	   <h3 class="mgt"><a href="#">Shop On</a></h3>
-	   <p> Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-	   <p>Got Question? Call us 24/7</p>
-	   <h4 class="mgt"><a class="col_1" href="#">+0123 456 789</a></h4>
-	 </div>
-	</div>
-	<div class="col-sm-3">
-	 <div class="footer_1i1 clearfix">
-      <h4 class="mgt">Useful links</h4>
-	  <ul class="normal">
-	   <li><a href="#">How it works</a></li>
-	   <li><a href="#">About us</a></li>
-	   <li><a href="#">Babysitters</a></li>
-	   <li><a href="#">Contact us</a></li>
-	  </ul>
-	 </div>
-	</div>
-	<div class="col-sm-3">
-	 <div class="footer_1i1 clearfix">
-      <h4 class="mgt">My Account</h4>
-	  <ul class="normal">
-	   <li><a href="#">Track my order</a></li>
-	   <li><a href="#">Terms of use</a></li>
-	   <li><a href="#">Wishlist</a></li>
-	   <li><a href="#">Submit Your feedback</a></li>
-	  </ul>
-	 </div>
-	</div>
-	<div class="col-sm-3">
-	 <div class="footer_1i2 clearfix">
-      <h4 class="mgt">Get In Tuch</h4>
-	  <p>NO. 172 - Kingdom Oxford Street.<br>
-000 United Kingdom.<br>
-info@gmail.com<br>
-+012 3456 7890</p>
-      <ul class="social-network social-circle">
-                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-	 </div>
-	</div>
-   </div>
-  </div>
- </div>
-</section>
-
-<section id="footer_last">
- <div class="container">
-  <div class="row">
-   <div class="footer_last text-center clearfix">
-    <div class="col-sm-12">
-	  <p class="mgt">© 2013 Your Website Name. All Rights Reserved | Design by <a class="col_1" href="http://www.templateonweb.com">TemplateOnWeb</a></p>
-	</div>
-   </div>
   </div>
  </div>
 </section>
