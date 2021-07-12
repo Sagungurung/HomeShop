@@ -35,7 +35,6 @@
 						<div class="top_1r text-right clearfix">
 							<ul class="mgt">
 								<li><i class="fa fa-map-marker col_1"></i> <a href="#"> Store location</a></li>
-								<li><i class="fa fa-clock-o col_1"></i> <a href="#"> Daily deal</a></li>
 								<li><i class="fa fa-user col_1"></i> <a href="#"> My account</a></li>
 								<li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login')}}"> Login</a></li>
 								<li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('seller.login')}}"> Perhaps A Seller??</a></li>
@@ -218,24 +217,8 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- <section id="products" class="clearfix">
-		@foreach($product as $products)
-		<div class="col-lg-2 col-md-2 col-sm-2">
-			<a href="" class="portfolio-box">
-				<img src="/uploads/sellerPhotos/products/{{$products->pimage}}" class="img-responsive" alt="{{$products->pimage}}" width="500" height="1000">
-				<div class="portfolio-box-caption">
-					<div class="portfolio-box-caption-content">
-						<span class="glyphicon glyphicon-zoom-in" style="font-size: 10px">{{$products->pname}}</span>
-					</div>
-				</div>
-			</a>
-		</div>
-		@endforeach
-	</section> -->
-	
 	<section id="products" class="clearfix">
-		@foreach($product as $products)
+		<!-- @foreach($product as $products)
 		<div class="home_inner clearfix">
 			<div class="col-sm-4">
 				<div class="workout_1_inner clearfix">
@@ -250,9 +233,28 @@
 						</div>
 					</div>
 				</div>
-			</div>	
-		</div>	
-		@endforeach
+			</div>
+		</div>
+		@endforeach -->
+
+		<div class="row col-md-12">
+			@foreach($product as $products)
+				<div class="col-md-3">
+					<div class="workout_1_inner clearfix">
+					<div class="workout_1_in1 clearfix">
+						<img src="/uploads/sellerPhotos/products/{{$products->pimage}}" class="img-responsive" alt="{{$products->pimage}}" width="500" height="1000">
+						<h5><a href="">{{$products->pname}}</a></h5>
+						<h5>Price: {{$products->pprice}}</h5>
+					</div>
+						<div class="workout_1_in2 clearfix">
+							<div class="col-sm-6 space_all">
+								<h6 class="mgt"><a href="">ADD TO CART</a></h6>
+							</div>
+						</div>
+					</div>
+				</div>
+				@endforeach
+		</div>
 	</section>
 
 

@@ -10,4 +10,9 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'status','slug','show_in_menu'];
+
+//     public function category()
+//    {
+//        return $this->hasMany('Product');
+//    }
 }

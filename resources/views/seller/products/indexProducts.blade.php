@@ -26,7 +26,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if(count($products)>0)
+                @if(count($products)>0 && ($products->sellers_id == $sellers->id))
                 @foreach($products as $key=>$products)
                   <tr>
                     <td>{{++$key}}</td>

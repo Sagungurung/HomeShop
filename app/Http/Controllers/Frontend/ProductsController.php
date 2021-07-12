@@ -19,11 +19,17 @@ class ProductsController extends Controller
      */
     public function index()
     {   
-        // $category = Category::get();
         // dd($category);
+        
         $products = Products::with('category')->get();
-        // dd($product);
-        return view('seller.products.indexProducts',compact('products'));
+        $sellers = Seller::select('id');
+
+        // dd($products);
+        // if($products->sellers_id == $sellers->id){
+            return view('seller.products.indexProducts', compact('products','sellers'));
+        // }else{
+        //     return view('seller.products.indexProducts');
+        // }
     }
 
     /**
