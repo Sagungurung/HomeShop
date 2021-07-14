@@ -126,8 +126,8 @@ Route::get('/productDetail',[FrontProductController::class,'detail'])->name('fro
  Route::post('/visitor/login/submit',[AuthenticationController::class,'submitlogin'])->name('frontend.authenticate.login.submit');
 
 Route::group(['middleware'=>'auth:visitor'],function(){
-    Route::get('/visitor/cart',[CartController::class,'viewCart'])->name('frontend.cart');
-    Route::get('/visitor/checkout',[CartController::class,'checkout'])->name('frontend.checkout');
+    Route::get('/visitor/cart',[FrontCartController::class,'viewCart'])->name('frontend.cart');
+    Route::get('/visitor/checkout',[FrontCartController::class,'checkout'])->name('frontend.checkout');
 
    
 });

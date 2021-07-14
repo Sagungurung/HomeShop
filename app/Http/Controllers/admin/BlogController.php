@@ -146,11 +146,11 @@ class BlogController extends Controller
         $blog->delete();
         return redirect()->back()->with('success','Blog Deleted Successfully.');
     }
-    public function changeSlider($id, $show){
-        $blog = Blog::find($id);
-        $blog->show_in_slider = $show;
-        $blog->update();
-        return response()->json(['success'=>'Slider Updated Successfully']);
-    }
+    // public function changeSlider($id, $show){
+    //     $blog = Blog::find($id);
+    //     $blog->show_in_slider = $show;
+    //     $blog->update();
+    //     return response()->json(['success'=>'Slider Updated Successfully']);
+    // }
     
 }

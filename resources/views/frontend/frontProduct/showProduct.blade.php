@@ -218,33 +218,16 @@
 		</div>
 	</section>
 	<section id="products" class="clearfix">
-		<!-- @foreach($product as $products)
-		<div class="home_inner clearfix">
-			<div class="col-sm-4">
-				<div class="workout_1_inner clearfix">
-					<div class="workout_1_in1 clearfix">
-						<img src="/uploads/sellerPhotos/products/{{$products->pimage}}" class="img-responsive" alt="{{$products->pimage}}" width="500" height="1000">
-						<h5><a href="">{{$products->pname}}</a></h5>
-						<h5>Price: {{$products->pprice}}</h5>
-					</div>
-					<div class="workout_1_in2 clearfix">
-						<div class="col-sm-6 space_all">
-							<h6 class="mgt"><a href="">ADD TO CART</a></h6>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		@endforeach -->
-
 		<div class="row col-md-12">
 			@foreach($product as $products)
 				<div class="col-md-3">
 					<div class="workout_1_inner clearfix">
 					<div class="workout_1_in1 clearfix">
+						<a href="{{route('frontend/frontProduct/productDetail', $products->id)}}">
 						<img src="/uploads/sellerPhotos/products/{{$products->pimage}}" class="img-responsive" alt="{{$products->pimage}}" width="500" height="1000">
-						<h5><a href="">{{$products->pname}}</a></h5>
+						<h5>{{$products->pname}}</h5>
 						<h5>Price: {{$products->pprice}}</h5>
+						</a>
 					</div>
 						<div class="workout_1_in2 clearfix">
 							<div class="col-sm-6 space_all">

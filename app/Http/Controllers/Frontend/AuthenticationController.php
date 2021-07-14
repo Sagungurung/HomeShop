@@ -44,13 +44,11 @@ class AuthenticationController extends Controller
     }
 
     public function viewLogin(){
-        // if(Auth::guard('visitor')->check()){
-            // return redirect()->route('frontend.home');//calling frontend model function
-            return view('frontend.authenticate.login');
-        // }else{
-        //     return view('seller.login');
-        // }
+
+       return view('frontend.authenticate.login'); 
+
     }
+    
     public function submitLogin(Request $request){
         // dd($request);
         $request->validate([

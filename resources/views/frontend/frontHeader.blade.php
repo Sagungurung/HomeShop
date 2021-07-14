@@ -1,4 +1,4 @@
-<section id="header">
+<!-- <section id="header">
  <div class="container">
   <div class="row">
    <div class="header_1 clearfix">
@@ -81,3 +81,56 @@
   </div>
  </div>
 </section>
+<section id="menu" class="clearfix cd-secondary-nav">
+	<nav class="navbar nav_t">
+		<div class="container">
+		    <div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{{route('frontend.home')}}"> Home Shop </a>
+			</div>
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+				<li class="dropdown">
+					  	<a class="m_tag1" href="#" data-toggle="dropdown" role="button" aria-expanded="false" selected disabled><i class="fa fa-bars"></i> CATEGORIES</a>
+					  <ul class="dropdown-menu drop_2" role="menu">
+						<li><a href="#">New Arrivals</a></li>
+						<li><a href="#">Best Selling</a></li>
+						<li><a href="#">Accessories</a></li>
+						<li><a href="#">Foods</a></li>
+						<li><a href="#">Winter Collections</a></li>
+					  </ul>
+                </li>
+				<li><a class="m_tag active_tab" href="{{route('frontend.home')}}">Home</a></li>
+				<li class="dropdown">
+					  <a class="m_tag" href="" data-toggle="dropdown" role="button" aria-expanded="false">Product<span class="caret"></span></a>
+					  <ul class="dropdown-menu drop_3" role="menu">
+						<li><a href="{{route('frontend.frontProduct.showProduct')}}">Product</a></li>
+						<li><a class="border_none" href="{{route('frontend.frontProduct.productDetail')}}">Product Detail</a></li>
+					  </ul>
+                    </li>
+				<li class="dropdown">
+					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
+					  <ul class="dropdown-menu drop_3" role="menu">
+						<li><a href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
+						<li><a class="border_none" href="{{route('frontend.frontBlog.blogDetail')}}">Blog Detail</a></li>
+					  </ul>
+                    </li>
+				<!-- <li><a class="m_tag" href="contact.html">Contact</a></li> -->
+				<li><a class="m_tag" href="{{route('frontend.cart')}}">Cart</a></li>
+				<li><a class="m_tag" href="{{route('frontend.checkout')}}">Checkout</a></li>
+			</ul>
+		    	
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	
+</section> -->

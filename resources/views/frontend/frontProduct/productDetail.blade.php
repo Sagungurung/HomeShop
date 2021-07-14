@@ -41,17 +41,17 @@
    <div class="header_1 clearfix">
     <div class="col-sm-2">
 	 <div class="header_1l clearfix">
-	  <h3><a href="index.html">Shop On</a></h3>
+	  <h3><a href="index.html">Home Shop</a></h3>
 	 </div>
 	</div>
 	<div class="col-sm-7">
 	 <div class="header_1m text-center clearfix">
 	 <select class="form-control form_1">
 				 <option>All Category</option>
-				 <option>Watch</option>
-				 <option>Mobile</option>
-				 <option>Kids</option>
-				 <option>Fashion</option>
+				 <option>Cookies</option>
+				 <option>Arts</option>
+				 <option>Cookies</option>
+				 <option>Mufflers</option>
 			 </select>
 	  <div class="input-group">
 					<input type="text" class="form-control form_2" placeholder="Search Products Here...">
@@ -448,7 +448,7 @@
  </div>
 </section>
 
-<section id="product_list">
+<!-- <section id="product_list">
  <div class="container">
   <div class="row">
    <div class="related clearfix">
@@ -456,7 +456,7 @@
 	  <h2 class="mgt">Related Products</h2>
 	</div>
    </div>
-   <div class="home_inner clearfix">
+   <!-- <div class="home_inner clearfix">
 					       <div class="col-sm-3">
 							 <div class="workout_1_inner clearfix">
 							   <div class="workout_1_in1 clearfix">
@@ -554,9 +554,9 @@
 							 </div>
 						   </div>
 					</div>
-  </div>
+  </div> -->
  </div>
-</section>
+</section> -->
 
 <script>
 $(document).ready(function(){

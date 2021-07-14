@@ -6,7 +6,7 @@
       <div class="col-md-12">
       <div class="box">
             <div class="box-header">
-              <h3 class="box-title">My Categories</h3>
+              <h3 class="box-title">Categories</h3>
               @include('admin.includes.errorSuccessMessage')
             </div>
             <!-- /.box-header -->
@@ -55,7 +55,7 @@
                   </tr>
                 @endif
                 </tbody>
-              <tfoot>
+              <!-- <tfoot>
                 <tr>
                     <th>S.N.</th>
                     <th>Name</th>
@@ -63,16 +63,9 @@
                     <th>Show In Menu</th>
                     <th>Action</th>
                 </tr>
-              </tfoot>
+              </tfoot> -->
           </table>
       </div>
     </div>     
 </section>
-<!-- @push('scripts')
-  <script>
-      function deleteCategory(){
-        confirm
-      }
-  </script>
-@endpush -->
 @endsection

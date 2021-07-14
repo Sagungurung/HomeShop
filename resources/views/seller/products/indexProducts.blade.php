@@ -26,8 +26,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if(count($products)>0 && ($products->sellers_id == $sellers->id))
-                @foreach($products as $key=>$products)
+                @if(count($product)>0)
+                @foreach($product as $key=>$products)
                   <tr>
                     <td>{{++$key}}</td>
                     <td><img src="/uploads/sellerPhotos/products/{{$products->pimage}}" alt="{{$products->pimage}}" width="100" height="80"></td>
