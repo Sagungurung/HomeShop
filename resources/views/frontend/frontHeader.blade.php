@@ -1,4 +1,4 @@
-<!-- <section id="header">
+<section id="header">
  <div class="container">
   <div class="row">
    <div class="header_1 clearfix">
@@ -81,6 +81,7 @@
   </div>
  </div>
 </section>
+
 <section id="menu" class="clearfix cd-secondary-nav">
 	<nav class="navbar nav_t">
 		<div class="container">
@@ -93,8 +94,6 @@
 				</button>
 				<a class="navbar-brand" href="{{route('frontend.home')}}"> Home Shop </a>
 			</div>
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 				<li class="dropdown">
@@ -128,9 +127,7 @@
 			</ul>
 		    	
 			</div>
-			<!-- /.navbar-collapse -->
 		</div>
-		<!-- /.container-fluid -->
 	</nav>
 	
-</section> -->
+</section>

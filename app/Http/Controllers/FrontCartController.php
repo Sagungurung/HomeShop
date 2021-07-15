@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CartController extends Controller
+class FrontCartController extends Controller
 {
     public function viewCart(){
         if(Auth::guard('visitor')->check()){

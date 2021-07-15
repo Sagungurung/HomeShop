@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('admin.master2')
 @section('title','Blog')
 @section('content')
 <section class="content">
@@ -47,8 +47,8 @@
                   {{$blog->show_in_slider}}
                 </td> -->
                 <td>
-                  <a href="{{route('admin.blog.edit',$blog)}}"><i class="fa fa-edit" title="Edit"></i></a>
-                  <a href="{{route('admin.blog.delete',$blog)}}" onclick="return confirm('Are you sure you want to delete the blog?');"><i class="fa fa-trash text-danger" title="Delete"></i></a>
+                  <a href="{{route('seller.sellerblog.edit',$blog)}}"><i class="fa fa-edit" title="Edit"></i></a>
+                  <a href="{{route('seller.sellerblog.delete',$blog)}}" onclick="return confirm('Are you sure you want to delete the blog?');"><i class="fa fa-trash text-danger" title="Delete"></i></a>
                 </td>
               </tr>
               @endforeach

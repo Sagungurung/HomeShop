@@ -13,6 +13,6 @@ class FrontendController extends Controller
         // $categories = Category::where('show_in_menu',1)->get();
         // $product = Products::all();
         // $product =Products::where($id)->get();
-        return view('frontend.master');
+        return view('frontend.homepage');
     }
 }

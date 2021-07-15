@@ -1,4 +1,4 @@
-<!-- @extends('frontend.master')
+@extends('frontend.master')
 @section('title','Home')
 @section('content')
 <section id="center" class="center_home clearfix">
@@ -76,7 +76,7 @@
 	  </div>
 	  <div class="col-sm-6 space_all">
 	   <div class="collect_1lr clearfix">
-	    <img src="uploads\blogs\perfumed-soap-blog1625839840.jpg" alt="abc" class="iw">
+	    <img src="uploads/blogs/perfumed-soap-blog1625839840.jpg" alt="abc" class="iw">
 	   </div>
 	  </div>
 	 </div>
@@ -1573,4 +1573,4 @@
   </div>
  </div>
 </section>
-@endsection -->
+@endsection
