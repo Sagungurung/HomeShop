@@ -18,4 +18,5 @@ class FrontendController extends Controller
         
         return view('frontend.homepage',compact('blogs'));
     }
+    
 }

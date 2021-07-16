@@ -9,7 +9,7 @@
 	 <div class="col-sm-12">
 	  <h5 class="mgt">
 	   <a href="{{route('frontend.home')}}">Home <i class="fa fa-long-arrow-right"></i> </a>
-	   <a href="{{route('frontend.frontBlog.blogDetail')}}">Blog Detail</a>
+	   <a href="">Blog Detail</a>
 	  </h5>
 	 </div>
 	</div>
@@ -36,12 +36,7 @@
 	 <h5><a href="#">Bags Collection</a></h5>
 	 <h5><a href="#">Accessories</a></h5>
 	 <h5><a href="#">Sun Glasses</a></h5><br>
-	 <h4><span class="col_1">|</span> Recent Post</h4><br>
-	   <div class="product_1li clearfix">
-	    <img src="/frontend/img/28.jpg" alt="abc">
-		<h5 class="mgt"><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
-		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> Feb 11, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 25</h6>
-	   </div>
+	 <h4><span class="col_1">|</span> Recent Blogs</h4><br>
 	   <div class="product_1li clearfix">
 	    <img src="/frontend/img/29.jpg" alt="abc">
 		<h5 class="mgt"><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
@@ -52,8 +47,7 @@
 		<h5 class="mgt"><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
 		<h6 class="col_2"><span class="span_1 col_1"><i class="fa fa-calendar"></i></span> jan 17, 2020 <span class="span_2 col_1"><i class="fa fa-comment-o"></i></span> 23</h6>
 	   </div><br>
-	   <h4><span class="col_1">|</span> Tags</h4><br>
-	   <ul>
+	   <!-- <ul>
 	    <li><a href="#">Business</a></li>
 		<li><a href="#">Wordpress</a></li>
 		<li><a href="#">Html</a></li>
@@ -61,36 +55,18 @@
 		<li><a href="#">Education</a></li>
 		<li><a href="#">Template</a></li>
 		<li><a href="#">Ecommerce</a></li>
-	   </ul>
-	   <h4><span class="col_1">|</span> Newslatter</h4><br>
-	   <div class="blog_1li clearfix">
-	     <h5 class="bold mgt">Subscribe & Get News
-Latest Updates.</h5><br>
-       <input class="form-control" placeholder="Enter your email" type="text">
-	   <h5><a class="button" href="#">SUBMIT</a></h5>
-	   </div>
+	   </ul> -->
 	</div>
    </div>
    <div class="col-sm-8">
     <div class="blod_d1 clearfix">
-	 <img src="/frontend/img/38.jpg" class="iw" alt="abc">
-	 <h3>What Are The Secrets To Start- Up Success?</h3>
-	 <h6 class="col_2"><a class="col_2" href="#"><i class="fa fa-user col_1"></i> By Admin</a> | <a class="col_2" href="#"><i class="fa fa-calendercol_1"></i> Nov 24, 2018</a> | <a class="col_2" href="#"><i class="fa fa-comments col_1"></i> Comment (15)</a></h6>
+	 <img src="/uploads/blogs/{{$blog->image}}" class="iw" alt="abc">
+	 <h3>{{$blog->title}}</h3>
+	 <h6 class="col_2"><a class="col_2" href="#"><i class="fa fa-user col_1"></i> By {{$sellers->firstname}}</a> | </i> {{$blog->updated_at}} | <i class="fa fa-comments col_1"></i> Comment (15)</h6>
 	 <hr>
-	 <p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p><br>
-	    <blockquote>
-	    <p class="mgt">Do what you love to do and give it your very best. Whether it's business or baseball, or the theater, or any field. If you don't love what you're doing and you can't give it your best, get out of it. Life is too short. You'll be an old man before you know it. risus. Ut tincidunt, erat eget feugiat eleifend, eros magna dapibus diam.</p>
-	   </blockquote>
-	   <p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
-	   <p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
-	  <ul>
-	   <li class="bold">Tags:</li>
-	   <li><a href="#">Glass</a></li>
-	   <li><a href="#">Pant</a></li>
-	   <li><a href="#">t-shirt</a></li>
-	   <li><a href="#">swater</a></li>
-	  </ul>
-	</div>  <br>
+	   <p>{{$blog->description}}</p>
+	 </div>
+	<br>
 	<div class="blod_d2 clearfix"> 
 	 <h3><span class="col_1">|</span> Comments (3)</h3>
 	 <div class="blod_d2i clearfix">

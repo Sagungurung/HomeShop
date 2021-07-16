@@ -30,25 +30,27 @@
 							</span>
 						</div><br>
 						<h4><span class="col_1">|</span> Blog Categories</h4><br>
-						<h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Men's Apparel</a></h5>
-						<h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Women's Apparel</a></h5>
-						<h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Bags Collection</a></h5>
-						<h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Accessories</a></h5>
-						<h5><a href="{{route('frontend.frontBlog.blogDetail')}}">Sun Glasses</a></h5><br>
+						<h5><a href="">Men's Apparel</a></h5>
+						<h5><a href="">Women's Apparel</a></h5>
+						<h5><a href="">Bags Collection</a></h5>
+						<h5><a href="">Accessories</a></h5>
+						<h5><a href="">Sun Glasses</a></h5><br>
 					</div>
 				</div>
 
 				<div class="col-sm-8">
 					<div class="blog_home_1 mgt clearfix">
 						@foreach($blogs as $blog)
+						<a href="{{route('frontend.frontBlog.blogDetail', $blog)}}">
 						<div class="col-sm-4">
 							<img src="/uploads/blogs/{{$blog->image}}" class="img-responsive" alt="{{$blog->image}}">
 							<div class="blog_home_1i1 text-center clearfix">
 								<h6 class="mgt col_2">{{$blog->updated_at}}</h6>
-								<h4><a href="">{{$blog->title}}</a></h4>
+								<h4>{{$blog->title}}</h4>
 								<p>{{Str::limit($blog->description,100)}}</p>
 							</div>
 						</div>
+						</a>
 						@endforeach
 					</div>
 				</div>

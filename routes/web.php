@@ -122,7 +122,7 @@ Route::group(['middleware' => 'auth:seller'], function () {
 Route::get('/', [FrontendController::class, 'home'])->name('frontend.home');
 
 Route::get('/showBlog', [FrontendBlogController::class, 'show'])->name('frontend.frontBlog.showBlog');
-Route::get('/blogDetail', [FrontendBlogController::class, 'detail'])->name('frontend.frontBlog.blogDetail');
+Route::get('/blogDetail/{blog}', [FrontendBlogController::class, 'detail'])->name('frontend.frontBlog.blogDetail');
 
 Route::get('/showProduct', [FrontProductController::class, 'show'])->name('frontend.frontProduct.showProduct');
 Route::get('/productDetail', [FrontProductController::class, 'detail'])->name('frontend.frontProduct.productDetail');

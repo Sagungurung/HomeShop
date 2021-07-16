@@ -13,7 +13,7 @@ class SellerBlogController extends Controller
 {
     public function index(){
 
-        $blogs = Blog::where('sellers_id', Auth::guard('seller')->id())->with('category')->get();
+        $blogs = Blog::where('sellers_id', Auth::guard('seller')->id())->with('category')->get()->first();
         // $blogs = Blog::with('category')->get();
         // dd($blogs);
         return view('seller.sellerblog.index',compact('blogs'));

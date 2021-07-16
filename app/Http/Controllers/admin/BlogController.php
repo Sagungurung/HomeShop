@@ -149,6 +149,7 @@ class BlogController extends Controller
         $blog->delete();
         return redirect()->back()->with('success','Blog Deleted Successfully.');
     }
+    
     public function changeSlider($id, $show){
         $blog = Blog::find($id);
         if($show == 0){

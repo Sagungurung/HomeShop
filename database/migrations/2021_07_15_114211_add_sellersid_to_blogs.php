@@ -26,7 +26,7 @@ class AddSellersidToBlogs extends Migration
     public function down()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            //
+                $table->dropColumn('sellers_id');
         });
     }
 }

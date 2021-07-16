@@ -97,7 +97,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 				<li class="dropdown">
-					  	<a class="m_tag1" href="#" data-toggle="dropdown" role="button" aria-expanded="false" selected disabled><i class="fa fa-bars"></i> CATEGORIES</a>
+					<a class="m_tag1" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bars"></i> CATEGORIES</a>
 					  <ul class="dropdown-menu drop_2" role="menu">
 						<li><a href="#">New Arrivals</a></li>
 						<li><a href="#">Best Selling</a></li>
@@ -107,20 +107,8 @@
 					  </ul>
                 </li>
 				<li><a class="m_tag active_tab" href="{{route('frontend.home')}}">Home</a></li>
-				<li class="dropdown">
-					  <a class="m_tag" href="" data-toggle="dropdown" role="button" aria-expanded="false">Product<span class="caret"></span></a>
-					  <ul class="dropdown-menu drop_3" role="menu">
-						<li><a href="{{route('frontend.frontProduct.showProduct')}}">Product</a></li>
-						<li><a class="border_none" href="{{route('frontend.frontProduct.productDetail')}}">Product Detail</a></li>
-					  </ul>
-                    </li>
-				<li class="dropdown">
-					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
-					  <ul class="dropdown-menu drop_3" role="menu">
-						<li><a href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
-						<li><a class="border_none" href="{{route('frontend.frontBlog.blogDetail')}}">Blog Detail</a></li>
-					  </ul>
-                    </li>
+				<li><a class="m_tag" href="{{route('frontend.frontProduct.showProduct')}}">Product</a></li>
+				<li><a class="m_tag" href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
 				<!-- <li><a class="m_tag" href="contact.html">Contact</a></li> -->
 				<li><a class="m_tag" href="{{route('frontend.cart')}}">Cart</a></li>
 				<li><a class="m_tag" href="{{route('frontend.checkout')}}">Checkout</a></li>
