@@ -71,17 +71,6 @@
   </div>
  </div>
 </section>
-<section id="footer_last">
- <div class="container">
-  <div class="row">
-   <div class="footer_last text-center clearfix">
-    <div class="col-sm-12">
-	  <p class="mgt">© 2013 Your Website Name. All Rights Reserved | Design by <a class="col_1" href="http://www.templateonweb.com">TemplateOnWeb</a></p>
-	</div>
-   </div>
-  </div>
- </div>
-</section>
 
 
 <script>
@@ -99,6 +88,5 @@ $(document).ready(function(){
 		
 });
 </script>
-<!-- @stack('scripts') -->
 </body> 
 </html>

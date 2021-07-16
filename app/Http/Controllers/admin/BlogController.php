@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog;
 use App\Models\Admin\Category;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -67,7 +68,7 @@ class BlogController extends Controller
         $blog->status = $request->status;
         $blog->image = $image_name;
         $blog->user_id = Auth::user()->id;
-        $blog->sellers_id = Auth::seller()->id;
+        $blog->sellers_id = Auth::guard('seller')->id();
         $blog->save();
         
         return redirect()->route('admin.blog.index')->with('success','Blog Created Successfully.');
@@ -113,7 +114,7 @@ class BlogController extends Controller
         $blog->category_id = $request->category_id;
         $blog->status = $request->status;
         $blog->user_id = Auth::user()->id;
-        $blog->sellers_id = Auth::seller()->id;
+        $blog->sellers_id = Auth::guard('seller')->id();
         if($request->image){
             $request->validate([
                 'image' => 'required|mimes:jpg,jpeg,png,svg,gif|max:3000',
@@ -148,11 +149,16 @@ class BlogController extends Controller
         $blog->delete();
         return redirect()->back()->with('success','Blog Deleted Successfully.');
     }
-    // public function changeSlider($id, $show){
-    //     $blog = Blog::find($id);
-    //     $blog->show_in_slider = $show;
-    //     $blog->update();
-    //     return response()->json(['success'=>'Slider Updated Successfully']);
-    // }
+    public function changeSlider($id, $show){
+        $blog = Blog::find($id);
+        if($show == 0){
+            $blog->show_in_slider = 1;
+        }else{
+            $blog->show_in_slider = 0;
+        }
+        $blog->update();
+        // \Session::put('success', 'Slider Updated Successfully');
+        return response()->json(['success'=>'Slider Updated Successfully']);
+    }
     
 }

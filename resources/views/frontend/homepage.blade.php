@@ -1539,36 +1539,16 @@
 	 </div> 
    </div>
    <div class="blog_home_1 clearfix">
+   @foreach($blogs as $blog)
      <div class="col-sm-4">
-	  <div class="blog_home_1i clearfix">
-	   <img src="/frontend/img/24.jpg" class="iw" alt="abc">
+	   <img src="/uploads/blogs/{{$blog->image}}" class="img-responsive" alt="{{$blog->image}}">
 	   <div class="blog_home_1i1 text-center clearfix">
-	    <h6 class="mgt col_2">22 July , 2020. Monday</h6>
-		<h4><a href="#">Sed adipiscing ornare</a></h4>
-		<p><a href="#">Continue Reading</a></p>
+	    <h6 class="mgt col_2">{{$blog->updated_at}}</h6>
+		<h4><a href="">{{$blog->title}}</a></h4>
+		<p>{{Str::limit($blog->description,100)}}</p>
 	   </div>
-	  </div>
 	 </div> 
-	 <div class="col-sm-4">
-	  <div class="blog_home_1i clearfix">
-	   <img src="frontend/img/25.jpg" class="iw" alt="abc">
-	   <div class="blog_home_1i1 text-center clearfix">
-	    <h6 class="mgt col_2">22 July , 2020. Monday</h6>
-		<h4><a href="#">Sed adipiscing ornare</a></h4>
-		<p><a href="#">Continue Reading</a></p>
-	   </div>
-	  </div>
-	 </div>
-	 <div class="col-sm-4">
-	  <div class="blog_home_1i clearfix">
-	   <img src="frontend/img/26.jpg" class="iw" alt="abc">
-	   <div class="blog_home_1i1 text-center clearfix">
-	    <h6 class="mgt col_2">22 July , 2020. Monday</h6>
-		<h4><a href="#">Sed adipiscing ornare</a></h4>
-		<p><a href="#">Continue Reading</a></p>
-	   </div>
-	  </div>
-	 </div>
+	 @endforeach
    </div>
   </div>
  </div>

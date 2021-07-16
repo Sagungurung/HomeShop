@@ -8,6 +8,7 @@
         <div class="box-header">
           <h3 class="box-title">Blog Table</h3>
           @include('admin.includes.errorSuccessMessage')
+          <div id="msg"></div>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -20,7 +21,7 @@
                 <th>Image</th>
                 <th>Description</th>
                 <th>Status</th>
-                <!-- <th>Show in Slider</th> -->
+                <th>Show in Slider</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -30,7 +31,7 @@
               <tr>
                 <td>{{++$key}}</td>
                 <td>{{$blog->title}}</td>
-                <td>{{$blog->category->name}}</td>
+                <td>{{optional($blog->category)->name}}</td>
                 <td><img src="/uploads/blogs/{{$blog->image}}" alt="{{$blog->image}}" width="100" height="80"></td>
                 <td>{{\Illuminate\Support\Str::limit($blog->description,60)}}</td>
                 <td>@if($blog->status == 1)
@@ -39,13 +40,12 @@
                   In-Active
                   @endif
                 </td>
-                <!-- <td>
+                <td>
                   <label class="switch">
-                    <input type="checkbox" onchange='sliderChange("{{$blog->id, $blog->show_in_slider}}")'>
+                    <input type="checkbox" onchange='sliderChange("{{$blog->id}}","{{$blog->show_in_slider}}")'>
                     <span class="slider round"></span>
                   </label>
-                  {{$blog->show_in_slider}}
-                </td> -->
+                </td>
                 <td>
                   <a href="{{route('admin.blog.edit',$blog)}}"><i class="fa fa-edit" title="Edit"></i></a>
                   <a href="{{route('admin.blog.delete',$blog)}}" onclick="return confirm('Are you sure you want to delete the blog?');"><i class="fa fa-trash text-danger" title="Delete"></i></a>
@@ -73,7 +73,7 @@
         </div>
       </div>
 </section>
-<!-- <style>
+<style>
   /* The switch - the box around the slider */
   .switch {
     position: relative;
@@ -135,12 +135,12 @@
 
   .slider.round:before {
     border-radius: 50%;
-  }
-</style> -->
+  } 
+</style>
 @endsection
-<!-- @push('scripts') -->
-<!-- <script>
-  // $('#show_slider').on("change",function(data){
+@push('scripts')
+<script>
+  // $('#show_slider').on("change", function(data) {
   //   alert("sagun");
   // });
   function sliderChange(id, show) {
@@ -149,9 +149,9 @@
       url: '/blog/slider/change/' + id + '/' + show,
       data: '',
       success: function(data) {
-        $("#msg").html(data.msg);
+              $("#msg").append('<div class="alert alert-success alert-block"><button type="button" class="close" data-dismiss="alert">×</button><strong>Slider Updated Successful</strong></div>');
       }
     });
   }
-</script> -->
-<!-- @endpush -->
+</script>
+@endpush

@@ -58,7 +58,7 @@ Route::group(['middleware' => 'auth:user'], function () {
     Route::get('/blog/create', [BlogController::class, 'create'])->name('admin.blog.create');
     Route::post('/blog/store', [BlogController::class, 'store'])->name('admin.blog.store');
 
-    Route::post('/blog/slider/change/{id}/{show}', [BlogController::class, 'changeSlider'])->name('admin.blog.slider');
+    Route::get('/blog/slider/change/{id}/{show}', [BlogController::class, 'changeSlider'])->name('admin.blog.slider');
 
     Route::get('/blog/edit/{blog}', [BlogController::class, 'edit'])->name('admin.blog.edit');
     Route::patch('/blog/update/{blog}', [BlogController::class, 'update'])->name('admin.blog.update');

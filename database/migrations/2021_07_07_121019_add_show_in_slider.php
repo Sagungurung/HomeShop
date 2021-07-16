@@ -14,7 +14,7 @@ class AddShowInSlider extends Migration
     public function up()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->boolean('show_in_slider')->default(0)->comment('0-dont show, 1-show')->after('category_id');
+            $table->boolean('show_in_slider')->default(0)->comment('0-dont_show, 1-show')->after('category_id');
         });
     }
 
