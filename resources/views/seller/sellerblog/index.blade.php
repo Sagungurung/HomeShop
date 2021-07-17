@@ -20,12 +20,11 @@
                 <th>Image</th>
                 <th>Description</th>
                 <th>Status</th>
-                <!-- <th>Show in Slider</th> -->
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              @if(count($blogs)>0)
+              @if(count((is_countable($blogs)? $blogs:[])))
               @foreach($blogs as $key=>$blog)
               <tr>
                 <td>{{++$key}}</td>
@@ -39,13 +38,6 @@
                   In-Active
                   @endif
                 </td>
-                <!-- <td>
-                  <label class="switch">
-                    <input type="checkbox" onchange='sliderChange("{{$blog->id, $blog->show_in_slider}}")'>
-                    <span class="slider round"></span>
-                  </label>
-                  {{$blog->show_in_slider}}
-                </td> -->
                 <td>
                   <a href="{{route('seller.sellerblog.edit',$blog)}}"><i class="fa fa-edit" title="Edit"></i></a>
                   <a href="{{route('seller.sellerblog.delete',$blog)}}" onclick="return confirm('Are you sure you want to delete the blog?');"><i class="fa fa-trash text-danger" title="Delete"></i></a>
@@ -73,85 +65,5 @@
         </div>
       </div>
 </section>
-<!-- <style>
-  /* The switch - the box around the slider */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
 
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  input:checked+.slider {
-    background-color: #2196F3;
-  }
-
-  input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-
-  input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-
-  .slider.round:before {
-    border-radius: 50%;
-  }
-</style> -->
 @endsection
-<!-- @push('scripts') -->
-<!-- <script>
-  // $('#show_slider').on("change",function(data){
-  //   alert("sagun");
-  // });
-  function sliderChange(id, show) {
-    $.ajax({
-      type: 'GET',
-      url: '/blog/slider/change/' + id + '/' + show,
-      data: '',
-      success: function(data) {
-        $("#msg").html(data.msg);
-      }
-    });
-  }
-</script> -->
-<!-- @endpush -->

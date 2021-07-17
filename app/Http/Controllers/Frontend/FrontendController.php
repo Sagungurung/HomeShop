@@ -12,11 +12,20 @@ class FrontendController extends Controller
 {
     public function home(){
         $blogs = Blog::where('show_in_slider',1)->get();
-        // $categories = Category::where('show_in_menu',1)->get();
-        // $product = Products::all();
-        // $product =Products::where($id)->get();
+        $categories = Category::where('show_in_menu',1)->get();
         
-        return view('frontend.homepage',compact('blogs'));
+        return view('frontend.homepage',compact('blogs','categories'));
+    }
+
+    public function frontCategories( $id){
+
+        $categories = Category::find($id)->get();
+        // $blogs = Blog::where('show_in_slider',1)->get();
+        // $product = Products::with('category')->get();
+        $product = Products::where('category_id', $id)->with('category')->get();
+        $blogs = Blog::where('category_id', $id)->with('category')->get();
+       
+        return view('frontend.includes.showCategories', compact('blogs','product','categories'));
     }
     
 }

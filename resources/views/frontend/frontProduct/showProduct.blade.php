@@ -24,7 +24,7 @@
 						<a href="{{route('frontend.frontProduct.productDetail', $products->id)}}">
 						<img src="/uploads/sellerPhotos/products/{{$products->pimage}}" class="img-responsive" alt="{{$products->pimage}}" width="500" height="1000">
 						<h5>{{$products->pname}}</h5>
-						<h5>Price: {{$products->pprice}}</h5>
+						<h5>Price: Rs {{$products->pprice}}</h5>
 						</a>
 					</div>
 						<div class="workout_1_in2 clearfix">

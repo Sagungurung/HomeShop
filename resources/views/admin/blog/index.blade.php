@@ -149,7 +149,7 @@
       url: '/blog/slider/change/' + id + '/' + show,
       data: '',
       success: function(data) {
-              $("#msg").append('<div class="alert alert-success alert-block"><button type="button" class="close" data-dismiss="alert">×</button><strong>Slider Updated Successful</strong></div>');
+              $("#msg").append('<div class="alert alert-success alert-block"><button type="button" class="close" data-dismiss="alert">×</button><strong>'+data.success+'</strong></div>');
       }
     });
   }

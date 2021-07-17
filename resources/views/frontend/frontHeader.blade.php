@@ -10,12 +10,11 @@
 	<div class="col-sm-7">
 	 <div class="header_1m text-center clearfix">
 	 <select class="form-control form_1">
-				 <option>All Category</option>
-				 <option>Mufflers</option>
-				 <option>Chocolates</option>
-				 <option>Perfume</option>
-				 <option>Sweaters</option>
-			 </select>
+		 		<option >Search</option>
+			 	@foreach($categories as $category)
+					<option><a href="">{{$category->name}}</a></option>
+				@endforeach
+	</select>
 	  <div class="input-group">
 					<input type="text" class="form-control form_2" placeholder="Search Products Here...">
 					<span class="input-group-btn">
@@ -25,7 +24,7 @@
       </div>
 	 </div>
 	</div>
-	<div class="col-sm-3">
+	<!-- <div class="col-sm-3">
 	 <div class="header_1r clearfix">
 	  <ul class="nav navbar-nav mgt navbar-right">
 				<li><a class="tag_m1" href="#"><i class="fa fa-heart-o"></i></a></li>
@@ -76,16 +75,15 @@
                     </li>
 			    </ul>
 	 </div>
-	</div>
+	</div> -->
    </div>
   </div>
  </div>
 </section>
-
 <section id="menu" class="clearfix cd-secondary-nav">
 	<nav class="navbar nav_t">
 		<div class="container">
-		    <div class="navbar-header page-scroll">
+			<div class="navbar-header page-scroll">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
@@ -96,26 +94,25 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-				<li class="dropdown">
-					<a class="m_tag1" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bars"></i> CATEGORIES</a>
-					  <ul class="dropdown-menu drop_2" role="menu">
-						<li><a href="#">New Arrivals</a></li>
-						<li><a href="#">Best Selling</a></li>
-						<li><a href="#">Accessories</a></li>
-						<li><a href="#">Foods</a></li>
-						<li><a href="#">Winter Collections</a></li>
-					  </ul>
-                </li>
-				<li><a class="m_tag active_tab" href="{{route('frontend.home')}}">Home</a></li>
-				<li><a class="m_tag" href="{{route('frontend.frontProduct.showProduct')}}">Product</a></li>
-				<li><a class="m_tag" href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
-				<!-- <li><a class="m_tag" href="contact.html">Contact</a></li> -->
-				<li><a class="m_tag" href="{{route('frontend.cart')}}">Cart</a></li>
-				<li><a class="m_tag" href="{{route('frontend.checkout')}}">Checkout</a></li>
-			</ul>
-		    	
+
+					<li class="dropdown">
+						<a class="m_tag1" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bars"></i> CATEGORIES</a>
+						<ul class="dropdown-menu drop_2" role="menu">
+						@foreach($categories as $category)
+							<li> <a href="{{route('frontend.includes.showCategories', $category->id)}}">{{$category->name}}</a></li>
+						@endforeach
+						</ul>
+					</li>
+
+					<li><a class="m_tag active_tab" href="{{route('frontend.home')}}">Home</a></li>
+					<li><a class="m_tag" href="{{route('frontend.frontProduct.showProduct')}}">Product</a></li>
+					<li><a class="m_tag" href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
+					<li><a class="m_tag" href="{{route('frontend.cart')}}">Cart</a></li>
+					<li><a class="m_tag" href="{{route('frontend.checkout')}}">Checkout</a></li>
+				</ul>
+
 			</div>
 		</div>
 	</nav>
-	
+
 </section>
