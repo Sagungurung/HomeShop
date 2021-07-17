@@ -59,7 +59,7 @@
 	</div>
 </section>
 
-<script>
+<!-- <script>
 	$(document).ready(function() {
 		/*****Fixed Menu******/
 		var secondaryNav = $('.cd-secondary-nav'),
@@ -73,7 +73,7 @@
 		});
 
 	});
-</script>
+</script> -->
 </body>
 
 </html>

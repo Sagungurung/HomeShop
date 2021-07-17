@@ -7,12 +7,13 @@
 	  <h3><a href="{{route('frontend.home')}}">Home Shop</a></h3>
 	 </div>
 	</div>
+		
 	<div class="col-sm-7">
 	 <div class="header_1m text-center clearfix">
 	 <select class="form-control form_1">
 		 		<option >Search</option>
 			 	@foreach($categories as $category)
-					<option><a href="">{{$category->name}}</a></option>
+					<option><a href="{{route('frontend.includes.showCategories', $category->id)}}">{{$category->name}}</a></option>
 				@endforeach
 	</select>
 	  <div class="input-group">
@@ -24,7 +25,7 @@
       </div>
 	 </div>
 	</div>
-	<!-- <div class="col-sm-3">
+	<div class="col-sm-3">
 	 <div class="header_1r clearfix">
 	  <ul class="nav navbar-nav mgt navbar-right">
 				<li><a class="tag_m1" href="#"><i class="fa fa-heart-o"></i></a></li>
@@ -75,11 +76,12 @@
                     </li>
 			    </ul>
 	 </div>
-	</div> -->
+	</div>
    </div>
   </div>
  </div>
 </section>
+
 <section id="menu" class="clearfix cd-secondary-nav">
 	<nav class="navbar nav_t">
 		<div class="container">

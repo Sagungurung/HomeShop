@@ -13,13 +13,15 @@ class FrontendController extends Controller
     public function home(){
         $blogs = Blog::where('show_in_slider',1)->get();
         $categories = Category::where('show_in_menu',1)->get();
+        $product = Products::get();
+        // dd($categories);
         
-        return view('frontend.homepage',compact('blogs','categories'));
+        return view('frontend.homepage',compact('blogs','categories','product'));
     }
 
     public function frontCategories( $id){
 
-        $categories = Category::find($id)->get();
+        $categories = Category::all();
         // $blogs = Blog::where('show_in_slider',1)->get();
         // $product = Products::with('category')->get();
         $product = Products::where('category_id', $id)->with('category')->get();

@@ -127,7 +127,7 @@ Route::get('/blogDetail/{blog}', [FrontendBlogController::class, 'detail'])->nam
 Route::get('/showCategories/{id}', [FrontendController::class, 'frontCategories'])->name('frontend.includes.showCategories');
 
 Route::get('/showProduct', [FrontProductController::class, 'show'])->name('frontend.frontProduct.showProduct');
-Route::get('/productDetail', [FrontProductController::class, 'detail'])->name('frontend.frontProduct.productDetail');
+Route::get('/productDetail/{id}', [FrontProductController::class, 'detail'])->name('frontend.frontProduct.productDetail');
 
 
 //frontend register and login functions

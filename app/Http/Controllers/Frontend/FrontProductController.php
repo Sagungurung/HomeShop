@@ -20,9 +20,10 @@ class FrontProductController extends Controller
     public function detail($id){
         
         // $product = Products::where('sellers_id', Auth::guard('seller')->id())->with('category','sellers')->get();
-        $product = Products::find($id);
-        $sellers = Seller::find($id);
+        $product = Products::find($id)->with('sellers','category')->get()->first;
+        // $sellers = Seller::find($id);
+        $categories = Category::get();
 
-        return view('frontend.frontProduct.productDetail',compact('sellers', 'product'));
+        return view('frontend.frontProduct.productDetail',compact('product','categories'));
     }
 }

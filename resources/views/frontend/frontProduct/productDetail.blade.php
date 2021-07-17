@@ -1,6 +1,7 @@
 @extends('frontend.master')
 @section('title','Product Details')
 @section('content')
+
 <section id="product" class="clearfix">
  <div class="container">
   <div class="row">
@@ -68,21 +69,10 @@
 		<div class="col-sm-7">
 		 <div class="center_detail_2_right clearfix">
 		  <div class="center_detail_2_right_inner clearfix">
-		    <h3> Nulla quis sem at nibh imperdiet</h3>
-			<h4>
-			 <i class="fa fa-star"></i>
-			 <i class="fa fa-star"></i>
-			 <i class="fa fa-star"></i>
-			 <i class="fa fa-star"></i>
-			 <i class="fa fa-star-o"></i>
-			<a href="#">(3 user review)</a>
-			</h4>
-			<h5><span>TLV:</span> NPM96-2</h5>
-			<h5><span>Classification:</span> <a href="#">Men</a>, <a href="#">Child</a>, <a href="#">Women</a>, <a href="#">Electricals</a>, <a href="#">Fashion</a>, <a href="#">Tables</a></h5>
-			<h5><span>Tags:</span> <a href="#">Fashion Department</a>, <a href="#">Mobile Phones</a></h5>
-			<h2>$90.00</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent mauris.</p>
-			<h6>1200 in stock</h6>
+		  <span> {{$product->pname}}</span>
+			<span>Classification: {{$product->category->name}}
+			<span>{{$product->pprice}}</span>
+			<span>{{$product->quantity}} in stock</span>
 			<div class="input-group number-spinner">
 				<span class="input-group-btn">
 					<button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
