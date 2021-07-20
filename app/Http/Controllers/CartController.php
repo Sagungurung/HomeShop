@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin\Category;
 use App\Models\Frontend\Cart;
 use App\Models\Frontend\Product;
+use App\Models\Frontend\Seller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,18 +58,6 @@ class CartController extends Controller
         }
     }
 
-    // public function increaseQuantity($id){
-
-    //     $carts = Cart::get($id);  
-    //     $quantity = $carts->quantity + 1;
-    //     $carts->update();
-    // }
-    // public function decreaseQuantity($id){
-
-    //     $carts = Cart::get($id);  
-    //     $quantity = $carts->quantity - 1;
-    //     $carts->update();
-    // }
     /**
      * Store a newly created resource in storage.
      *
@@ -144,12 +133,16 @@ class CartController extends Controller
 
     }
 
-    public function checkout(){
-        $categories = Category::get();
-        $cart = Cart::with('product','visitor')->where('visitor_id', Auth::guard('visitor')->user()->id);
+    public function cartInfo(){
 
-        if($cart){
-            return view('frontend.checkout', compact('categories','cart'));
+        $categories = Category::get();
+        $carts = Cart::with('product','visitor')->where('visitor_id', Auth::guard('visitor')->user()->id)->get();
+        $products = Product::with('seller')->get();
+        
+        if(Auth::guard('visitor')->check()){
+
+
+            return view('frontend.cartInfo', compact('categories','carts','products'));
         }else{
             return view('frontend.home');
         }

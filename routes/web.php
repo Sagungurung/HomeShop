@@ -113,6 +113,8 @@ Route::group(['middleware' => 'auth:seller'], function () {
     Route::get('/seller/sellerblog/edit/{blog}', [SellerBlogController::class, 'edit'])->name('seller.sellerblog.edit');
     Route::patch('/seller/sellerblog/update/{blog}', [SellerBlogController::class, 'update'])->name('seller.sellerblog.update');
     Route::get('/seller/sellerblog/delete/{blog}', [SellerBlogController::class, 'destroy'])->name('seller.sellerblog.delete');
+
+    
 });
 
 
@@ -140,12 +142,11 @@ Route::post('/visitor/login/submit', [AuthenticationController::class, 'submitlo
 
 Route::group(['middleware' => 'auth:visitor'], function () {
     Route::get('/cart', [CartController::class, 'index'])->name('frontend.cart');
-    Route::get('/checkout', [CartController::class, 'checkout'])->name('frontend.checkout');
+    Route::get('/cartInfo', [CartController::class, 'cartInfo'])->name('frontend.cartInfo');
 
     Route::post('/createCart', [CartController::class, 'create'])->name('frontend.createCart');
     Route::post('/edit/{id}', [CartController::class, 'edit'])->name('frontend.cart.edit');
 
-    // Route::post('/update/cart/{id}', [CartController::class, 'update'])->name('frontend.cart.update');
     Route::get('/delete/{id}', [CartController::class, 'destroy'])->name('frontend.cart.delete');
 
     Route::get('/visitor/logout', [AuthenticationController::class, 'logout'])->name('frontend.authenticate.logout');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Frontend\Cart;
+use App\Models\Frontend\Product;
 use App\Models\Frontend\Seller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,8 +14,13 @@ use Illuminate\Support\Str;
 class SellerDashboardController extends Controller
 {
     public function dashboard(){
+
         $sellers = Auth::guard('seller')->user();
-        return view('seller.dashboard',compact('sellers'));
+        $carts = Cart::with('product','visitor')->where('visitor_id', Auth::guard('visitor')->user()->id)->get();
+        $products = Product::with('seller')->where('seller_id',  $sellers->id)->get();
+
+        return view('seller.dashboard',compact('sellers','carts','products'));
+
     }
     public function logout(){
         Auth::logout();
@@ -67,6 +74,7 @@ class SellerDashboardController extends Controller
         $sellers->image = $image_name;
 
         $sellers->update();
-        return redirect()->back()->with('success','Profile Updated Successfully.');
+        
+        return view('seller.sellerProfile',compact('sellers'))->with('success','Profile Updated Successfully.');
     }
 }

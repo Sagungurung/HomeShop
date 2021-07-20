@@ -110,7 +110,7 @@
 					<li><a class="m_tag" href="{{route('frontend.frontProduct.showProduct')}}">Product</a></li>
 					<li><a class="m_tag" href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
 					<li><a class="m_tag" href="{{route('frontend.cart')}}">Cart</a></li>
-					<li><a class="m_tag" href="{{route('frontend.checkout')}}">Checkout</a></li>
+					<li><a class="m_tag" href="{{route('frontend.cartInfo')}}">Cart Info</a></li>
 				</ul>
 
 			</div>

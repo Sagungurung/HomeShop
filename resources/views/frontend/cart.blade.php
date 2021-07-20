@@ -108,7 +108,7 @@
 			<div class="cart_3 clearfix">
 				<div class="col-sm-4 space_left">
 					<div class="cart_3i clearfix">
-						<h6><a class="button" href="{{route('frontend.checkout')}}">CHECKOUT</a></h6>
+						<!-- <h6><a class="button" href="{{route('frontend.cartInfo')}}">UPDATE</a></h6> -->
 						<h6><a class="button" href="{{route('frontend.home')}}">CONTINUE SHOPPING</a></h6>
 					</div>
 				</div>

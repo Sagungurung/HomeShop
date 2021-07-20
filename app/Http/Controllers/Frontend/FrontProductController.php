@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class FrontProductController extends Controller
 {
     public function show(){
-        $product = Product::all();
+        $product = Product::where('pstatus',1)->get();
         $categories = Category::all();
         $sellers = Seller::all();
         return view('frontend.frontProduct.showProduct',compact('product','categories','sellers'));
@@ -20,7 +20,7 @@ class FrontProductController extends Controller
     public function detail($id){
         
         // $product = Products::where('sellers_id', Auth::guard('seller')->id())->with('category','sellers')->get();
-        $product = Product::find($id)->with('sellers','category')->get()->first;
+        $product = Product::find($id)->with('seller','category')->get()->first;
         // $sellers = Seller::find($id);
         $categories = Category::get();
 

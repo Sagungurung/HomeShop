@@ -22,7 +22,7 @@ class ProductsController extends Controller
          // $products = Products::with('category')->with('sellers')->get();
         // return view('seller.products.indexProducts',compact('products'));
         $sellers = Auth::guard('seller')->user();
-         $product = Product::where('sellers_id', Auth::guard('seller')->id())->with('category','sellers')->get();
+         $product = Product::with('category','seller')->where('seller_id', Auth::guard('seller')->id())->get();
         return view('seller.products.indexProducts',compact('product','sellers'));
     }
 
@@ -122,7 +122,7 @@ class ProductsController extends Controller
             'pquantity'=>'required',
             'pstatus'=>'boolean',
         ]);
-        
+            
         // dd($image_name);
         // $products = new Products();
         $products->pname = $request->pname;
@@ -131,7 +131,7 @@ class ProductsController extends Controller
         $products->psize = $request->psize;
         $products->pquantity = $request->pquantity;
         $products->category_id = $request->category_id;
-        $products->sellers_id = Auth::guard('seller')->id();
+        $products->seller_id = Auth::guard('seller')->id();
         $products->pstatus = $request->pstatus;
 
         if($request->pimage){
@@ -145,8 +145,8 @@ class ProductsController extends Controller
             $image_name = Str::slug($request->pimage) . time().".".$extension;
             $request->pimage->move(public_path('/uploads/sellerPhotos/products'), $image_name);
 
-            if(file_exists("/uploads/sellerPhotos/products".$products->image)){
-                unlink("/uploads/sellerPhotos/products".$products->image);
+            if(file_exists("/uploads/sellerPhotos/products".$products->pimage)){
+                unlink("/uploads/sellerPhotos/products".$products->pimage);
             }
             $products->pimage = $image_name;
         }

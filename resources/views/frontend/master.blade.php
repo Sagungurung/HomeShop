@@ -23,7 +23,7 @@
 
 @yield('content')
 
-<section id="shipping">
+<!-- <section id="shipping">
  <div class="container">
   <div class="row">
    <div class="shipping_1 clearfix">
@@ -54,7 +54,7 @@
    </div>
   </div>
  </div>
-</section>
+</section> -->
 
 
 <script>

@@ -48,24 +48,8 @@
             <li class="active"><a href="{{route('seller.sellerblog.create')}}"><i class="fa fa-circle-o"></i> Create Blog</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-book"></i> <span>Orders</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="{{route('admin.category.index')}}"><i class="fa fa-circle-o"></i> View Products</a></li>
-            <li class="active"><a href="{{route('admin.category.create')}}"><i class="fa fa-circle-o"></i> Add Products</a></li>
-          </ul>
-        </li>
-        <a href="{{route('seller.settings')}}">
-            <i class="fa fa-gear"></i><span>Settings</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-        </a>
-      </ul>  
+        <!-- <li class="treeview"><a href="{{route('seller.sellerblog.create')}}"><i class="fa fa-circle-o"></i>Orders</a></li> -->
+        <li class="active"><a href="{{route('seller.settings')}}"><i class="fa fa-circle-o"></i> Settings</a></li>
+       </ul>  
     </section>
   </aside>
