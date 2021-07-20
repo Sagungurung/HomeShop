@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Blog;
 use App\Models\Admin\Category;
+use App\Models\Frontend\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -104,7 +106,9 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::find($id);
+        $blog = Blog::where('category_id',$category->id)->delete();
+        $product = Product::where('category_id',$category->id)->delete();
         $category->delete();
-        return redirect()->route('admin.category.index')->with(['success'=>'Category Deleted Successfully']);
+        return redirect()->route('admin.category.index')->with(['success'=>'Category Deleted Successfully'],compact('blog','product'));
     }
 }

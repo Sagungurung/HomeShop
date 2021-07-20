@@ -35,12 +35,14 @@ class SellerRegisterController extends Controller
         $sell->password = $password;
         $saved = $sell->save();
 
-        return redirect()->back()->with(['success'=>'Registered Successfully.']);
+        return redirect()->route('seller.login')->with(['success'=>'Registered Successfully.']);
     }
 
     public function viewLogin(){
-        if(Auth::guard('seller')->check()){
-            return redirect()->route('seller.dashboard');
+
+        $sellers = Auth::guard('seller');
+        if($sellers->check()){
+            return redirect()->route('seller.dashboard',compact('sellers'));
         }else{
             return view('seller.login');
         }

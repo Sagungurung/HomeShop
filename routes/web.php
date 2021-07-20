@@ -18,7 +18,6 @@ use App\Http\Controllers\Frontend\SellerBlogController;
 use App\Http\Controllers\Frontend\FrontendBlogController;
 use App\Http\Controllers\Frontend\FrontProductController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\FrontCartController;
 
 
 use App\Models\Dashboard;
@@ -137,7 +136,18 @@ Route::post('/visitor/submit/register', [AuthenticationController::class, 'submi
 Route::get('/visitor/login', [AuthenticationController::class, 'viewLogin'])->name('frontend.authenticate.login');
 Route::post('/visitor/login/submit', [AuthenticationController::class, 'submitlogin'])->name('frontend.authenticate.login.submit');
 
+
+
 Route::group(['middleware' => 'auth:visitor'], function () {
-    Route::get('/cart', [FrontCartController::class, 'viewCart'])->name('frontend.cart');
-    Route::get('/checkout', [FrontCartController::class, 'checkout'])->name('frontend.checkout');
+    Route::get('/cart', [CartController::class, 'index'])->name('frontend.cart');
+    Route::get('/checkout', [CartController::class, 'checkout'])->name('frontend.checkout');
+
+    Route::post('/createCart', [CartController::class, 'create'])->name('frontend.createCart');
+    Route::post('/edit/{id}', [CartController::class, 'edit'])->name('frontend.cart.edit');
+
+    // Route::post('/update/cart/{id}', [CartController::class, 'update'])->name('frontend.cart.update');
+    Route::get('/delete/{id}', [CartController::class, 'destroy'])->name('frontend.cart.delete');
+
+    Route::get('/visitor/logout', [AuthenticationController::class, 'logout'])->name('frontend.authenticate.logout');
+
 });

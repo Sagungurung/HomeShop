@@ -24,7 +24,7 @@
               </tr>
             </thead>
             <tbody>
-              @if(count((is_countable($blogs)? $blogs:[])))
+            @if(count($blogs)>0)
               @foreach($blogs as $key=>$blog)
               <tr>
                 <td>{{++$key}}</td>
@@ -46,7 +46,7 @@
               @endforeach
               @else
               <tr>
-                <td colspan="4" class="text-center">No Records Found...</td>
+                <td colspan="7" class="text-center">No Records Found...</td>
               </tr>
               @endif
             </tbody>

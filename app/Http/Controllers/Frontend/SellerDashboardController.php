@@ -12,7 +12,8 @@ use Illuminate\Support\Str;
 class SellerDashboardController extends Controller
 {
     public function dashboard(){
-        return view('seller.dashboard');
+        $sellers = Auth::guard('seller')->user();
+        return view('seller.dashboard',compact('sellers'));
     }
     public function logout(){
         Auth::logout();

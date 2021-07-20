@@ -33,15 +33,31 @@
 
     <form action="{{route('frontend.authenticate.register.submit')}}" method="post">
     <!-- cross site request forgery -->
-    @csrf 
+    @csrf                                
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="name" placeholder="Full name" required>
+        <input type="text" class="form-control" name="firstname" placeholder="First Name" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
-      <!-- <div class="form-group has-feedback">
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="lastname" placeholder="Last Name" required>
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="phone_no" placeholder="Phone No" required>
+        <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
         <input type="text" class="form-control" name="address" placeholder="Address" required>
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>                                                                                                 -->
+        <span class="glyphicon glyphicon-home form-control-feedback"></span>
+      </div>  
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="city" placeholder="City Name" required>
+        <span class="glyphicon glyphicon-home form-control-feedback"></span>
+      </div> 
+      <!-- <div class="form-group has-feedback">
+        <input type="number" class="form-control" name="address" placeholder="Area Code" required>
+        <span class="glyphicon glyphicon-home form-control-feedback"></span>
+      </div> -->
       <div class="form-group has-feedback">
         <input type="email" class="form-control" name="email" placeholder="Email" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

@@ -12,15 +12,16 @@ use Illuminate\Support\Str;
 class SellerBlogController extends Controller
 {
     public function index(){
-
-        $blogs = Blog::where('sellers_id', Auth::guard('seller')->id())->with('category')->get();
+        $sellers = Auth::guard('seller')->user();
+        $blogs = Blog::with('category','seller')->where('sellers_id', Auth::guard('seller')->id())->get();
         // $blogs = Blog::with('category')->get();
         // dd($blogs);
-        return view('seller.sellerblog.index',compact('blogs'));
+        return view('seller.sellerblog.index',compact('blogs','sellers'));
     }
     public function create(){
+        $sellers = Auth::guard('seller')->user();
         $categories = Category::where('status',1)->get();
-        return view('seller.sellerblog.create',compact('categories'));
+        return view('seller.sellerblog.create',compact('categories','sellers'));
     }
     public function store(Request $request){
         $request->validate([
@@ -55,8 +56,9 @@ class SellerBlogController extends Controller
     }
     
     public function edit(Blog $blog){
+        $sellers = Auth::guard('seller')->user();
         $categories = Category::get();
-        return view('seller.sellerblog.edit',compact('blog','categories'));
+        return view('seller.sellerblog.edit',compact('blog','categories','sellers'));
     }
 
     public function update(Request $request, Blog $blog){

@@ -124,13 +124,16 @@
 												</div>
 												<div class="workout_1_in2 clearfix">
 													<div class="col-sm-6 space_all">
-														<h6 class="mgt"><a href="#">ADD TO CART</a></h6>
-													</div>
+														<form action="{{route('frontend.createCart')}}" method="POST">
+															@csrf
+															<input type="hidden" name="product_id" value="{{$products->id}}">
+															<h6 class="mgt"><button style="border:none;	background:none;">ADD TO CART<button</h6>
+														<!-- <h6 class="mgt"><a href="{{route('frontend.createCart')}}">ADD TO CART</a></h6> -->
+														</form>
+														</div>
 													<div class="col-sm-6 space_all">
 														<ul class="mgt pull-right">
-															<li><a href="#"><i class="fa fa-eye"></i></a></li>
 															<li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-															<li><a href="#"><i class="fa fa-bar-chart-o"></i></a></li>
 														</ul>
 													</div>
 												</div>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Category;
-use App\Models\Frontend\Products;
+use App\Models\Frontend\Product;
 use App\Models\Frontend\Seller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,9 +21,9 @@ class ProductsController extends Controller
     {   
          // $products = Products::with('category')->with('sellers')->get();
         // return view('seller.products.indexProducts',compact('products'));
-
-         $product = Products::where('sellers_id', Auth::guard('seller')->id())->with('category','sellers')->get();
-        return view('seller.products.indexProducts',compact('product'));
+        $sellers = Auth::guard('seller')->user();
+         $product = Product::where('sellers_id', Auth::guard('seller')->id())->with('category','sellers')->get();
+        return view('seller.products.indexProducts',compact('product','sellers'));
     }
 
     /**
@@ -34,7 +34,7 @@ class ProductsController extends Controller
     public function create()
     {
         $categories = Category::where('status',1)->get();
-        $sellers = Seller::select('id');
+        $sellers = Seller::select('id')->user();
         return view('seller.products.createProducts',compact('categories','sellers'));
     }
 
@@ -66,7 +66,7 @@ class ProductsController extends Controller
             $request->pimage->move(public_path('/uploads/sellerPhotos/products'), $image_name);
         }
         // dd($image_name);
-        $products = new Products();
+        $products = new Product();
         $products->pname = $request->pname;
         $products->pprice = $request->pprice;
         $products->pcolor = $request->pcolor;
@@ -87,7 +87,7 @@ class ProductsController extends Controller
      * @param  \App\Models\Frontend\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $products)
+    public function show(Product $products)
     {
         //
     }
@@ -98,11 +98,12 @@ class ProductsController extends Controller
      * @param  \App\Models\Frontend\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit(Products $products)
+    public function edit(Product $products)
     {
         // dd($products);
+        $sellers = Auth::guard('seller')->user();
         $categories = Category::get();
-        return view('seller.products.editProducts',compact('products','categories'));
+        return view('seller.products.editProducts',compact('products','categories','sellers'));
     }
 
     /**
@@ -112,7 +113,7 @@ class ProductsController extends Controller
      * @param  \App\Models\Frontend\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $products)
+    public function update(Request $request, Product $products)
     {
         $request->validate([
             'pname'=>'required|max:50',
@@ -162,7 +163,7 @@ class ProductsController extends Controller
      * @param  \App\Models\Frontend\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Products $products)
+    public function destroy(Product $products)
     {
         if(file_exists("/uploads/sellerPhotos/products".$products->image)){
             unlink("/uploads/sellerPhotos/products".$products->image);

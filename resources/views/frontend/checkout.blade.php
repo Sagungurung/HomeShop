@@ -9,7 +9,7 @@
     <div class="col-sm-8">
 	  <div class="checkout_1l clearfix">
 	   <h3 class="mgt">Make Your Checkout Here</h3>
-	   <p>Please register in order to checkout more quickly</p>
+	   <!-- <p>Please register in order to checkout more quickly</p> -->
 	  </div><br>
 	  <div class="checkout_1l1 clearfix">
        <div class="col-sm-6 space_left">
@@ -58,17 +58,17 @@
 	    <h5>Address Line 1 <span class="col_3">*</span></h5>
 		<input class="form-control" type="text">
 	   </div>
-	   <div class="col-sm-6 space_left">
+	   <!-- <div class="col-sm-6 space_left">
 	    <h5>Address Line 2 <span class="col_3">*</span></h5>
 		<input class="form-control" type="text">
-	   </div>
+	   </div> -->
 	  </div>
 	  <div class="checkout_1l1 clearfix">
        <div class="col-sm-6 space_left">
 	    <h5>Postal Code <span class="col_3">*</span></h5>
 		<input class="form-control" type="text">
 	   </div>
-	   <div class="col-sm-6 space_left">
+	   <!-- <div class="col-sm-6 space_left">
 	    <h5>Company <span class="col_3">*</span></h5>
 		<select class="form-control">
 				 <option>Microsoft</option>
@@ -77,7 +77,7 @@
 				 <option>Samsung</option>
 				 <option>Motorola</option>
 			 </select>
-	   </div>
+	   </div> -->
 	  </div>
 	  <div class="checkout_1l clearfix">
 	   <p><input type="checkbox"> Create an account?</p>

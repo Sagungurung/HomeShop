@@ -5,13 +5,15 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class SellerCategoriesController extends Controller
 {
     public function index(){
+        $sellers = Auth::guard('seller')->user();
         $categories= Category::get();
-        return view('seller.sellerCategories.index', compact('categories'));
+        return view('seller.sellerCategories.index', compact('categories','sellers'));
     }
 
     public function create()
@@ -33,9 +35,10 @@ class SellerCategoriesController extends Controller
     }
 
     public function edit($id)
-    {
+    {   
+        $sellers = Auth::guard('seller')->user();
         $category = Category::find($id);
-        return view('seller.sellerCategories.edit',compact('category'));
+        return view('seller.sellerCategories.edit',compact('category','sellers'));
     }
 
     public function update(Request $request, $id)

@@ -16,23 +16,7 @@
   </head>
   <!-- style="background-color: #c59292;" -->
 <body>
-<section id="top">
- <div class="container">
-  <div class="row">
-   <div class="top_1 clearfix">
-	<div class="col-sm-6">
-	 <div class="top_1r text-right clearfix">
-	  <ul class="mgt">
-	   <li><i class="fa fa-user col_1"></i> <a href="#"> My account</a></li>
-	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('frontend.authenticate.login')}}">Customer Login</a></li>
-	   <li class="border_none"><i class="fa fa-power-off col_1"></i> <a href="{{route('seller.login')}}"> Perhaps A Seller??</a></li>
-	  </ul>
-	 </div>
-	</div>
-   </div>
-  </div>
- </div>
-</section>
+@include('frontend.frontTop')
 
 @include('frontend.frontHeader')
 

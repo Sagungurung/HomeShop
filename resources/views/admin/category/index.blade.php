@@ -68,11 +68,4 @@
       </div>
     </div>     
 </section>
-<!-- @push('scripts')
-  <script>
-      function deleteCategory(){
-        confirm
-      }
-  </script>
-@endpush -->
 @endsection

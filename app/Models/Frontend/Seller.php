@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Seller extends Authenticatable
 {
     use HasFactory;
-    protected $fillable=['firstname','lastname','phone_no','address','shopname','email','password','id'];
+    protected $table = "sellers";
+    protected $fillable=['firstname','lastname','phone_no','address','shopname','email','password'];
 
 }
