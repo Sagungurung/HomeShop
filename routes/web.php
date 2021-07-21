@@ -46,6 +46,7 @@ Route::post('/login/submit', [RegisterController::class, 'submitlogin'])->name('
 
 
 Route::group(['middleware' => 'auth:user'], function () {
+
     //dashboard
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('admin.includes.dashboard');
     Route::get('/logout', [DashboardController::class, 'logout'])->name('admin.logout');
@@ -83,6 +84,7 @@ Route::post('/seller/login/submit', [SellerRegisterController::class, 'submitlog
 
 //SellerDashboard
 Route::group(['middleware' => 'auth:seller'], function () {
+
     Route::get('/seller/dashboard', [SellerDashboardController::class, 'dashboard'])->name('seller.dashboard');
     Route::get('/seller/logout', [SellerDashboardController::class, 'logout'])->name('seller.logout');
     Route::get('/seller/sellerProfile', [SellerDashboardController::class, 'profile'])->name('seller.sellerProfile');
@@ -141,14 +143,15 @@ Route::post('/visitor/login/submit', [AuthenticationController::class, 'submitlo
 
 
 Route::group(['middleware' => 'auth:visitor'], function () {
+
     Route::get('/cart', [CartController::class, 'index'])->name('frontend.cart');
     Route::get('/cartInfo', [CartController::class, 'cartInfo'])->name('frontend.cartInfo');
+    Route::get('/contact', [FrontendController::class, 'contact'])->name('frontend.contact');
 
     Route::post('/createCart', [CartController::class, 'create'])->name('frontend.createCart');
     Route::post('/edit/{id}', [CartController::class, 'edit'])->name('frontend.cart.edit');
-
     Route::get('/delete/{id}', [CartController::class, 'destroy'])->name('frontend.cart.delete');
-
+    
     Route::get('/visitor/logout', [AuthenticationController::class, 'logout'])->name('frontend.authenticate.logout');
-
+    Route::get('/comment',[FrontendController::class,'comment'])->name('frontend.comment');
 });

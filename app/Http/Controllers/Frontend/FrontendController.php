@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Blog;
 use App\Models\Admin\Category;
+use App\Models\Frontend\Comment;
 use App\Models\Frontend\Product;
-use App\Models\Frontend\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,6 +33,22 @@ class FrontendController extends Controller
         return view('frontend.includes.showCategories', compact('blogs','product','categories'));
     }
 
-    
+    public function contact(){
+        $categories = Category::all();
+        return view('frontend.contact',compact('categories'));
+    }
+    public function comment(Request $request){
+
+        if(Auth::guard('visitor')->check()){
+            $request->validate([
+                'blog_id'=>'required|integer',
+                'visitor_id'=>'integer',
+                'product_id'=>'integer',
+                'comment'=>'required|min:2|max:100',
+            ]);
+            Comment::create($request->all());
+            return redirect()->back();
+        }
+    }
     
 }

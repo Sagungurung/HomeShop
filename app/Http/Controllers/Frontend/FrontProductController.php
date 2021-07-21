@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Category;
+use App\Models\Frontend\Comment;
 use App\Models\Frontend\Product;
 use App\Models\Frontend\Seller;
 use Illuminate\Http\Request;
@@ -20,10 +21,12 @@ class FrontProductController extends Controller
     public function detail($id){
         
         // $product = Products::where('sellers_id', Auth::guard('seller')->id())->with('category','sellers')->get();
-        $product = Product::find($id)->with('seller','category')->get()->first;
-        // $sellers = Seller::find($id);
-        $categories = Category::get();
+        $products = Product::find($id)->with('seller','category')->where('id',$id)->first();
 
-        return view('frontend.frontProduct.productDetail',compact('product','categories'));
+        // dd($products);
+        $categories = Category::get();
+        $comments = Comment::with('visitor')->where('product_id',$products->id)->get();
+
+        return view('frontend.frontProduct.productDetail',compact('products','categories','comments'));
     }
 }

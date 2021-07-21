@@ -111,6 +111,7 @@
 					<li><a class="m_tag" href="{{route('frontend.frontBlog.showBlog')}}">Blog</a></li>
 					<li><a class="m_tag" href="{{route('frontend.cart')}}">Cart</a></li>
 					<li><a class="m_tag" href="{{route('frontend.cartInfo')}}">Cart Info</a></li>
+					<!-- <li><a class="m_tag" href="{{route('frontend.contact')}}">Contact</a></li> -->
 				</ul>
 
 			</div>

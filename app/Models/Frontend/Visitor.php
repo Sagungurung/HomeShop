@@ -9,6 +9,5 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Visitor extends Authenticatable
 {
     use HasFactory;
-    protected $table = "visitors";
     protected $fillable=['firstname','lastname','phone_no','address','city','areacode','email','password'];
 }

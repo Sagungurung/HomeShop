@@ -36,11 +36,11 @@
 										<!-- <h6 class="mgt"><a href="{{route('frontend.createCart')}}">ADD TO CART</a></h6> -->
 						</form>
 					</div>
-					<div class="col-sm-6 space_all">
+					<!-- <div class="col-sm-6 space_all">
 						<ul class="mgt pull-right">
 							<li><a href="#"><i class="fa fa-heart-o"></i></a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
